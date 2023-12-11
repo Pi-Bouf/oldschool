@@ -142,7 +142,7 @@ void CTachyonHUGEMAP::InitVB( CD3DDevice *pDevice)
 	nCount = 9 * nCount * nCount;
 	m_nBlockCount = 0;
 
-	for( i=0; i<m_nDiffuseCount; i++)
+	for( auto i=0; i<m_nDiffuseCount; i++)
 	{
 		LPDIRECT3DVERTEXBUFFER9 pVB = NULL;
 
@@ -499,7 +499,7 @@ void CTachyonHUGEMAP::ResetTEX( LPDIRECT3DDEVICE9 pDevice,
 			pCENTER->m_nX * m_nShadowPixel - SHADOWTEX_SIZE / 2,
 			pCENTER->m_nY * m_nShadowPixel - SHADOWTEX_SIZE / 2);
 
-		for( i=0; i<INT(vUNIT.size()); i++)
+		for( auto i=0; i<INT(vUNIT.size()); i++)
 		{
 			int nPosX = (m_nUnitX + vUNIT[i] % 3) * m_nUnitLength * m_nShadowPixel;
 			int nPosZ = (m_nUnitZ + vUNIT[i] / 3) * m_nUnitLength * m_nShadowPixel;
@@ -803,7 +803,7 @@ void CTachyonHUGEMAP::Render( CD3DDevice *pDevice)
 
 		if( pDevice->m_vCAPS.MaxVertexIndex > 0x0000FFFF )
 			if( pDevice->m_vCAPS.MaxPrimitiveCount < nTotal )
-				for( i=0; i<INT(m_vDETAIL.size()); i++)
+				for( auto i=0; i<INT(m_vDETAIL.size()); i++)
 				{
 					pDevice->m_pDevice->DrawIndexedPrimitive(
 						D3DPT_TRIANGLELIST,
@@ -820,7 +820,7 @@ void CTachyonHUGEMAP::Render( CD3DDevice *pDevice)
 			}
 		else
 		{
-			for( i=0; i<INT(m_vDETAIL.size()); i++)
+			for( auto i=0; i<INT(m_vDETAIL.size()); i++)
 				for( int j=0; j<9; j++)
 				{
 					pDevice->m_pDevice->DrawIndexedPrimitive(
@@ -1012,7 +1012,7 @@ void CTachyonHUGEMAP::ResetVB32( CD3DDevice *pDevice,
 				vINDEX[(*itTILE).first] = m_vDETAIL.size() - 1;
 			}
 
-		for( i=0; i<m_nBlockCount; i++)
+		for( auto i=0; i<m_nBlockCount; i++)
 		{
 			LPBLOCK pRECT = m_pBLOCK[i];
 
@@ -1066,7 +1066,7 @@ void CTachyonHUGEMAP::ResetVB32( CD3DDevice *pDevice,
 		LPVOID pBUF = NULL;
 		DWORD dwTOTAL = 0;
 
-		for( i=0; i<INT(pTILE->size()); i++)
+		for( auto i=0; i<INT(pTILE->size()); i++)
 		{
 			m_vSTART.push_back(dwTOTAL);
 			vSTART[i] = dwTOTAL;
@@ -1074,7 +1074,7 @@ void CTachyonHUGEMAP::ResetVB32( CD3DDevice *pDevice,
 			dwTOTAL += 3 * m_vCOUNT[i];
 		}
 
-		for( i=0; i<INT(pTILE->size()); i++)
+		for( auto i=0; i<INT(pTILE->size()); i++)
 		{
 			m_vBSTART.push_back(dwTOTAL);
 			dwTOTAL += 3 * m_vBLEND[i];
@@ -1097,7 +1097,7 @@ void CTachyonHUGEMAP::ResetVB32( CD3DDevice *pDevice,
 			m_pINDEXBUF = new DWORD[m_nIndexCount];
 		}
 
-		for( i=0; i<m_nBlockCount; i++)
+		for( auto i=0; i<m_nBlockCount; i++)
 		{
 			LPBLOCK pRECT = m_pBLOCK[i];
 
@@ -1121,7 +1121,7 @@ void CTachyonHUGEMAP::ResetVB32( CD3DDevice *pDevice,
 						pRECT, j));
 				}
 
-				for( j=0; j<INT(pRECT->m_vPOLY.size()); j++)
+				for( auto j=0; j<INT(pRECT->m_vPOLY.size()); j++)
 				{
 					pINDEX[vSTART[dwIndex]] = vPOINT[pRECT->m_vPOLY[j]];
 					vSTART[dwIndex]++;
@@ -1131,7 +1131,7 @@ void CTachyonHUGEMAP::ResetVB32( CD3DDevice *pDevice,
 			}
 		}
 
-		for( i=0; i<INT(pTILE->size()); i++)
+		for( auto i=0; i<INT(pTILE->size()); i++)
 		{
 			LPDWORD pINDEX = (LPDWORD) m_pINDEXBUF;
 			pINDEX += m_vBSTART[i];
@@ -1150,7 +1150,7 @@ void CTachyonHUGEMAP::ResetVB32( CD3DDevice *pDevice,
 						pRECT, k));
 				}
 
-				for( k=0; k<INT(pRECT->m_vPOLY.size()); k++)
+				for( auto k=0; k<INT(pRECT->m_vPOLY.size()); k++)
 				{
 					(*pINDEX) = vPOINT[pRECT->m_vPOLY[k]];
 					pINDEX++;
@@ -1164,7 +1164,7 @@ void CTachyonHUGEMAP::ResetVB32( CD3DDevice *pDevice,
 		memcpy( pBUF, m_pINDEXBUF, dwTOTAL * sizeof(DWORD));
 		m_pINDEX->Unlock();
 
-		for( i=0; i<INT(pTILE->size()); i++)
+		for( auto i=0; i<INT(pTILE->size()); i++)
 			vBLEND[i].clear();
 	}
 }
@@ -1206,7 +1206,7 @@ void CTachyonHUGEMAP::ResetVB16( CD3DDevice *pDevice,
 			m_vDIFFUSEID.push_back(0);
 			vINDEX[TILE_NULL] = 0;
 
-			for( i=0; i<9; i++)
+			for( auto i=0; i<9; i++)
 			{
 				m_vBLEND.push_back(0);
 				m_vCOUNT.push_back(0);
@@ -1225,7 +1225,7 @@ void CTachyonHUGEMAP::ResetVB16( CD3DDevice *pDevice,
 				m_vDIFFUSEID.push_back(BYTE((*itDIFFUSE).second));
 				vINDEX[(*itTILE).first] = m_vDETAIL.size() - 1;
 
-				for( i=0; i<9; i++)
+				for( auto i=0; i<9; i++)
 				{
 					m_vBLEND.push_back(0);
 					m_vCOUNT.push_back(0);
@@ -1233,7 +1233,7 @@ void CTachyonHUGEMAP::ResetVB16( CD3DDevice *pDevice,
 				}
 			}
 
-		for( i=0; i<m_nBlockCount; i++)
+		for( auto i=0; i<m_nBlockCount; i++)
 		{
 			LPBLOCK pRECT = m_pBLOCK[i];
 
@@ -1283,7 +1283,7 @@ void CTachyonHUGEMAP::ResetVB16( CD3DDevice *pDevice,
 		LPVOID pBUF = NULL;
 		DWORD dwTOTAL = 0;
 
-		for( i=0; i<INT(pTILE->size()); i++)
+		for( auto i=0; i<INT(pTILE->size()); i++)
 			for( int j=0; j<9; j++)
 			{
 				m_vSTART.push_back(dwTOTAL);
@@ -1292,7 +1292,7 @@ void CTachyonHUGEMAP::ResetVB16( CD3DDevice *pDevice,
 				dwTOTAL += 3 * m_vCOUNT[i * 9 + j];
 			}
 
-		for( i=0; i<INT(pTILE->size()); i++)
+		for( auto i=0; i<INT(pTILE->size()); i++)
 			for( int j=0; j<9; j++)
 			{
 				m_vBSTART.push_back(dwTOTAL);
@@ -1316,7 +1316,7 @@ void CTachyonHUGEMAP::ResetVB16( CD3DDevice *pDevice,
 			m_pINDEXBUF = new WORD[m_nIndexCount];
 		}
 
-		for( i=0; i<m_nBlockCount; i++)
+		for( auto i=0; i<m_nBlockCount; i++)
 		{
 			LPBLOCK pRECT = m_pBLOCK[i];
 
@@ -1349,7 +1349,7 @@ void CTachyonHUGEMAP::ResetVB16( CD3DDevice *pDevice,
 						pRECT, j));
 				}
 
-				for( j=0; j<INT(pRECT->m_vPOLY.size()); j++)
+				for( auto j=0; j<INT(pRECT->m_vPOLY.size()); j++)
 				{
 					pINDEX[vSTART[bINDEX][vINDEX[bTILE]]] = (WORD) vPOINT[pRECT->m_vPOLY[j]];
 					vSTART[bINDEX][vINDEX[bTILE]]++;
@@ -1359,7 +1359,7 @@ void CTachyonHUGEMAP::ResetVB16( CD3DDevice *pDevice,
 			}
 		}
 
-		for( i=0; i<INT(pTILE->size()); i++)
+		for( auto i=0; i<INT(pTILE->size()); i++)
 			for( int j=0; j<9; j++)
 			{
 				LPWORD pINDEX = &((LPWORD) m_pINDEXBUF)[m_vBSTART[i * 9 + j]];
@@ -1378,7 +1378,7 @@ void CTachyonHUGEMAP::ResetVB16( CD3DDevice *pDevice,
 							pRECT, l));
 					}
 
-					for( l=0; l<INT(pRECT->m_vPOLY.size()); l++)
+					for( auto l=0; l<INT(pRECT->m_vPOLY.size()); l++)
 					{
 						(*pINDEX) = (WORD) vPOINT[pRECT->m_vPOLY[l]];
 						pINDEX++;
@@ -1392,7 +1392,7 @@ void CTachyonHUGEMAP::ResetVB16( CD3DDevice *pDevice,
 		memcpy( pBUF, m_pINDEXBUF, dwTOTAL * sizeof(WORD));
 		m_pINDEX->Unlock();
 
-		for( i=0; i<INT(pTILE->size()); i++)
+		for( auto i=0; i<INT(pTILE->size()); i++)
 			for( int j=0; j<9; j++)
 				vBLEND[j][i].clear();
 	}
@@ -1417,7 +1417,7 @@ void CTachyonHUGEMAP::CheckVB( LPDIRECT3DDEVICE9 pDevice,
 			m_bLOAD[i] = FALSE;
 		}
 
-		for( i=0; i<9; i++)
+		for( auto i=0; i<9; i++)
 		{
 			int nLocalX = nUnitX - m_nUnitX + i % 3;
 			int nLocalZ = nUnitZ - m_nUnitZ + i / 3;
@@ -1462,7 +1462,7 @@ void CTachyonHUGEMAP::CheckVB( LPDIRECT3DDEVICE9 pDevice,
 			m_bLOCK[i] = FALSE;
 		}
 
-		for( i=0; i<9; i++)
+		for( auto i=0; i<9; i++)
 		{
 			int nLocalX = nCellX - m_nCellX + i % 3;
 			int nLocalZ = nCellZ - m_nCellZ + i / 3;
@@ -1484,14 +1484,14 @@ void CTachyonHUGEMAP::CheckVB( LPDIRECT3DDEVICE9 pDevice,
 			}
 		}
 
-		for( i=0; i<9; i++)
+		for( auto i=0; i<9; i++)
 			if(!m_bLOCK[i])
 				FreeDIFFUSE(i);
 
 		m_nCellX = nCellX;
 		m_nCellZ = nCellZ;
 
-		for( i=0; i<9; i++)
+		for( auto i=0; i<9; i++)
 			if( m_bINDEX[i] == 0xFF )
 			{
 				nCellX = m_nCellX + i % 3;
@@ -1579,7 +1579,7 @@ void CTachyonHUGEMAP::ComplateBLOCK()
 	for( int i=0; i<INT(m_vBLOCK.size()); i++)
 		mapBLOCK.insert( MAPBLOCK::value_type( m_vBLOCK[i]->GetID(), m_vBLOCK[i]));
 
-	for( i=0; i<INT(m_vBLOCK.size()); i++)
+	for( auto i=0; i<INT(m_vBLOCK.size()); i++)
 	{
 		SHORT nWIDTH = m_vBLOCK[i]->Width();
 
@@ -1611,7 +1611,7 @@ void CTachyonHUGEMAP::ComplateBLOCK()
 			{
 				BYTE bINDEX = 1;
 
-				for( j=0; j<7; j++)
+				for( auto j=0; j<7; j++)
 					if(vJOINT[j + 1])
 					{
 						m_vBLOCK[i]->m_vPOLY.push_back(bINDEX);
@@ -1648,7 +1648,7 @@ void CTachyonHUGEMAP::ComplateBLOCK()
 				IPOINT( m_vBLOCK[i]->m_vRECT.m_nLEFT, m_vBLOCK[i]->m_vRECT.m_nBOTTOM),
 				IPOINT( m_vBLOCK[i]->m_vRECT.m_nLEFT, vCENTER.m_nY)};
 
-			for( j=0; j<8; j++)
+			for( auto j=0; j<8; j++)
 				if(vJOINT[j])
 					m_vBLOCK[i]->m_vPOINT.push_back(new IPOINT( vPOINT[j].m_nX, vPOINT[j].m_nY));
 		}
@@ -1680,7 +1680,7 @@ void CTachyonHUGEMAP::BuildBLOCK( CRect rect)
 
 	if( nBound < rect.Width() )
 	{
-		static offset[4][2] = {
+		static BYTE offset[4][2] = {
 			{ 0, 0},
 			{ 1, 0},
 			{ 0, 1},
@@ -1991,7 +1991,7 @@ BYTE CTachyonHUGEMAP::HitTest( LPD3DXVECTOR3 pResult,
 						{
 							bHIT = FALSE;
 
-							for( l=0; l<4; l++)
+							for( auto l=0; l<4; l++)
 								if( D3DXPlaneDotCoord( &vCUTTERH, &vPoint[l]) *
 									D3DXPlaneDotCoord( &vCUTTERH, &vPoint[(l + 1) % 4]) <= 0.0f )
 								{
@@ -2182,7 +2182,7 @@ void CTachyonHUGEMAP::BuildDIFFUSE( LPDIRECT3DDEVICE9 pDevice,
 	nCellX = nCellX * m_nUnitLength / m_nCellCount;
 	nCellZ = nCellZ * m_nUnitLength / m_nCellCount;
 
-	for( i=0; i<nCount; i++)
+	for( auto i=0; i<nCount; i++)
 		for( int j=0; j<nCount; j++)
 		{
 			static int nBLEND[8][2] = {
@@ -2216,7 +2216,7 @@ void CTachyonHUGEMAP::BuildDIFFUSE( LPDIRECT3DDEVICE9 pDevice,
 					pBUF[(i + nRECT[k][1]) * (nCount + 1) + j + nRECT[k][0]] = 0xFF000000;
 
 				if(!(bTileID&0x80))
-					for( k=0; k<8; k++)
+					for( auto k=0; k<8; k++)
 					{
 						BYTE bBLEND = FindDetailID(
 							nCellX + j + nBLEND[k][0],
@@ -2250,7 +2250,7 @@ void CTachyonHUGEMAP::BuildDIFFUSE( LPDIRECT3DDEVICE9 pDevice,
 	nCount++;
 	nCount *= nCount;
 
-	for( i=1; i<INT(m_vDIFFUSELOCK.size()); i++)
+	for( auto i=1; i<INT(m_vDIFFUSELOCK.size()); i++)
 		if(m_vDIFFUSELOCK[i]&dwMASK)
 		{
 			LPVOID pBUF = NULL;
@@ -2503,7 +2503,7 @@ void CTachyonHUGEMAP::LoadUNIT( LPDIRECT3DDEVICE9 pDevice,
 		nATTR = *((int *) pDATA);
 		pDATA += sizeof(int);
 
-		for( j=0; j<nATTR; j++)
+		for( auto j=0; j<nATTR; j++)
 		{
 			LPATTRIBUTE pATTR = new ATTRIBUTE();
 			DWORD dwATTR;
@@ -2532,7 +2532,7 @@ void CTachyonHUGEMAP::LoadUNIT( LPDIRECT3DDEVICE9 pDevice,
 	nSIZE = *((int *) pDATA);
 	pDATA += sizeof(int);
 
-	for( i=0; i<nSIZE; i++)
+	for( auto i=0; i<nSIZE; i++)
 	{
 		LPMAPSFX pSFX = new MAPSFX();
 		DWORD dwInstID;
@@ -2563,7 +2563,7 @@ void CTachyonHUGEMAP::LoadUNIT( LPDIRECT3DDEVICE9 pDevice,
 	nSIZE = *((int *) pDATA);
 	pDATA += sizeof(int);
 
-	for( i=0; i<nSIZE; i++)
+	for( auto i=0; i<nSIZE; i++)
 	{
 		LPMAPSND pSND = new MAPSND();
 		DWORD dwInstID;
@@ -2651,7 +2651,7 @@ void CTachyonHUGEMAP::LoadUNIT( LPDIRECT3DDEVICE9 pDevice,
 	nSIZE = *((int *) pDATA);
 	pDATA += sizeof(int);
 
-	for( i=0; i<nSIZE; i++)
+	for( auto i=0; i<nSIZE; i++)
 	{
 		LPDIRECT3DSURFACE9 pTIMG = NULL;
 		D3DXIMAGE_INFO vTINFO;

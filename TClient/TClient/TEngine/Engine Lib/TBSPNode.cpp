@@ -1356,7 +1356,7 @@ void CTBSPNode::LoadMAP( CFile* pFile,
 			pWINDING->m_vPoint.push_back(pPoint);
 		}
 
-		for( j=1; j<INT(pWINDING->m_vPoint.size()) - 1; j++)
+		for( auto j=1; j<INT(pWINDING->m_vPoint.size()) - 1; j++)
 		{
 			memcpy( &pMESH[nMESH++], pWINDING->m_vPoint[0], sizeof(MESHVERTEX));
 			memcpy( &pMESH[nMESH++], pWINDING->m_vPoint[j], sizeof(MESHVERTEX));
@@ -1370,7 +1370,7 @@ void CTBSPNode::LoadMAP( CFile* pFile,
 	}
 
 	pFile->Read( &nCount, sizeof(nCount));
-	for( i=0; i<nCount; i++)
+	for( auto i=0; i<nCount; i++)
 	{
 		CTBSPPortal *pItem = NULL;
 		DWORD dwPortalID;
@@ -1410,7 +1410,7 @@ void CTBSPNode::LoadMAP( CFile* pFile,
 				pItem->m_vFace.m_vPoint.push_back(pPoint);
 			}
 
-			for( j=0; j<nFrontPVS; j++)
+			for( auto j=0; j<nFrontPVS; j++)
 			{
 				DWORD dwPVS = NODEID_NULL;
 
@@ -1418,7 +1418,7 @@ void CTBSPNode::LoadMAP( CFile* pFile,
 				pItem->AddPVS( dwPVS, PORTALDIR_FRONT);
 			}
 
-			for( j=0; j<nBackPVS; j++)
+			for( auto j=0; j<nBackPVS; j++)
 			{
 				DWORD dwPVS = NODEID_NULL;
 
@@ -1431,7 +1431,7 @@ void CTBSPNode::LoadMAP( CFile* pFile,
 	}
 
 	pFile->Read( &nCount, sizeof(nCount));
-	for( i=0; i<nCount; i++)
+	for( auto i=0; i<nCount; i++)
 	{
 		LPTEXWINDING pWINDING = new TEXWINDING();
 
@@ -1473,7 +1473,7 @@ void CTBSPNode::LoadMAP( CFile* pFile,
 				pWinding->m_vPoint.push_back(pPoint);
 			}
 
-			for( k=1; k<INT(pWinding->m_vPoint.size()) - 1; k++)
+			for( auto k=1; k<INT(pWinding->m_vPoint.size()) - 1; k++)
 			{
 				pLIGHT[nLIGHT].m_dwColor = pWINDING->m_dwColor;
 				pLIGHT[nLIGHT].m_fPosX = pWinding->m_vPoint[0]->m_fPosX;
@@ -1587,7 +1587,7 @@ void CTBSPNode::Load( CFile* pFile)
 	}
 
 	pFile->Read( &nCount, sizeof(nCount));
-	for( i=0; i<nCount; i++)
+	for( auto i=0; i<nCount; i++)
 	{
 		CTBSPPortal *pItem = NULL;
 		DWORD dwPortalID;
@@ -1627,7 +1627,7 @@ void CTBSPNode::Load( CFile* pFile)
 				pItem->m_vFace.m_vPoint.push_back(pPoint);
 			}
 
-			for( j=0; j<nFrontPVS; j++)
+			for( auto j=0; j<nFrontPVS; j++)
 			{
 				DWORD dwPVS = NODEID_NULL;
 
@@ -1635,7 +1635,7 @@ void CTBSPNode::Load( CFile* pFile)
 				pItem->AddPVS( dwPVS, PORTALDIR_FRONT);
 			}
 
-			for( j=0; j<nBackPVS; j++)
+			for( auto j=0; j<nBackPVS; j++)
 			{
 				DWORD dwPVS = NODEID_NULL;
 
@@ -1648,7 +1648,7 @@ void CTBSPNode::Load( CFile* pFile)
 	}
 
 	pFile->Read( &nCount, sizeof(nCount));
-	for( i=0; i<nCount; i++)
+	for( auto i=0; i<nCount; i++)
 	{
 		LPTEXWINDING pWINDING = new TEXWINDING();
 
@@ -1753,7 +1753,7 @@ void CTBSPNode::Save( CFile* pFile)
 	nCount = INT(m_vPortal.size());
 	pFile->Write( &nCount, sizeof(nCount));
 
-	for( i=0; i<nCount; i++)
+	for( auto i=0; i<nCount; i++)
 	{
 		BYTE bData = m_vPortal[i]->m_dwFrontID == m_dwID ? TRUE : FALSE;
 
@@ -1801,7 +1801,7 @@ void CTBSPNode::Save( CFile* pFile)
 		pFile->Write( &(*it).second->m_dwColor, sizeof(DWORD));
 
 		pFile->Write( &nWINDING, sizeof(int));
-		for( i=0; i<nWINDING; i++)
+		for( auto i=0; i<nWINDING; i++)
 		{
 			int nPoint = INT((*it).second->m_vWINDING[i]->m_vPoint.size());
 
@@ -2001,7 +2001,7 @@ void CTBSPNode::AddLight( LPTEXTURESET pTEX,
 					pWinding->m_vPoint[j]->m_fV2 = pWinding->m_vPoint[j]->m_fV1;
 				}
 
-				for( j=0; j<4; j++)
+				for( auto j=0; j<4; j++)
 				{
 					D3DXPLANE vPlane;
 

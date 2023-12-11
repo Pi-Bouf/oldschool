@@ -53,9 +53,9 @@ void CPacket::Encrypt(INT64 key)
 		lpBody[i] ^= key;  
 	}
 
-	LPBYTE lpLeft = (LPBYTE)&lpBody[i];
+	LPBYTE lpLeft = (LPBYTE)&lpBody[body];
 	LPBYTE pchKey = (LPBYTE)&key;
-	for(i = 0; i < left; i++)
+	for(auto i = 0; i < left; i++)
 	{
 		llCheckSum ^=(BYTE)lpLeft[i]; 
 		lpLeft[i] ^= (BYTE)pchKey[i];
@@ -97,9 +97,9 @@ BOOL CPacket::Decrypt(INT64 key)
 		llCheckSum1 ^= lpBody[i];
 	}
 
-	LPBYTE lpLeft = (LPBYTE)&lpBody[i];
+	LPBYTE lpLeft = (LPBYTE)&lpBody[body];
 	LPBYTE pchKey = (LPBYTE)&key;
-	for(i = 0; i < left; i++)
+	for(auto i = 0; i < left; i++)
 	{
 		lpLeft[i] ^= (BYTE)pchKey[i];
 		llCheckSum1 ^= (BYTE)lpLeft[i];

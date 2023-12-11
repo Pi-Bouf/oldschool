@@ -14,7 +14,6 @@
 #include <Iphlpapi.h>
 #include <Wbemidl.h>
 #include <dmusicc.h>
-#include <dmusici.h>
 #include <gdiplus.h>
 #include <dsound.h>
 #include <ddraw.h>
@@ -1492,8 +1491,9 @@ struct tagANISET
 			vResult.m_fRotX = m_vKey[i + 1]->m_fRotX;
 			vResult.m_fRotY = m_vKey[i + 1]->m_fRotY;
 			vResult.m_fRotZ = m_vKey[i + 1]->m_fRotZ;
+
+			m_nKeyBase = i;
 		}
-		m_nKeyBase = i;
 
 		return vResult;
 	};

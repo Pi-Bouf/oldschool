@@ -481,7 +481,7 @@ CTachyonMAP *CTachyonRes::LockMAP( DWORD dwID)
 				((CTachyonHUGEMAP *) pResult)->m_pRES = this;
 				((CTachyonHUGEMAP *) pResult)->m_dwID = dwID;
 
-				for( i=0; i<9; i++)
+				for( auto i=0; i<9; i++)
 				{
 					((CTachyonHUGEMAP *) pResult)->m_UNIT[i].m_nTileCount = ((CTachyonHUGEMAP *) pResult)->m_nUnitLength;
 					((CTachyonHUGEMAP *) pResult)->m_UNIT[i].m_pSHADOW = new WORD[nCount * nCount];
@@ -528,7 +528,7 @@ CTachyonMAP *CTachyonRes::LockMAP( DWORD dwID)
 				file.Read( &nCount, sizeof(int));
 				MAPTEXTURESET mapLightID;
 
-				for( i=0; i<nCount; i++)
+				for( auto i=0; i<nCount; i++)
 				{
 					DWORD dwTexID = 0;
 					DWORD dwIndex = 0;
@@ -547,7 +547,7 @@ CTachyonMAP *CTachyonRes::LockMAP( DWORD dwID)
 				mapLightID.clear();
 
 				file.Read( &nCount, sizeof(int));
-				for( i=0; i<nCount; i++)
+				for( auto i=0; i<nCount; i++)
 				{
 					LPMAPOBJ pOBJ = new MAPOBJ();
 					DWORD dwInstID;
@@ -583,7 +583,7 @@ CTachyonMAP *CTachyonRes::LockMAP( DWORD dwID)
 					}
 
 					file.Read( &nATTR, sizeof(int));
-					for( j=0; j<nATTR; j++)
+					for( auto j=0; j<nATTR; j++)
 					{
 						LPATTRIBUTE pATTR = new ATTRIBUTE();
 						DWORD dwATTR;
@@ -602,7 +602,7 @@ CTachyonMAP *CTachyonRes::LockMAP( DWORD dwID)
 				}
 
 				file.Read( &nCount, sizeof(int));
-				for( i=0; i<nCount; i++)
+				for( auto i=0; i<nCount; i++)
 				{
 					LPMAPSFX pSFX = new MAPSFX();
 					DWORD dwInstID;
@@ -623,7 +623,7 @@ CTachyonMAP *CTachyonRes::LockMAP( DWORD dwID)
 				}
 
 				file.Read( &nCount, sizeof(int));
-				for( i=0; i<nCount; i++)
+				for( auto i=0; i<nCount; i++)
 				{
 					LPMAPSND pSND = new MAPSND();
 					DWORD dwInstID;
@@ -822,7 +822,7 @@ void CTachyonRes::LoadTEX( CString strGroupID)
 	for( int i=0; i<nCount; i++)
 		LoadTEX( LoadString(&file), &pTRESDATA[i], &pTRES[i], nIndex, nTotal);
 
-	for( i=0; i<nTotal; i++)
+	for( auto i=0; i<nTotal; i++)
 	{
 		DWORD dwFileID;
 		DWORD dwPOS;
@@ -847,7 +847,7 @@ void CTachyonRes::LoadTEX( CString strGroupID)
 		}
 	}
 
-	for( i=0; i<nCount; i++)
+	for( auto i=0; i<nCount; i++)
 	{
 		MAPRES::iterator it;
 
@@ -905,7 +905,7 @@ void CTachyonRes::LoadIMG( CString strGroupID)
 	for( int i=0; i<nCount; i++)
 		LoadIMG( LoadString(&file), &pTRESDATA[i], &pTRES[i], nIndex, nTotal);
 
-	for( i=0; i<nTotal; i++)
+	for( auto i=0; i<nTotal; i++)
 	{
 		DWORD dwFileID;
 		DWORD dwPOS;
@@ -930,7 +930,7 @@ void CTachyonRes::LoadIMG( CString strGroupID)
 		}
 	}
 
-	for( i=0; i<nCount; i++)
+	for( auto i=0; i<nCount; i++)
 	{
 		MAPRES::iterator it;
 
@@ -968,7 +968,7 @@ void CTachyonRes::LoadMEDIA( CString strGroupID)
 		vFILE.push_back(strFILE);
 	}
 
-	for( i=0; i<nTotal; i++)
+	for( auto i=0; i<nTotal; i++)
 	{
 		DWORD dwFileID;
 		DWORD dwPOS;
@@ -1007,7 +1007,7 @@ void CTachyonRes::LoadANI( CString strGroupID)
 		LoadANI( DWORD(i), &pTRESDATA[i], &pTRES[i], nIndex, nTotal);
 	}
 
-	for( i=0; i<nTotal; i++)
+	for( auto i=0; i<nTotal; i++)
 	{
 		DWORD dwFileID;
 		DWORD dwPOS;
@@ -1032,7 +1032,7 @@ void CTachyonRes::LoadANI( CString strGroupID)
 		}
 	}
 
-	for( i=0; i<nCount; i++)
+	for( auto i=0; i<nCount; i++)
 	{
 		MAPRES::iterator it;
 
@@ -1074,7 +1074,7 @@ void CTachyonRes::LoadMESH( CString strGroupID)
 		LoadMESH( dwBASE, DWORD(i), &pTRES[i], nIndex, nTotal);
 	}
 
-	for( i=0; i<nTotal; i++)
+	for( auto i=0; i<nTotal; i++)
 	{
 		DWORD dwFileID;
 		DWORD dwPOS;
@@ -1092,7 +1092,7 @@ void CTachyonRes::LoadMESH( CString strGroupID)
 		}
 	}
 
-	for( i=0; i<nCount; i++)
+	for( auto i=0; i<nCount; i++)
 	{
 		MAPRES::iterator it;
 
@@ -1124,7 +1124,7 @@ void CTachyonRes::LoadOBJ( CString strGroupID)
 	for( int i=0; i<nCount; i++)
 		LoadOBJ( LoadString(&file), &pTRES[i], nIndex, nTotal);
 
-	for( i=0; i<nTotal; i++)
+	for( auto i=0; i<nTotal; i++)
 	{
 		DWORD dwFileID;
 		DWORD dwPOS;
@@ -1142,7 +1142,7 @@ void CTachyonRes::LoadOBJ( CString strGroupID)
 		}
 	}
 
-	for( i=0; i<nCount; i++)
+	for( auto i=0; i<nCount; i++)
 	{
 		MAPRES::iterator it;
 
@@ -1174,7 +1174,7 @@ void CTachyonRes::LoadSFX( CString strGroupID)
 	for( int i=0; i<nCount; i++)
 		LoadSFX( LoadString(&file), &pTRES[i], nIndex, nTotal);
 
-	for( i=0; i<nTotal; i++)
+	for( auto i=0; i<nTotal; i++)
 	{
 		DWORD dwFileID;
 		DWORD dwPOS;
@@ -1192,7 +1192,7 @@ void CTachyonRes::LoadSFX( CString strGroupID)
 		}
 	}
 
-	for( i=0; i<nCount; i++)
+	for( auto i=0; i<nCount; i++)
 	{
 		MAPRES::iterator it;
 
@@ -1220,7 +1220,7 @@ void CTachyonRes::LoadMAP( CString strGroupID)
 	for( int i=0; i<nCount; i++)
 		m_vMAPFILE.push_back(LoadString(&file));
 
-	for( i=0; i<nTotal; i++)
+	for( auto i=0; i<nTotal; i++)
 	{
 		LPRESINDEX pRES = new RESINDEX();
 		DWORD dwID;
@@ -1264,7 +1264,7 @@ void CTachyonRes::LoadTEX( CString strFILE,
 		}
 
 		ucpr.Read( &nCount, sizeof(int));
-		for( i=0; i<nCount; i++)
+		for( auto i=0; i<nCount; i++)
 		{
 			LPUVKEY pKEY = new UVKEY();
 
@@ -1397,7 +1397,7 @@ void CTachyonRes::LoadIMG( CString strFILE,
 		}
 
 		ucpr.Read( &nCount, sizeof(int));
-		for( i=0; i<nCount; i++)
+		for( auto i=0; i<nCount; i++)
 		{
 			LPCLRKEY pKEY = new CLRKEY();
 
@@ -1488,7 +1488,7 @@ void CTachyonRes::LoadANI( DWORD dwFileID,
 		}
 
 		file.Read( &nCount, sizeof(int));
-		for( i=0; i<nCount; i++)
+		for( auto i=0; i<nCount; i++)
 		{
 			LPANIKEY pKEY = new ANIKEY();
 
@@ -1714,7 +1714,7 @@ void CTachyonRes::LoadOBJ( CString strFILE,
 		}
 
 		file.Read( &nCount, sizeof(int));
-		for( i=0; i<nCount; i++)
+		for( auto i=0; i<nCount; i++)
 		{
 			LPSFXINST pSFX = new SFXINST();
 			DWORD dwSFX;
@@ -1745,7 +1745,7 @@ void CTachyonRes::LoadOBJ( CString strFILE,
 		}
 
 		file.Read( &nCount, sizeof(int));
-		for( i=0; i<nCount; i++)
+		for( auto i=0; i<nCount; i++)
 		{
 			LPSNDINST pSND = new SNDINST();
 			DWORD dwSND;
@@ -1760,7 +1760,7 @@ void CTachyonRes::LoadOBJ( CString strFILE,
 		}
 
 		file.Read( &nCount, sizeof(int));
-		for( i=0; i<nCount; i++)
+		for( auto i=0; i<nCount; i++)
 		{
 			LPATTRIBUTE pATTR = new ATTRIBUTE();
 			DWORD dwATTR;
@@ -1776,7 +1776,7 @@ void CTachyonRes::LoadOBJ( CString strFILE,
 		}
 
 		file.Read( &nCount, sizeof(int));
-		for( i=0; i<nCount; i++)
+		for( auto i=0; i<nCount; i++)
 		{
 			LPACTION pACT = new ACTION();
 			DWORD dwACT = 0;
@@ -1806,7 +1806,7 @@ void CTachyonRes::LoadOBJ( CString strFILE,
 			}
 
 			file.Read( &nSND, sizeof(int));
-			for( j=0; j<nSND; j++)
+			for( auto j=0; j<nSND; j++)
 			{
 				LPSNDINST pSND = new SNDINST();
 				DWORD dwSND;
@@ -1821,7 +1821,7 @@ void CTachyonRes::LoadOBJ( CString strFILE,
 			}
 
 			file.Read( &nANI, sizeof(int));
-			for( j=0; j<nANI; j++)
+			for( auto j=0; j<nANI; j++)
 			{
 				LPANI pANI = new ANI();
 				DWORD dwANIID;
@@ -1849,7 +1849,7 @@ void CTachyonRes::LoadOBJ( CString strFILE,
 				}
 
 				file.Read( &nSND, sizeof(int));
-				for( k=0; k<nSND; k++)
+				for( auto k=0; k<nSND; k++)
 				{
 					LPSNDINST pSND = new SNDINST();
 					DWORD dwSND;
@@ -1869,7 +1869,7 @@ void CTachyonRes::LoadOBJ( CString strFILE,
 		}
 
 		file.Read( &nCount, sizeof(int));
-		for( i=0; i<nCount; i++)
+		for( auto i=0; i<nCount; i++)
 		{
 			LPCLKIND pCLK = new CLKIND();
 			DWORD dwCLK = 0;
@@ -1968,7 +1968,7 @@ void CTachyonRes::LoadSFX( CString strFILE,
 		}
 
 		ucpr.Read( &nCount, sizeof(int));
-		for( i=0; i<nCount; i++)
+		for( auto i=0; i<nCount; i++)
 		{
 			LPSFX pCOMBINE = NULL;
 
@@ -1988,7 +1988,7 @@ void CTachyonRes::LoadSFX( CString strFILE,
 		ucpr.Read( &pSFX->m_fSizeY, sizeof(FLOAT));
 
 		ucpr.Read( &nCount, sizeof(int));
-		for( i=0; i<nCount; i++)
+		for( auto i=0; i<nCount; i++)
 		{
 			LPCLKINST pCI = new CLKINST();
 			DWORD dwCI = 0;

@@ -198,7 +198,7 @@ CT3DMusic::CT3DMusic()
 		m_vOUTPUT[i] = NULL;
 	}
 
-	for( i=0; i<2; i++)
+	for( auto i=0; i<2; i++)
 	{
 		for( int j=0; j<2; j++)
 			m_vCOUNT[i][j] = 0;
@@ -312,10 +312,10 @@ void CT3DMusic::DecodeL2INIT()
 	for( int i=1; i<18; i++)
 		m_vValueL2[i] = 2.0f / FLOAT(vValueL2[i]);
 
-	for( i=0; i<64; i++)
+	for( auto i=0; i<64; i++)
 		m_vTableSF[i] = FLOAT(32768.0f * 2.0f * powf( 2.0f, -i / 3.0f));
 
-	for( i=0; i<32; i++)
+	for( auto i=0; i<32; i++)
 	{
 		int nCode = i;
 
@@ -326,7 +326,7 @@ void CT3DMusic::DecodeL2INIT()
 		}
 	}
 
-	for( i=0; i<128; i++)
+	for( auto i=0; i<128; i++)
 	{
 		int nCode = i;
 
@@ -337,7 +337,7 @@ void CT3DMusic::DecodeL2INIT()
 		}
 	}
 
-	for( i=0; i<1024; i++)
+	for( auto i=0; i<1024; i++)
 	{
 		int nCode = i;
 
@@ -364,18 +364,18 @@ void CT3DMusic::InitQuant()
 	for( int i=0; i<262; i++)
 		m_vValueL3[i] = powf( 2.0f, 0.25f * (i - 216 + MPEG_GLOBAL_GAIN_SCALE));
 
-	for( i=0; i<2; i++)
+	for( auto i=0; i<2; i++)
 		for( int j=0; j<4; j++)
 			for( int k=0; k<32; k++)
 				m_vScaleL3[i][j][k] = powf( 2.0f, -0.5f * (1 + i) * (k + j));
 
-	for( i=0; i<64; i++)
+	for( auto i=0; i<64; i++)
 	{
 		FLOAT fInverse = FLOAT(i - 32);
 		m_vPowL3[i] = fInverse * powf( fabs(fInverse), 1.0f / 3.0f);
 	}
 
-	for( i=0; i<8; i++)
+	for( auto i=0; i<8; i++)
 		m_vSubBlockL3[i] = powf( 2.0f, 0.25f * -8.0f * i);
 }
 
@@ -413,7 +413,7 @@ void CT3DMusic::InitMSIS()
 	m_vISData1[1][7][0] = 1.0f;
 	m_vISData1[1][7][1] = 1.0f;
 
-	for( i=0; i<2; i++)
+	for( auto i=0; i<2; i++)
 	{
 		fTheta = powf( 2.0f, -0.25f * (1 + i));
 
@@ -488,21 +488,21 @@ void CT3DMusic::InitIMDCT()
 	for( int i=0; i<nCount; i++)
 		m_vW1[i] = 2.0f * cosf(fTheta * (2.0f * i + 1.0f));
 
-	for( i=0; i<9; i++)
+	for( auto i=0; i<9; i++)
 		m_vW2[i] = 2.0f * cosf(2.0f * fTheta * (2.0f * i + 1.0f));
 
 	fTheta = D3DX_PI / (2.0f * nCount);
-	for( i=0; i<9; i++)
+	for( auto i=0; i<9; i++)
 		for( int j=0; j<4; j++)
 			m_vCoef[i][j] = cosf(fTheta * (2.0f * i) * (2.0f * j + 1.0f));
 
 	nCount = 6;
 	fTheta = D3DX_PI / (4.0f * nCount);
 
-	for( i=0; i<nCount; i++)
+	for( auto i=0; i<nCount; i++)
 		m_vV1[i] = cosf(fTheta * (2.0f * i + 1.0f));
 
-	for( i=0; i<3; i++)
+	for( auto i=0; i<3; i++)
 		m_vV2[i] = 2.0f * cosf(2.0f * fTheta * (2.0f * i + 1.0f));
 
 	fTheta = D3DX_PI / (2.0f * nCount);
@@ -516,44 +516,44 @@ void CT3DMusic::InitHWIN()
 		m_vWIN[0][i] = sinf(D3DX_PI / 36.0f * (i + 0.5f));
 
 	// Type 1
-	for( i=0; i<18; i++)
+	for( auto i=0; i<18; i++)
 		m_vWIN[1][i] = sinf(D3DX_PI / 36.0f * (i + 0.5f));
 
-	for( i=18; i<24; i++)
+	for( auto i=18; i<24; i++)
 		m_vWIN[1][i] = 1.0f;
 
-	for( i=24; i<30; i++)
+	for( auto i=24; i<30; i++)
 		m_vWIN[1][i] = sinf(D3DX_PI / 12.0f * (i + 0.5f - 18.0f));
 
-	for( i=30; i<36; i++)
+	for( auto i=30; i<36; i++)
 		m_vWIN[1][i] = 0.0f;
 
 	// Type 2
-	for( i=0; i<12; i++)
+	for( auto i=0; i<12; i++)
 		m_vWIN[2][i] = sinf(D3DX_PI / 12.0f * (i + 0.5f));
 
-	for( i=12; i<36; i++)
+	for( auto i=12; i<36; i++)
 		m_vWIN[2][i] = 0.0f;
 
 	// Type 3
-	for( i=0; i<6; i++)
+	for( auto i=0; i<6; i++)
 		m_vWIN[3][i] = 0.0f;
 
-	for( i=6; i<12; i++)
+	for( auto i=6; i<12; i++)
 		m_vWIN[3][i] = sinf(D3DX_PI / 12.0f * (i + 0.5f - 6.0f));
 
-	for( i=12; i<18; i++)
+	for( auto i=12; i<18; i++)
 		m_vWIN[3][i] = 1.0f;
 
-	for( i=18; i<36; i++)
+	for( auto i=18; i<36; i++)
 		m_vWIN[3][i] = sinf(D3DX_PI / 36.0f * (i + 0.5f));
 
-	for( i=0; i<4; i++)
+	for( auto i=0; i<4; i++)
 		if( i != 2 )
 			for( int j=9; j<36; j++)
 				m_vWIN[i][j] = -m_vWIN[i][j];
 
-	for( i=3; i<12; i++)
+	for( auto i=3; i<12; i++)
 		m_vWIN[2][i] = -m_vWIN[2][i];
 }
 
@@ -1040,7 +1040,7 @@ void CT3DMusic::Unlock()
 		ZeroMemory( &m_vHEADER[i], sizeof(WAVEHDR));
 	}
 
-	for( i=0; i<2; i++)
+	for( auto i=0; i<2; i++)
 	{
 		for( int j=0; j<2; j++)
 			m_vCOUNT[i][j] = 0;
@@ -1845,13 +1845,13 @@ void CT3DMusic::DecodeL1( CT3DMusic *pMUSIC,
 	}
 
 	vDISPATCH[pMUSIC->m_nLimit] = 31;
-	vDISPATCH[i] = 30;
+	vDISPATCH[pMUSIC->m_nBATCount] = 30;
 
-	for( i=0; i<pMUSIC->m_nBATCount; i++)
+	for( auto i=0; i<pMUSIC->m_nBATCount; i++)
 		if(vDATA[i])
 			vSF[i] = vCODE[i] * m_vTableSF[vSTREAM.PopBITs(6)];
 
-	for( i=0; i<12; i++)
+	for( auto i=0; i<12; i++)
 	{
 		BYTE bDISPATCH = TRUE;
 		int nINDEX = -1;
@@ -1976,9 +1976,9 @@ void CT3DMusic::DecodeL2( CT3DMusic *pMUSIC,
 	vDISPATCH[pMUSIC->m_nLimit] = 37;
 	vDISPATCH[nINDEX] = 36;
 
-	for( i=0; i<pMUSIC->m_nMaxSB; i++)
+	for( auto i=0; i<pMUSIC->m_nMaxSB; i++)
 		vDISPATCHSF[i] = vDATA[i] ? vSTREAM.PopBITs(2) : 4;
-	vDISPATCHSF[i] = 5;
+	vDISPATCHSF[pMUSIC->m_nMaxSB] = 5;
 
 	BYTE bDISPATCH = TRUE;
 	nINDEX = -1;
@@ -1990,7 +1990,7 @@ void CT3DMusic::DecodeL2( CT3DMusic *pMUSIC,
 		switch(vDISPATCHSF[nINDEX])
 		{
 		case 0	:
-			for( i=0; i<3; i++)
+			for( auto i=0; i<3; i++)
 				vSF[i][nINDEX] = vCODE[nINDEX] * m_vTableSF[vSTREAM.PopBITs(6)];
 
 			break;
@@ -2023,7 +2023,7 @@ void CT3DMusic::DecodeL2( CT3DMusic *pMUSIC,
 			break;
 
 		case 4	:
-			for( i=0; i<3; i++)
+			for( auto i=0; i<3; i++)
 				vSF[i][nINDEX] = 0.0f;
 
 			break;
@@ -2032,7 +2032,7 @@ void CT3DMusic::DecodeL2( CT3DMusic *pMUSIC,
 		}
 	}
 
-	for( i=0; i<3; i++)
+	for( auto i=0; i<3; i++)
 		for( int j=0; j<4; j++)
 		{
 			bDISPATCH = TRUE;
@@ -2286,7 +2286,7 @@ void CT3DMusic::DecodeL3( CT3DMusic *pMUSIC,
 		for( int i=0; i<nChannels; i++)
 			vSIDE.m_dwSCFSI[i] = vSTREAM.PopBITs(4);
 
-		for( i=0; i<2; i++)
+		for( auto i=0; i<2; i++)
 			for( int j=0; j<nChannels; j++)
 			{
 				vSIDE.m_vINFO[i][j].m_dwPart2_3_Length = vSTREAM.PopBITs(12);
@@ -2593,7 +2593,7 @@ void CT3DMusic::DecodeMainL3( CT3DMusic *pMUSIC,
 				vR[j] = vRT[nRIndex][nIndex][j];
 
 			if(nISModeCH)
-				for( j=0; j<3; j++)
+				for( auto j=0; j<3; j++)
 				{
 					vIS.m_vSL[j] = vSL[j];
 					vIS.m_vR[j] = vR[j];
@@ -2607,12 +2607,12 @@ void CT3DMusic::DecodeMainL3( CT3DMusic *pMUSIC,
 				{
 					if(vSL[0])
 					{
-						for( j=0; j<6; j++)
+						for( auto j=0; j<6; j++)
 							vSF[nGROUP][i].m_nL[j] = vSTREAM.PopBITs(vSL[0]);
 					}
 					else
 					{
-						for( j=0; j<6; j++)
+						for( auto j=0; j<6; j++)
 							vSF[nGROUP][i].m_nL[j] = 0;
 					}
 
@@ -2620,7 +2620,7 @@ void CT3DMusic::DecodeMainL3( CT3DMusic *pMUSIC,
 				}
 				else if(vSL[0])
 				{
-					for( j=0; j<vR[0]; j++)
+					for( auto j=0; j<vR[0]; j++)
 					{
 						vSF[nGROUP][i].m_nS[0][nBLOCK] = vSTREAM.PopBITs(vSL[0]);
 						vSF[nGROUP][i].m_nS[1][nBLOCK] = vSTREAM.PopBITs(vSL[0]);
@@ -2631,7 +2631,7 @@ void CT3DMusic::DecodeMainL3( CT3DMusic *pMUSIC,
 				}
 				else
 				{
-					for( j=0; j<vR[0]; j++)
+					for( auto j=0; j<vR[0]; j++)
 					{
 						vSF[nGROUP][i].m_nS[0][nBLOCK] = 0;
 						vSF[nGROUP][i].m_nS[1][nBLOCK] = 0;
@@ -2641,7 +2641,7 @@ void CT3DMusic::DecodeMainL3( CT3DMusic *pMUSIC,
 					}
 				}
 
-				for( j=1; j<4; j++)
+				for( auto j=1; j<4; j++)
 					if(vSL[j])
 					{
 						for( int k=0; k<vR[j]; k++)
@@ -2669,7 +2669,7 @@ void CT3DMusic::DecodeMainL3( CT3DMusic *pMUSIC,
 			{
 				int nBLOCK = 0;
 
-				for( j=0; j<4; j++)
+				for( auto j=0; j<4; j++)
 					if(vSL[j])
 					{
 						for( int k=0; k<vR[j]; k++)
@@ -2694,14 +2694,14 @@ void CT3DMusic::DecodeMainL3( CT3DMusic *pMUSIC,
 				for( int j=0; j<8; j++)
 					vSF[nGROUP][i].m_nL[j] = vSTREAM.PopBITs(vSLT[pSIDE->m_vINFO[nGROUP][i].m_dwSFCompress][0]);
 
-				for( j=3; j<6; j++)
+				for( auto j=3; j<6; j++)
 				{
 					vSF[nGROUP][i].m_nS[0][j] = vSTREAM.PopBITs(vSLT[pSIDE->m_vINFO[nGROUP][i].m_dwSFCompress][0]);
 					vSF[nGROUP][i].m_nS[1][j] = vSTREAM.PopBITs(vSLT[pSIDE->m_vINFO[nGROUP][i].m_dwSFCompress][0]);
 					vSF[nGROUP][i].m_nS[2][j] = vSTREAM.PopBITs(vSLT[pSIDE->m_vINFO[nGROUP][i].m_dwSFCompress][0]);
 				}
 
-				for( j=6; j<12; j++)
+				for( auto j=6; j<12; j++)
 				{
 					vSF[nGROUP][i].m_nS[0][j] = vSTREAM.PopBITs(vSLT[pSIDE->m_vINFO[nGROUP][i].m_dwSFCompress][1]);
 					vSF[nGROUP][i].m_nS[1][j] = vSTREAM.PopBITs(vSLT[pSIDE->m_vINFO[nGROUP][i].m_dwSFCompress][1]);
@@ -2717,7 +2717,7 @@ void CT3DMusic::DecodeMainL3( CT3DMusic *pMUSIC,
 					vSF[nGROUP][i].m_nS[2][j] = vSTREAM.PopBITs(vSLT[pSIDE->m_vINFO[nGROUP][i].m_dwSFCompress][0]);
 				}
 
-				for( j=6; j<12; j++)
+				for( auto j=6; j<12; j++)
 				{
 					vSF[nGROUP][i].m_nS[0][j] = vSTREAM.PopBITs(vSLT[pSIDE->m_vINFO[nGROUP][i].m_dwSFCompress][1]);
 					vSF[nGROUP][i].m_nS[1][j] = vSTREAM.PopBITs(vSLT[pSIDE->m_vINFO[nGROUP][i].m_dwSFCompress][1]);
@@ -2729,7 +2729,7 @@ void CT3DMusic::DecodeMainL3( CT3DMusic *pMUSIC,
 			for( int j=0; j<11; j++)
 				vSF[nGROUP][i].m_nL[j] = vSTREAM.PopBITs(vSLT[pSIDE->m_vINFO[nGROUP][i].m_dwSFCompress][0]);
 
-			for( j=11; j<21; j++)
+			for( auto j=11; j<21; j++)
 				vSF[nGROUP][i].m_nL[j] = vSTREAM.PopBITs(vSLT[pSIDE->m_vINFO[nGROUP][i].m_dwSFCompress][1]);
 		}
 		else
@@ -2849,7 +2849,7 @@ void CT3DMusic::DecodeMainL3( CT3DMusic *pMUSIC,
 			memset( pMUSIC->m_pSAMPLE->m_vA[i][nGROUP], 0, sizeof(SAMPLE) * 576);
 	}
 
-	for( i=0; i<nChannels; i++)
+	for( auto i=0; i<nChannels; i++)
 	{
 		vCB[nGROUP][i].m_nStart = 12;
 		vCB[nGROUP][i].m_nEnd = 22;
@@ -2876,7 +2876,7 @@ void CT3DMusic::DecodeMainL3( CT3DMusic *pMUSIC,
 		FLOAT fInit = m_vValueL3[pSIDE->m_vINFO[nGROUP][i].m_dwGlobalGain + 6];
 		int nINDEX = 0;
 
-		for( j=0; j<vCB[nGROUP][i].m_nEnd; j++)
+		for( auto j=0; j<vCB[nGROUP][i].m_nEnd; j++)
 		{
 			FLOAT fSCALE = fInit * m_vScaleL3[pSIDE->m_vINFO[nGROUP][i].m_dwSFScale][vTAB[pSIDE->m_vINFO[nGROUP][i].m_dwPreFlag][j]][vSF[nGROUP][i].m_nL[j]];
 			int nBAND = m_vSFBT[nVersion][nFREQ].m_nL[j + 1] - m_vSFBT[nVersion][nFREQ].m_nL[j];
@@ -2910,13 +2910,13 @@ void CT3DMusic::DecodeMainL3( CT3DMusic *pMUSIC,
 			int nISTART = nINDEX;
 			int nREV = 0;
 
-			for( j=0; j<3; j++)
+			for( auto j=0; j<3; j++)
 			{
 				vSUB[j] = fInit * m_vSubBlockL3[pSIDE->m_vINFO[nGROUP][i].m_dwSubblockGain[j]];
 				vCB[nGROUP][i].m_nMaxS[j] = vCB[nGROUP][i].m_nStart;
 			}
 
-			for( j=vCB[nGROUP][i].m_nStart; j<13; j++)
+			for( auto j=vCB[nGROUP][i].m_nStart; j<13; j++)
 			{
 				int nBAND = m_vSFBT[nVersion][nFREQ].m_nS[j + 1] - m_vSFBT[nVersion][nFREQ].m_nS[j];
 
@@ -2986,7 +2986,7 @@ void CT3DMusic::DecodeMainL3( CT3DMusic *pMUSIC,
 		else
 			pMUSIC->m_vCOUNT[nGROUP][1] = pMUSIC->m_vCOUNT[nGROUP][0];
 
-	for( i=0; i<nChannels; i++)
+	for( auto i=0; i<nChannels; i++)
 		if(vCB[nGROUP][i].m_nEnd)
 		{
 			int nCount = pSIDE->m_vINFO[nGROUP][i].m_dwMixedBlockFlag ? 1 : (pMUSIC->m_vCOUNT[nGROUP][i] + 7) / 18;
@@ -4206,7 +4206,7 @@ void CT3DMusic::ProcessIS1( FLOAT *pVALUE,
 				vR[j] = m_vISData1[nMSMode][nSF][1];
 			}
 
-			for( j=0; j<nBand; j++)
+			for( auto j=0; j<nBand; j++)
 			{
 				nCount -= 3;
 
@@ -4274,7 +4274,7 @@ void CT3DMusic::ProcessIS2( FLOAT *pVALUE,
 
 	if(pCB[1].m_nType)
 	{
-		for( i=0; i<3; i++)
+		for( auto i=0; i<3; i++)
 		{
 			nIndex = GetBandIndex( nVersion, nFREQ, 1, pCB[1].m_nMaxS[i]) + i;
 
@@ -4300,7 +4300,7 @@ void CT3DMusic::ProcessIS2( FLOAT *pVALUE,
 		nIndex = GetBandIndex( nVersion, nFREQ, 0, pCB[1].m_nMax);
 		nCount -= nIndex;
 
-		for( i = pCB[1].m_nMax + 1; i < 21; i++)
+		for( auto i = pCB[1].m_nMax + 1; i < 21; i++)
 		{
 			int nBand = m_vSFBT[nVersion][nFREQ].m_nL[i + 1] - m_vSFBT[nVersion][nFREQ].m_nL[i];
 			int nSF = vL[i] + pSF->m_nL[i];
@@ -4495,7 +4495,7 @@ void CT3DMusic::XFormMono( CT3DMusic *pMUSIC,
 		else
 			vHYBRID[0] = 0;
 
-	for( i=0; i<2; i++)
+	for( auto i=0; i<2; i++)
 		if( vHYBRID[i] > pMUSIC->m_nBandLimit )
 			vHYBRID[i] = pMUSIC->m_nBandLimit;
 	ZeroMemory( vOUTBUF, 576 * sizeof(FLOAT));
@@ -5113,7 +5113,7 @@ void CT3DMusic::WinDual32S( FLOAT *pBUF, int nPOS, LPVOID pPCM)
 	}
 	fTOTAL = 0.0f;
 
-	for( i=0; i<8; i++)
+	for( auto i=0; i<8; i++)
 	{
 		fTOTAL += (*pCOEF) * pBUF[nBX];
 		pCOEF++;
@@ -5130,7 +5130,7 @@ void CT3DMusic::WinDual32S( FLOAT *pBUF, int nPOS, LPVOID pPCM)
 	pDATA += 2;
 	pCOEF = m_vWinCoef + 255;
 
-	for( i=0; i<15; i++)
+	for( auto i=0; i<15; i++)
 	{
 		fTOTAL = 0.0f;
 		nSI--;
@@ -5197,7 +5197,7 @@ void CT3DMusic::WinDual32B( FLOAT *pBUF, int nPOS, LPVOID pPCM)
 	}
 	fTOTAL = 0.0f;
 
-	for( i=0; i<8; i++)
+	for( auto i=0; i<8; i++)
 	{
 		fTOTAL += (*pCOEF) * pBUF[nBX];
 		pCOEF++;
@@ -5214,7 +5214,7 @@ void CT3DMusic::WinDual32B( FLOAT *pBUF, int nPOS, LPVOID pPCM)
 	pDATA += 2;
 	pCOEF = m_vWinCoef + 255;
 
-	for( i=0; i<15; i++)
+	for( auto i=0; i<15; i++)
 	{
 		fTOTAL = 0.0f;
 		nSI--;
@@ -5281,7 +5281,7 @@ void CT3DMusic::WinMono32S( FLOAT *pBUF, int nPOS, LPVOID pPCM)
 	}
 	fTOTAL = 0.0f;
 
-	for( i=0; i<8; i++)
+	for( auto i=0; i<8; i++)
 	{
 		fTOTAL += (*pCOEF) * pBUF[nBX];
 		pCOEF++;
@@ -5298,7 +5298,7 @@ void CT3DMusic::WinMono32S( FLOAT *pBUF, int nPOS, LPVOID pPCM)
 	pDATA++;
 	pCOEF = m_vWinCoef + 255;
 
-	for( i=0; i<15; i++)
+	for( auto i=0; i<15; i++)
 	{
 		fTOTAL = 0.0f;
 		nSI--;
@@ -5365,7 +5365,7 @@ void CT3DMusic::WinMono32B( FLOAT *pBUF, int nPOS, LPVOID pPCM)
 	}
 	fTOTAL = 0.0f;
 
-	for( i=0; i<8; i++)
+	for( auto i=0; i<8; i++)
 	{
 		fTOTAL += (*pCOEF) * pBUF[nBX];
 		pCOEF++;
@@ -5382,7 +5382,7 @@ void CT3DMusic::WinMono32B( FLOAT *pBUF, int nPOS, LPVOID pPCM)
 	pDATA++;
 	pCOEF = m_vWinCoef + 255;
 
-	for( i=0; i<15; i++)
+	for( auto i=0; i<15; i++)
 	{
 		fTOTAL = 0.0f;
 		nSI--;
@@ -5450,7 +5450,7 @@ void CT3DMusic::WinDual16S( FLOAT *pBUF, int nPOS, LPVOID pPCM)
 	}
 	fTOTAL = 0.0f;
 
-	for( i=0; i<8; i++)
+	for( auto i=0; i<8; i++)
 	{
 		fTOTAL += (*pCOEF) * pBUF[bBX];
 		pCOEF++;
@@ -5467,7 +5467,7 @@ void CT3DMusic::WinDual16S( FLOAT *pBUF, int nPOS, LPVOID pPCM)
 	pDATA += 2;
 	pCOEF = m_vWinCoef + 255;
 
-	for( i=0; i<7; i++)
+	for( auto i=0; i<7; i++)
 	{
 		fTOTAL = 0.0f;
 		pCOEF -= 16;
@@ -5536,7 +5536,7 @@ void CT3DMusic::WinDual16B( FLOAT *pBUF, int nPOS, LPVOID pPCM)
 	}
 	fTOTAL = 0.0f;
 
-	for( i=0; i<8; i++)
+	for( auto i=0; i<8; i++)
 	{
 		fTOTAL += (*pCOEF) * pBUF[bBX];
 		pCOEF++;
@@ -5553,7 +5553,7 @@ void CT3DMusic::WinDual16B( FLOAT *pBUF, int nPOS, LPVOID pPCM)
 	pDATA += 2;
 	pCOEF = m_vWinCoef + 255;
 
-	for( i=0; i<7; i++)
+	for( auto i=0; i<7; i++)
 	{
 		fTOTAL = 0.0f;
 		pCOEF -= 16;
@@ -5622,7 +5622,7 @@ void CT3DMusic::WinMono16S( FLOAT *pBUF, int nPOS, LPVOID pPCM)
 	}
 	fTOTAL = 0.0f;
 
-	for( i=0; i<8; i++)
+	for( auto i=0; i<8; i++)
 	{
 		fTOTAL += (*pCOEF) * pBUF[bBX];
 		pCOEF++;
@@ -5639,7 +5639,7 @@ void CT3DMusic::WinMono16S( FLOAT *pBUF, int nPOS, LPVOID pPCM)
 	pDATA++;
 	pCOEF = m_vWinCoef + 255;
 
-	for( i=0; i<7; i++)
+	for( auto i=0; i<7; i++)
 	{
 		fTOTAL = 0.0f;
 		pCOEF -= 16;
@@ -5708,7 +5708,7 @@ void CT3DMusic::WinMono16B( FLOAT *pBUF, int nPOS, LPVOID pPCM)
 	}
 	fTOTAL = 0.0f;
 
-	for( i=0; i<8; i++)
+	for( auto i=0; i<8; i++)
 	{
 		fTOTAL += (*pCOEF) * pBUF[bBX];
 		pCOEF++;
@@ -5725,7 +5725,7 @@ void CT3DMusic::WinMono16B( FLOAT *pBUF, int nPOS, LPVOID pPCM)
 	pDATA++;
 	pCOEF = m_vWinCoef + 255;
 
-	for( i=0; i<7; i++)
+	for( auto i=0; i<7; i++)
 	{
 		fTOTAL = 0.0f;
 		pCOEF -= 16;
@@ -5794,7 +5794,7 @@ void CT3DMusic::WinDual8S( FLOAT *pBUF, int nPOS, LPVOID pPCM)
 	}
 	fTOTAL = 0.0f;
 
-	for( i=0; i<8; i++)
+	for( auto i=0; i<8; i++)
 	{
 		fTOTAL += (*pCOEF) * pBUF[nBX];
 		pCOEF++;
@@ -5811,7 +5811,7 @@ void CT3DMusic::WinDual8S( FLOAT *pBUF, int nPOS, LPVOID pPCM)
 	pDATA += 2;
 	pCOEF = m_vWinCoef + 255;
 
-	for( i=0; i<3; i++)
+	for( auto i=0; i<3; i++)
 	{
 		fTOTAL = 0.0f;
 		pCOEF -= 48;
@@ -5880,7 +5880,7 @@ void CT3DMusic::WinDual8B( FLOAT *pBUF, int nPOS, LPVOID pPCM)
 	}
 	fTOTAL = 0.0f;
 
-	for( i=0; i<8; i++)
+	for( auto i=0; i<8; i++)
 	{
 		fTOTAL += (*pCOEF) * pBUF[nBX];
 		pCOEF++;
@@ -5897,7 +5897,7 @@ void CT3DMusic::WinDual8B( FLOAT *pBUF, int nPOS, LPVOID pPCM)
 	pDATA += 2;
 	pCOEF = m_vWinCoef + 255;
 
-	for( i=0; i<3; i++)
+	for( auto i=0; i<3; i++)
 	{
 		fTOTAL = 0.0f;
 		pCOEF -= 48;
@@ -5966,7 +5966,7 @@ void CT3DMusic::WinMono8S( FLOAT *pBUF, int nPOS, LPVOID pPCM)
 	}
 	fTOTAL = 0.0f;
 
-	for( i=0; i<8; i++)
+	for( auto i=0; i<8; i++)
 	{
 		fTOTAL += (*pCOEF) * pBUF[nBX];
 		pCOEF++;
@@ -5983,7 +5983,7 @@ void CT3DMusic::WinMono8S( FLOAT *pBUF, int nPOS, LPVOID pPCM)
 	pDATA++;
 	pCOEF = m_vWinCoef + 255;
 
-	for( i=0; i<3; i++)
+	for( auto i=0; i<3; i++)
 	{
 		fTOTAL = 0.0f;
 		pCOEF -= 48;
@@ -6052,7 +6052,7 @@ void CT3DMusic::WinMono8B( FLOAT *pBUF, int nPOS, LPVOID pPCM)
 	}
 	fTOTAL = 0.0f;
 
-	for( i=0; i<8; i++)
+	for( auto i=0; i<8; i++)
 	{
 		fTOTAL += (*pCOEF) * pBUF[nBX];
 		pCOEF++;
@@ -6069,7 +6069,7 @@ void CT3DMusic::WinMono8B( FLOAT *pBUF, int nPOS, LPVOID pPCM)
 	pDATA++;
 	pCOEF = m_vWinCoef + 255;
 
-	for( i=0; i<3; i++)
+	for( auto i=0; i<3; i++)
 	{
 		fTOTAL = 0.0f;
 		pCOEF -= 48;
@@ -6149,7 +6149,7 @@ void CT3DMusic::BackBF( FLOAT *pDATA,
 		}
 		nEVEN = nInit + 1;
 
-		for( j=0; j<nSize2; j++)
+		for( auto j=0; j<nSize2; j++)
 		{
 			pBUF[nEVEN] = pDATA[nODD] + pDATA[nODD + 1];
 			nEVEN += 2;
@@ -6171,8 +6171,9 @@ int CT3DMusic::AddHybrid( FLOAT *pIN,
 	if( nTYPE == 2 )
 		nTYPE = 0;
 	int nCount = (nLONG + 17) / 18;
+	int i = 0;
 
-	for( int i=0; i<nCount; i++)
+	for (; i < nCount; i++)
 	{
 		Imdct18(pIN);
 
@@ -6182,7 +6183,7 @@ int CT3DMusic::AddHybrid( FLOAT *pIN,
 			pOUT[j * 32 + i] += m_vWIN[nTYPE][j] * pIN[j + 9];
 		}
 
-		for( j=0; j<4; j++)
+		for( auto j=0; j<4; j++)
 		{
 			FLOAT fB = pIN[8 - j];
 			FLOAT fA = pIN[j];
@@ -6192,10 +6193,10 @@ int CT3DMusic::AddHybrid( FLOAT *pIN,
 			pLEFT[9 + j] += m_vWIN[nTYPE][(18 + 9) + j] * fA;
 			pLEFT[17 - j] += m_vWIN[nTYPE][(18 + 17) - j] * fB;
 		}
-		FLOAT fA = pIN[j];
+		FLOAT fA = pIN[4];
 
-		pLEFT[j] += m_vWIN[nTYPE][18 + j] * fA;
-		pLEFT[9 + j] += m_vWIN[nTYPE][(18 + 9) + j] * fA;
+		pLEFT[4] += m_vWIN[nTYPE][18 + 4] * fA;
+		pLEFT[9 + 4] += m_vWIN[nTYPE][(18 + 9) + 4] * fA;
 
 		pLEFT += 18;
 		pIN += 18;
@@ -6215,13 +6216,13 @@ int CT3DMusic::AddHybrid( FLOAT *pIN,
 			pOUT[(15 + j) * 32 + i] += m_vWIN[2][9 + j] * pIN[j] + m_vWIN[2][3 + j] * pIN[(6 + 5) - j];
 		}
 
-		for( j=0; j<3; j++)
+		for( auto j=0; j<3; j++)
 		{
 			pLEFT[j] += m_vWIN[2][6 + j] * pIN[(6 + 2) - j] + m_vWIN[2][j] * pIN[(12 + 3) + j];
 			pLEFT[3 + j] += m_vWIN[2][9 + j] * pIN[6 + j] + m_vWIN[2][3 + j] * pIN[(12 + 5) - j];
 		}
 
-		for( j=0; j<3; j++)
+		for( auto j=0; j<3; j++)
 		{
 			pLEFT[6 + j] += m_vWIN[2][6 + j] * pIN[(12 + 2) - j];
 			pLEFT[9 + j] += m_vWIN[2][9 + j] * pIN[12 + j];
@@ -6247,8 +6248,9 @@ int CT3DMusic::Hybrid( FLOAT *pIN,
 	if( nTYPE == 2 )
 		nTYPE = 0;
 	int nCount = (nLONG + 17) / 18;
+	int i = 0;
 
-	for( int i=0; i<nCount; i++)
+	for(; i<nCount; i++)
 	{
 		Imdct18(pIN);
 
@@ -6258,7 +6260,7 @@ int CT3DMusic::Hybrid( FLOAT *pIN,
 			pOUT[j * 32 + i] = pPREV[j] + m_vWIN[nTYPE][j] * pIN[9 + j];
 		}
 
-		for( j=0; j<4; j++)
+		for( auto j=0; j<4; j++)
 		{
 			FLOAT fB = pIN[8 - j];
 			FLOAT fA = pIN[j];
@@ -6268,10 +6270,10 @@ int CT3DMusic::Hybrid( FLOAT *pIN,
 			pIN[9 + j] = m_vWIN[nTYPE][(18 + 9) + j] * fA;
 			pIN[17 - j] = m_vWIN[nTYPE][(18 + 17) - j] * fB;
 		}
-		FLOAT fA = pIN[j];
+		FLOAT fA = pIN[4];
 
-		pIN[j] = m_vWIN[nTYPE][18 + j] * fA;
-		pIN[9 + j] = m_vWIN[nTYPE][(18 + 9) + j] * fA;
+		pIN[4] = m_vWIN[nTYPE][18 + 4] * fA;
+		pIN[9 + 4] = m_vWIN[nTYPE][(18 + 9) + 4] * fA;
 
 		pPREV += 18;
 		pIN += 18;
@@ -6294,19 +6296,19 @@ int CT3DMusic::Hybrid( FLOAT *pIN,
 			pOUT[(15 + j) * 32 + i] = pPREV[15 + j] + m_vWIN[2][9 + j] * pIN[j] + m_vWIN[2][3 + j] * pIN[(6 + 5) - j];
 		}
 
-		for( j=0; j<3; j++)
+		for( auto j=0; j<3; j++)
 		{
 			pIN[j] = m_vWIN[2][6 + j] * pIN[(6 + 2) - j] + m_vWIN[2][j] * pIN[(12 + 3) + j];
 			pIN[3 + j] = m_vWIN[2][9 + j] * pIN[6 + j] + m_vWIN[2][3 + j] * pIN[(12 + 5) - j];
 		}
 
-		for( j=0; j<3; j++)
+		for( auto j=0; j<3; j++)
 		{
 			pIN[6 + j] = m_vWIN[2][6 + j] * pIN[(12 + 2) - j];
 			pIN[9 + j] = m_vWIN[2][9 + j] * pIN[12 + j];
 		}
 
-		for( j=0; j<3; j++)
+		for( auto j=0; j<3; j++)
 		{
 			pIN[12 + j] = 0.0f;
 			pIN[15 + j] = 0.0f;
@@ -6372,7 +6374,7 @@ void CT3DMusic::Imdct6_3( FLOAT *pDATA)
 	}
 	pBUF[0] = vBUF;
 
-	for( i=0; i<3; i++)
+	for( auto i=0; i<3; i++)
 	{
 		FLOAT vA[2] = {
 			pBUF[0][0] + pBUF[0][2],
@@ -6421,11 +6423,11 @@ void CT3DMusic::Imdct18( FLOAT *pDATA)
 		vB[i] = fB1 + fB2;
 	}
 
-	FLOAT fG2 = m_vW1[17 - i] * pDATA[17 - i];
-	FLOAT fG1 = m_vW1[i] * pDATA[i];
+	FLOAT fG2 = m_vW1[17 - 4] * pDATA[17 - 4];
+	FLOAT fG1 = m_vW1[4] * pDATA[4];
 
-	vB[i] = m_vW2[i] * (fG1 - fG2);
-	vA[i] = fG1 + fG2;
+	vB[4] = m_vW2[4] * (fG1 - fG2);
+	vA[4] = fG1 + fG2;
 
 	pDATA[0] = 0.5f * (vA[0] + vA[1] + vA[2] + vA[3] + vA[4]);
 	pDATA[1] = 0.5f * (vB[0] + vB[1] + vB[2] + vB[3] + vB[4]);

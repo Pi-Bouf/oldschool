@@ -513,7 +513,7 @@ void CTachyonMesh::Restore( LPDIRECT3DDEVICE9 pDevice)
 					&pIB, NULL);
 
 				pIB->Lock( 0, 0, (LPVOID *) &pBUF, 0);
-				for( k=0; k<INT(m_pMESH[i][j]->m_vIB.size()); k++)
+				for( auto k=0; k<INT(m_pMESH[i][j]->m_vIB.size()); k++)
 				{
 					memcpy( &pBUF[dwCOPY], m_pMESH[i][j]->m_vIB[k]->m_pIB, m_pMESH[i][j]->m_vIB[k]->m_dwCount * sizeof(WORD));
 					dwCOPY += m_pMESH[i][j]->m_vIB[k]->m_dwCount;
@@ -845,7 +845,7 @@ LPIBINFO CTachyonMesh::BuildMeshINFO( LPVECTORDWORD pMESH)
 		pBUF[i].clear();
 	vBLEND.clear();
 
-	for( i=0; i<DWORD(pMESH->size() / 3); i++)
+	for( auto i=0; i<DWORD(pMESH->size() / 3); i++)
 	{
 		WORD wMatrix = 0xFFFF;
 
@@ -881,7 +881,7 @@ LPIBINFO CTachyonMesh::BuildMeshINFO( LPVECTORDWORD pMESH)
 		}
 	}
 
-	for( i=0; i<dwNodeCount; i++)
+	for( auto i=0; i<dwNodeCount; i++)
 	{
 		if(!pBUF[i].empty())
 		{
@@ -908,7 +908,7 @@ LPIBINFO CTachyonMesh::BuildMeshINFO( LPVECTORDWORD pMESH)
 		pDATA->m_pIB = new WORD[pDATA->m_dwCount];
 		pDATA->m_wMatrix = 0xFFFF;
 
-		for( i=0; i<pDATA->m_dwCount; i++)
+		for( auto i=0; i<pDATA->m_dwCount; i++)
 			pDATA->m_pIB[i] = WORD(vBLEND[i]);
 
 		pINFO->m_vIB.push_back(pDATA);
@@ -936,7 +936,7 @@ LPIBINFO CTachyonMesh::BuildMeshINFO( LPWORD pMESH,
 		pBUF[i].clear();
 	vBLEND.clear();
 
-	for( i=0; i<dwCount / 3; i++)
+	for( auto i=0; i<dwCount / 3; i++)
 	{
 		WORD wMatrix = 0xFFFF;
 
@@ -972,7 +972,7 @@ LPIBINFO CTachyonMesh::BuildMeshINFO( LPWORD pMESH,
 		}
 	}
 
-	for( i=0; i<dwNodeCount; i++)
+	for( auto i=0; i<dwNodeCount; i++)
 	{
 		if(!pBUF[i].empty())
 		{
@@ -999,7 +999,7 @@ LPIBINFO CTachyonMesh::BuildMeshINFO( LPWORD pMESH,
 		pDATA->m_pIB = new WORD[pDATA->m_dwCount];
 		pDATA->m_wMatrix = 0xFFFF;
 
-		for( i=0; i<pDATA->m_dwCount; i++)
+		for( auto i=0; i<pDATA->m_dwCount; i++)
 			pDATA->m_pIB[i] = WORD(vBLEND[i]);
 
 		pINFO->m_vIB.push_back(pDATA);

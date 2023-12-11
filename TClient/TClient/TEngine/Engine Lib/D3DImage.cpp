@@ -247,7 +247,7 @@ LPT3DDATA CD3DImage::BuildImageData( LPDIRECT3DDEVICE9 pDevice, BYTE bFormat)
 	memcpy( pData, &m_nHeight, sizeof(int));
 	pData += sizeof(int);
 
-	for( i=0; i<m_nPartCount; i++)
+	for( auto i=0; i<m_nPartCount; i++)
 	{
 		memcpy( pData, &pDXT[i]->m_dwSize, sizeof(DWORD));
 		pData += sizeof(DWORD);
@@ -439,7 +439,7 @@ BYTE CD3DImage::LoadImageFile( LPDIRECT3DDEVICE9 pDevice,
 				return FALSE;
 			}
 
-			for( i=0; i<4; i++)
+			for( auto i=0; i<4; i++)
 			{
 				pData[i].m_fPosX = ((FLOAT) vPoint[i][0]) + 0.5f;
 				pData[i].m_fPosY = ((FLOAT) vPoint[i][1]) + 0.5f;

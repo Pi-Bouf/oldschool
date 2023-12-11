@@ -376,7 +376,7 @@ void CTachyonBSPMAP::BuildPVS( LPMAPTBSPNODE pPVS,
 		LPMESHVERTEX pVBDATA = new MESHVERTEX[3 * pMESH->m_dwCount];
 		LPMESHVERTEX pDATA = pVBDATA;
 
-		for( i=0; i<INT((*itMESH).second->size()); i++)
+		for( auto i=0; i<INT((*itMESH).second->size()); i++)
 			for( int j=1; j<INT((*((*itMESH).second))[i]->m_vPoint.size()) - 1; j++)
 			{
 				memcpy( pDATA, (*((*itMESH).second))[i]->m_vPoint[0], sizeof(MESHVERTEX));
@@ -416,7 +416,7 @@ void CTachyonBSPMAP::BuildPVS( LPMAPTBSPNODE pPVS,
 		LPLVERTEX pVBDATA = new LVERTEX[3 * pLIGHTVB->m_dwCount];
 		LPLVERTEX pDATA = pVBDATA;
 
-		for( i=0; i<INT((*itLIGHT).second->size()); i++)
+		for( auto i=0; i<INT((*itLIGHT).second->size()); i++)
 			for( int j=0; j<INT((*(*itLIGHT).second)[i]->m_vWINDING.size()); j++)
 				for( int k=1; k<INT((*(*itLIGHT).second)[i]->m_vWINDING[j]->m_vPoint.size()) - 1; k++)
 				{

@@ -60,7 +60,7 @@ DWORD CTBitStream::PopBITs( BYTE bCount)
 	BYTE bBYTE = bCount / 8;
 	BYTE bBIT = bCount % 8;
 
-	for( i=0; i<bBYTE; i++)
+	for( auto i=0; i<bBYTE; i++)
 		pVALUE[3 - i] = 0x00;
 
 	if(bBIT)

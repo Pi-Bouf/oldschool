@@ -14,6 +14,20 @@
 
 #define VC_EXTRALEAN		// Exclude rarely-used stuff from Windows headers
 
+typedef struct DXGI_JPEG_AC_HUFFMAN_TABLE {
+	int CodeCounts[16];
+	int CodeValues[162];
+};
+
+typedef struct DXGI_JPEG_DC_HUFFMAN_TABLE {
+	int CodeCounts[12];
+	int CodeValues[12];
+};
+
+typedef struct DXGI_JPEG_QUANTIZATION_TABLE {
+	int Elements[64];
+};
+
 #include <afx.h>
 #include <afxwin.h>
 #include <afxsock.h>

@@ -109,14 +109,14 @@ BOOL CTachyonAnimation::LoadAnimation( LPBYTE pData)
 				}
 				pData += sizeof(BYTE);
 
-				for( i=0; i<m_dwNodeCount; i++)
+				for( auto i=0; i<m_dwNodeCount; i++)
 				{
 					m_pTREE[i].m_bINDEX = *((LPBYTE) pData); pData += sizeof(BYTE);
 					m_pTREE[i].m_bParentROT = *((LPBYTE) pData); pData += sizeof(BYTE);
 					m_pTREE[i].m_bParentPOS = *((LPBYTE) pData); pData += sizeof(BYTE);
 				}
 
-				for( i=0; i<m_dwNodeCount; i++)
+				for( auto i=0; i<m_dwNodeCount; i++)
 				{
 					int nNODE = 0;
 
@@ -139,7 +139,7 @@ BOOL CTachyonAnimation::LoadAnimation( LPBYTE pData)
 						m_pNode[nNODE].m_pPositionKey = pTKEY;
 						pData += sizeof(BYTE);
 
-						for( j=0; j<m_pNode[nNODE].m_nPositionKeyCount; j++)
+						for( auto j=0; j<m_pNode[nNODE].m_nPositionKeyCount; j++)
 						{
 							pTKEY[j].m_vKeyPoint = *((LPD3DXVECTOR3) &pData[bSIZE[bTYPE - 1][1]]);
 							pTKEY[j].m_dwTime = *((LPDWORD) &pData[0]);
@@ -162,7 +162,7 @@ BOOL CTachyonAnimation::LoadAnimation( LPBYTE pData)
 						m_pNode[nNODE].m_pRotationKey = pTKEY;
 						pData += sizeof(BYTE);
 
-						for( j=0; j<m_pNode[nNODE].m_nRotationKeyCount; j++)
+						for( auto j=0; j<m_pNode[nNODE].m_nRotationKeyCount; j++)
 						{
 							if( bTYPE == 1 )
 							{
@@ -179,7 +179,7 @@ BOOL CTachyonAnimation::LoadAnimation( LPBYTE pData)
 						}
 
 						if( bTYPE != 1 )
-							for( j=m_pNode[nNODE].m_nRotationKeyCount - 1; j>0; j--)
+							for( auto j=m_pNode[nNODE].m_nRotationKeyCount - 1; j>0; j--)
 							{
 								D3DXQUATERNION vINV;
 
@@ -206,7 +206,7 @@ BOOL CTachyonAnimation::LoadAnimation( LPBYTE pData)
 						m_pNode[nNODE].m_pScaleKey = pTKEY;
 						pData += sizeof(BYTE);
 
-						for( j=0; j<m_pNode[nNODE].m_nScaleKeyCount; j++)
+						for( auto j=0; j<m_pNode[nNODE].m_nScaleKeyCount; j++)
 						{
 							pTKEY[j].m_vKeyScale = *((LPD3DXVECTOR3) &pData[bSIZE[bTYPE - 1][1]]);
 							pTKEY[j].m_dwTime = *((LPDWORD) &pData[0]);
@@ -286,7 +286,7 @@ BOOL CTachyonAnimation::LoadAnimation( LPBYTE pData)
 				memcpy( m_pTREE, pData, m_dwNodeCount * sizeof(BONESNODE));
 				pData += m_dwNodeCount * sizeof(BONESNODE);
 
-				for( i=0; i<m_dwNodeCount; i++)
+				for( auto i=0; i<m_dwNodeCount; i++)
 				{
 					m_pNode[i].m_nPositionKeyCount = *((int *) pData);
 					pData += sizeof(int);
@@ -393,7 +393,7 @@ BOOL CTachyonAnimation::LoadAnimation( LPBYTE pData)
 				memcpy( m_pTREE, pData, m_dwNodeCount * sizeof(BONESNODE));
 				pData += m_dwNodeCount * sizeof(BONESNODE);
 
-				for( i=0; i<m_dwNodeCount; i++)
+				for( auto i=0; i<m_dwNodeCount; i++)
 				{
 					m_pNode[i].m_nPositionKeyCount = *((int *) pData);
 					pData += sizeof(int);
@@ -750,7 +750,7 @@ void CTachyonAnimation::GetFrameMatrix( LPD3DXMATRIX pResult,
 		vRESULT[bRootID] = CTMath::Inverse(&(m_pBones[bRootID - 1] * vRESULT[bRootID]));
 	}
 
-	for( i=0; i<m_dwNodeCount; i++)
+	for( auto i=0; i<m_dwNodeCount; i++)
 		if(IsValidNode( &m_pTREE[i], vFILTER))
 		{
 			D3DXQUATERNION vROT = vIDENTITY;

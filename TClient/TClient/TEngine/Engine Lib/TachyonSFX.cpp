@@ -911,7 +911,7 @@ void CTachyonSFX::CalcTick( LPDIRECT3DDEVICE9 pDevice, DWORD dwTick)
 	}
 
 	nCount = INT(m_vPSFX.size());
-	for( i=0; i<nCount; i++)
+	for( auto i=0; i<nCount; i++)
 		m_vPSFX[i]->CalcTick( pDevice, dwTick);
 	ClearDead();
 
@@ -1316,7 +1316,7 @@ void CTachyonSFX::Render( CD3DDevice *pDevice, CD3DCamera *pCamera, BYTE bMaxAlp
 
 	nCount = INT(m_vCSFX.size());
 	m_dwParticleNum += nCount;
-	for( i=0; i<nCount; i++)
+	for( auto i=0; i<nCount; i++)
 	{
 		m_vCSFX[i]->m_vPFactor = m_vPFactor;
 		m_vCSFX[i]->m_vGlobal = m_vGlobal;

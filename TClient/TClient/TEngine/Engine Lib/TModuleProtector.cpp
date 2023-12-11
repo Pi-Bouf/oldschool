@@ -251,7 +251,7 @@ BYTE CTModuleProtector::InitProtector( LPBYTE pBUF)
 		pBUF[0]);
 	vTMODULE.push_back(pTESSMODULE);
 
-	for( i=0; i<TESSPROC_COUNT; i++)
+	for( auto i=0; i<TESSPROC_COUNT; i++)
 		pTESSPROC[i] = pTESSMODULE->AddProc(ReadString( &pDATA, pMASK, &bMIDX, pBUF[0]));
 
 	dwCOUNT = (DWORD) ReadWORD(
@@ -260,7 +260,7 @@ BYTE CTModuleProtector::InitProtector( LPBYTE pBUF)
 		&bMIDX,
 		pBUF[0]);
 
-	for( i=0; i<dwCOUNT; i++)
+	for( auto i=0; i<dwCOUNT; i++)
 	{
 		LPTPROTECTED_MODULE pTMODULE = NULL;
 		WORD wPROC = ReadWORD(
@@ -495,7 +495,7 @@ BYTE CTModuleProtector::InitProtector( LPVTPROTECTED_MODULE pVMODULE,
 		m_vTMODULE.push_back(pTMODULE);
 		pTMODULE->m_strModuleName = (*pVMODULE)[i]->m_strModuleName;
 
-		for( j=0; j<INT((*pVMODULE)[i]->m_vTPROC.size()); j++)
+		for( auto j=0; j<INT((*pVMODULE)[i]->m_vTPROC.size()); j++)
 		{
 			MAPSTRING::iterator finder = mapPROC.find((*pVMODULE)[i]->m_vTPROC[j]->m_strProcName);
 
@@ -568,7 +568,7 @@ BYTE CTModuleProtector::InitProtector( LPVTPROTECTED_MODULE pVMODULE,
 		mapPROC.clear();
 	}
 
-	for( i=0; i<INT(pBLOCK->size()); i++)
+	for( auto i=0; i<INT(pBLOCK->size()); i++)
 	{
 		(*pBLOCK)[i].MakeUpper();
 		m_vBLOCK.push_back((*pBLOCK)[i]);

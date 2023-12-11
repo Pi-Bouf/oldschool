@@ -13,7 +13,7 @@
 // New Arab Ver.
 CString CTachyonWnd::m_strFont = " ";
 
-BEGIN_MESSAGE_MAP( CTachyonWnd, CWnd)
+BEGIN_MESSAGE_MAP(CTachyonWnd, CWnd)
 	ON_WM_ACTIVATE()
 	ON_WM_KEYDOWN()
 	ON_WM_KEYUP()
@@ -23,6 +23,7 @@ BEGIN_MESSAGE_MAP( CTachyonWnd, CWnd)
 	ON_WM_MOUSEMOVE()
 	ON_WM_NCRBUTTONDOWN()
 END_MESSAGE_MAP()
+
 
 
 CTachyonWnd::CTachyonWnd()
@@ -468,7 +469,7 @@ void CTachyonWnd::OnKeyUp( UINT nChar, UINT nRepCnt, UINT nFlags)
 		m_pMainFrame->OnKeyUp( nChar, nRepCnt, nFlags);
 }
 
-UINT CTachyonWnd::OnNcHitTest( CPoint point)
+LRESULT CTachyonWnd::OnNcHitTest( CPoint point)
 {
 	UINT nHIT = CWnd::OnNcHitTest(point);
 

@@ -33,7 +33,7 @@ CD3DDevice::CD3DDevice()
 		m_dwVertexShader[i] = 0;
 	}
 
-	for( i=0; i<PS_COUNT; i++)
+	for( auto i=0; i<PS_COUNT; i++)
 	{
 		m_pPixelShader[i] = NULL;
 		m_dwPixelShader[i] = 0;
@@ -480,7 +480,7 @@ BOOL CD3DDevice::InitDevices( CWnd *pWnd)
 
 	if(m_option.m_bUseSHADER)
 	{
-		for( i=0; i<VS_COUNT; i++)
+		for( auto i=0; i<VS_COUNT; i++)
 			if(m_dwVertexShader[i])
 			{
 				HRSRC hResInfo = FindResource( NULL, MAKEINTRESOURCE(m_dwVertexShader[i]), LPCSTR(m_strResourceType));
@@ -555,14 +555,14 @@ BOOL CD3DDevice::InitDevices( CWnd *pWnd)
 
 	if(!m_bEnableSHADER)
 	{
-		for( i=0; i<VS_COUNT; i++)
+		for( auto i=0; i<VS_COUNT; i++)
 			if(m_pVertexShader[i])
 			{
 				m_pVertexShader[i]->Release();
 				m_pVertexShader[i] = NULL;
 			}
 
-		for( i=0; i<PS_COUNT; i++)
+		for( auto i=0; i<PS_COUNT; i++)
 			if(m_pPixelShader[i])
 			{
 				m_pPixelShader[i]->Release();
@@ -662,7 +662,7 @@ void CD3DDevice::ReleaseDevice()
 		}
 	}
 
-	for( i=0; i<PS_COUNT; i++)
+	for( auto i=0; i<PS_COUNT; i++)
 		if(m_pPixelShader[i])
 		{
 			m_pPixelShader[i]->Release();

@@ -1819,7 +1819,7 @@ BOOL CTachyonObject::OBJInRect( CD3DCamera *pCamera, CRect rect)
 			{
 				LPWMESHVERTEX pDATA = (LPWMESHVERTEX) pMESH->m_pDATA->m_pVB;
 
-				for( i=0; i<pMESH->m_pDATA->m_dwCount; i++)
+				for( auto i=0; i<pMESH->m_pDATA->m_dwCount; i++)
 				{
 					D3DXMATRIX vTrans = pANI && pANI->m_pANI ? CTMath::GetTransformMatrix(
 						m_pBone,
@@ -1840,7 +1840,7 @@ BOOL CTachyonObject::OBJInRect( CD3DCamera *pCamera, CRect rect)
 			{
 				LPMESHVERTEX pDATA = (LPMESHVERTEX) pMESH->m_pDATA->m_pVB;
 
-				for( i=0; i<pMESH->m_pDATA->m_dwCount; i++)
+				for( auto i=0; i<pMESH->m_pDATA->m_dwCount; i++)
 				{
 					vPoint[i] = D3DXVECTOR3(
 						pDATA[i].m_fPosX,
@@ -1853,7 +1853,7 @@ BOOL CTachyonObject::OBJInRect( CD3DCamera *pCamera, CRect rect)
 				}
 			}
 
-			for( i=0; i<pMESH->m_dwMeshCount; i++)
+			for( auto i=0; i<pMESH->m_dwMeshCount; i++)
 				for( int j=0; j<INT(pMESH->m_pMESH[i][nLevel]->m_vIB.size()); j++)
 					for( int k=0; k<pMESH->m_pMESH[i][nLevel]->m_vIB[j]->m_dwCount / 3; k++)
 					{

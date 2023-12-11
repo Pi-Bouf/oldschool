@@ -172,7 +172,7 @@ void CTachyonSlashSFX::CalcKEY()
 		&vKeyP[1],
 		&(m_vLENGTH * (*m_pPIVOT)));
 
-	for( i=0; i<m_bINTER; i++)
+	for( auto i=0; i<m_bINTER; i++)
 	{
 		FLOAT fTime = FLOAT(i + 1) / FLOAT(m_bINTER);
 		LPD3DXMATRIX pKEY = NULL;

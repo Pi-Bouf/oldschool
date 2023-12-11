@@ -321,22 +321,22 @@ WMESHVERTEX CTMath::Average( LPWMESHVERTEX pPoint1, LPWMESHVERTEX pPoint2)
 		}
 	}
 
-	for( i=0; i<nCount; i++)
+	for( auto i=0; i<nCount; i++)
 		fSum += fLastWeight[i];
 
 	if( fSum == 0.0f )
 	{
 		vResult.m_dwMatIndex = 0;
 
-		for( i=0; i<WEIGHT_COUNT; i++)
+		for( auto i=0; i<WEIGHT_COUNT; i++)
 			vResult.m_fWeight[i] = 0.0f;
 	}
 	else
 	{
-		for( i=0; i<nCount; i++)
+		for( auto i=0; i<nCount; i++)
 			fLastWeight[i] /= fSum;
 
-		for( i=0; i<nCount - 1; i++)
+		for( auto i=0; i<nCount - 1; i++)
 		{
 			vResult.m_dwMatIndex |= ((DWORD) nLastIndex[i]) << (i*8);
 			vResult.m_fWeight[i] = fLastWeight[i];
@@ -421,7 +421,7 @@ void CTMath::ProgressMesh( LPVECTORDWORD pMESH,
 					pMULTI[j] = TRUE;
 				}
 
-	for( i=0; i<dwMeshCount; i++)
+	for( auto i=0; i<dwMeshCount; i++)
 	{
 		DWORD dwCount = DWORD(pMESH[i].size()) / 3;
 
@@ -454,7 +454,7 @@ void CTMath::ProgressMesh( LPVECTORDWORD pMESH,
 			}
 	}
 
-	for( i=0; i<dwMeshCount; i++)
+	for( auto i=0; i<dwMeshCount; i++)
 	{
 		DWORD dwCount = DWORD(pMESH[i].size()) / 3;
 
@@ -477,7 +477,7 @@ void CTMath::ProgressMesh( LPVECTORDWORD pMESH,
 			}
 
 			if(bCLEAR)
-				for( k=0; k<3; k++)
+				for( auto k=0; k<3; k++)
 				{
 					DWORD dwEDGE = MAKELONG(
 						WORD(max( pMESH[i][3 * j + (k + 1) % 3], pMESH[i][3 * j + k])),
@@ -562,7 +562,7 @@ void CTMath::ProgressMesh( LPVECTORDWORD pMESH,
 						(LPWMESHVERTEX) (*pDATA)[vPOINT[0]],
 						(LPWMESHVERTEX) (*pDATA)[vPOINT[1]]);
 
-					for( i=0; i<DWORD(pDATA->size()); i++)
+					for( auto i=0; i<DWORD(pDATA->size()); i++)
 						if(IsEqual( pNEW, (LPWMESHVERTEX) (*pDATA)[i]))
 						{
 							wINDEX = WORD(i);
@@ -582,7 +582,7 @@ void CTMath::ProgressMesh( LPVECTORDWORD pMESH,
 					wPOINT = wINDEX;
 				(*itEDGE).second = DWORD(wINDEX);
 
-				for( i=0; i<2; i++)
+				for( auto i=0; i<2; i++)
 				{
 					MAPDWORD::iterator finder = mapPOINT.find(vPOINT[i]);
 
@@ -615,7 +615,7 @@ void CTMath::ProgressMesh( LPVECTORDWORD pMESH,
 						(LPMESHVERTEX) (*pDATA)[vPOINT[0]],
 						(LPMESHVERTEX) (*pDATA)[vPOINT[1]]);
 
-					for( i=0; i<DWORD(pDATA->size()); i++)
+					for( auto i=0; i<DWORD(pDATA->size()); i++)
 						if(IsEqual( pNEW, (LPMESHVERTEX) (*pDATA)[i]))
 						{
 							wINDEX = WORD(i);
@@ -635,7 +635,7 @@ void CTMath::ProgressMesh( LPVECTORDWORD pMESH,
 					wPOINT = wINDEX;
 				(*itEDGE).second = DWORD(wINDEX);
 
-				for( i=0; i<2; i++)
+				for( auto i=0; i<2; i++)
 				{
 					MAPDWORD::iterator finder = mapPOINT.find(vPOINT[i]);
 
@@ -649,13 +649,13 @@ void CTMath::ProgressMesh( LPVECTORDWORD pMESH,
 			break;
 		}
 
-		for( i=0; i<dwPOINT; i++)
+		for( auto i=0; i<dwPOINT; i++)
 			if( mapPOINT.find(i) == mapPOINT.end() && (
 				IsEqual( &pPOINT[i], &pPOINT[LOWORD(dwEDGE)]) ||
 				IsEqual( &pPOINT[i], &pPOINT[HIWORD(dwEDGE)])) )
 				mapPOINT.insert( MAPDWORD::value_type( i, wPOINT));
 
-		for( i=0; i<dwMeshCount; i++)
+		for( auto i=0; i<dwMeshCount; i++)
 		{
 			DWORD dwCount = DWORD(pMESH[i].size()) / 3;
 
@@ -790,7 +790,7 @@ BYTE CTMath::GetWindingPosition( LPVERTEXWINDING pWinding, LPD3DXPLANE pPlane)
 		return D3DXVec3Dot( &vNormal, &vCross) < 0.0f ? WINDINGPOS_ONBACK : WINDINGPOS_ONFRONT;
 	}
 
-	for(; i<pWinding->m_vPoint.size(); i++)
+	for(auto i = 0; i<pWinding->m_vPoint.size(); i++)
 	{
 		BYTE bDet = GetPointPosition(
 			pWinding->m_vPoint[i],
@@ -807,8 +807,9 @@ BYTE CTMath::GetWindingPosition( LPVERTEXWINDING pWinding, LPD3DXPLANE pPlane)
 BYTE CTMath::GetWindingPosition( LPPOINTWINDING pWinding, LPD3DXPLANE pPlane)
 {
 	BYTE bMain = POINTPOS_ONPLANE;
+	size_t i = 0;
 
-	for( int i=0; bMain == POINTPOS_ONPLANE && i<pWinding->m_vPoint.size(); i++)
+	for(; bMain == POINTPOS_ONPLANE && i<pWinding->m_vPoint.size(); i++)
 	{
 		bMain = GetPointPosition(
 			pWinding->m_vPoint[i],
@@ -833,7 +834,7 @@ BYTE CTMath::GetWindingPosition( LPPOINTWINDING pWinding, LPD3DXPLANE pPlane)
 		return D3DXVec3Dot( &vNormal, &vCross) < 0.0f ? WINDINGPOS_ONBACK : WINDINGPOS_ONFRONT;
 	}
 
-	for(; i<pWinding->m_vPoint.size(); i++)
+	for(auto i = 0; i<pWinding->m_vPoint.size(); i++)
 	{
 		BYTE bDet = GetPointPosition(
 			pWinding->m_vPoint[i],
@@ -1679,13 +1680,13 @@ BYTE CTMath::CheckCollision( LPVECTORPOINTWINDING pSRC,
 	for( int i=0; i<pDEST->size(); i++)
 		vDEST.push_back(CopyWinding((*pDEST)[i]));
 
-	for( i=0; i<pSRC->size(); i++)
+	for( auto i=0; i<pSRC->size(); i++)
 		for( int j=0; j<vDEST.size(); j++)
 			if(!vDEST[j]->m_vPoint.empty())
 				CutWinding( &(*pSRC)[i]->m_vPlane, vDEST[j]);
 
 	BYTE bResult = FALSE;
-	for( i=0; i<vDEST.size(); i++)
+	for( auto i=0; i<vDEST.size(); i++)
 		if(!vDEST[i]->m_vPoint.empty())
 		{
 			bResult = TRUE;
@@ -1731,7 +1732,7 @@ void CTMath::BuildBoundWinding( LPVECTORPOINTWINDING pResult,
 			&vBound[i]);
 	}
 
-	for( i=0; i<6; i++)
+	for( auto i=0; i<6; i++)
 	{
 		LPPOINTWINDING pWinding = new POINTWINDING;
 
@@ -1972,7 +1973,7 @@ BYTE CTMath::HitPoly( LPD3DXVECTOR3 pPOLY,
 			return FALSE;
 	}
 
-	for( i=0; i<3; i++)
+	for( auto i=0; i<3; i++)
 	{
 		D3DXPlaneFromPoints(
 			&vBOUND[i],
@@ -1984,7 +1985,7 @@ BYTE CTMath::HitPoly( LPD3DXVECTOR3 pPOLY,
 			&pPOLY[(i + 1) % 3]);
 	}
 
-	for( i=0; i<3; i++)
+	for( auto i=0; i<3; i++)
 	{
 		BYTE bRESULT = TRUE;
 
@@ -1999,7 +2000,7 @@ BYTE CTMath::HitPoly( LPD3DXVECTOR3 pPOLY,
 			return FALSE;
 	}
 
-	for( i=0; i<4; i++)
+	for( auto i=0; i<4; i++)
 	{
 		BYTE bRESULT = TRUE;
 
@@ -2021,7 +2022,7 @@ BYTE CTMath::HitPoly( LPD3DXVECTOR3 pPOLY,
 			}
 		}
 
-		for( j=0; j<3; j++)
+		for( auto j=0; j<3; j++)
 			if( D3DXPlaneDotCoord( &vBOUND[j], &pRECT[i]) * D3DXPlaneDotCoord( &vBOUND[j], &pRECT[(i + 1) % 4]) < 0.0f &&
 				D3DXPlaneDotCoord( &pBOUND[i], &pPOLY[j]) * D3DXPlaneDotCoord( &pBOUND[i], &pPOLY[(j + 1) % 3]) < 0.0f )
 			{
@@ -2040,7 +2041,7 @@ BYTE CTMath::HitPoly( LPD3DXVECTOR3 pPOLY,
 			}
 	}
 
-	for( i=0; i<3; i++)
+	for( auto i=0; i<3; i++)
 	{
 		BYTE bRESULT = TRUE;
 
