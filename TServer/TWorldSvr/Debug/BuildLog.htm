@@ -1,0 +1,157 @@
+<html>
+<head>
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=Windows-1252">
+</head>
+<body>
+<pre>
+<table width=100% bgcolor=#CFCFE5><tr> <td> <font face=arial size=+3>
+Build Log
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>
+<h3>------- Build started: Project: TWorldSvr, Configuration: Debug|Win32 -------
+</h3>
+</pre></table><table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
+Command Lines
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>
+TWorldSvr : warning PRJ0041 : Cannot find missing dependency 'TWorldSvr.tlb' for file 'TWorldSvr.rc'.  Your project may still build, but may continue to appear out of date until this file is found.
+
+Creating temporary file "c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TWorldSvr\Debug\RSP00001F.rsp" with contents
+[
+/D "_DEBUG" /env win32 /Oicf  /tlb "Debug/TWorldSvr.tlb" /h "TWorldSvr.h" /iid "TWorldSvr_i.c" /proxy "TWorldSvr_p.c"
+".\TWorldSvr.idl"
+]
+Creating command line "midl.exe @"c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TWorldSvr\Debug\RSP00001F.rsp" /nologo"
+Creating temporary file "c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TWorldSvr\Debug\RSP000020.rsp" with contents
+[
+/Od /I ".\\" /I "..\TNetLib" /I "..\..\TProtocol" /I "..\..\Apex\Server" /D "WIN32" /D "_WINDOWS" /D "_DEBUG" /D "_ATL_STATIC_REGISTRY" /D "_MBCS" /Gm /EHsc /RTC1 /MTd /Yu"stdafx.h" /Fp"Debug/TWorldSvr.pch" /Fo"Debug/" /Fd"Debug/vc70.pdb" /W3 /c /Wp64 /ZI /TP
+".\TWorldSvr.cpp"
+".\TWorldSession.cpp"
+".\TServer.cpp"
+".\TParty.cpp"
+".\TMiniDump.cpp"
+".\TGuild.cpp"
+".\TCorps.cpp"
+".\SSSender.cpp"
+".\SSHandler.cpp"
+".\RWSender.cpp"
+".\RWHandler.cpp"
+".\DMSender.cpp"
+".\DBAccess.cpp"
+]
+Creating command line "cl.exe @"c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TWorldSvr\Debug\RSP000020.rsp" /nologo"
+Creating temporary file "c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TWorldSvr\Debug\RSP000021.rsp" with contents
+[
+/Od /I ".\\" /I "..\TNetLib" /I "..\..\TProtocol" /I "..\..\Apex\Server" /D "WIN32" /D "_WINDOWS" /D "_DEBUG" /D "_ATL_STATIC_REGISTRY" /D "_MBCS" /Gm /EHsc /RTC1 /MTd /Yc"stdafx.h" /Fp"Debug/TWorldSvr.pch" /Fo"Debug/" /Fd"Debug/vc70.pdb" /W3 /c /Wp64 /ZI /TP
+".\stdafx.cpp"
+]
+Creating command line "cl.exe @"c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TWorldSvr\Debug\RSP000021.rsp" /nologo"
+Creating temporary file "c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TWorldSvr\Debug\RSP000022.rsp" with contents
+[
+/Od /I ".\\" /I "..\TNetLib" /I "..\..\TProtocol" /I "..\..\Apex\Server" /D "WIN32" /D "_WINDOWS" /D "_DEBUG" /D "_ATL_STATIC_REGISTRY" /D "_MBCS" /Gm /EHsc /RTC1 /MTd /Fo"Debug/" /Fd"Debug/vc70.pdb" /W3 /c /Wp64 /ZI /TC
+".\TWorldSvr_i.c"
+]
+Creating command line "cl.exe @"c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TWorldSvr\Debug\RSP000022.rsp" /nologo"
+Creating command line "rc.exe /d "_DEBUG" /l 0x412 /I "Debug" /fo"Debug/TWorldSvr.res" ".\TWorldSvr.rc""
+Creating temporary file "c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TWorldSvr\Debug\RSP000023.rsp" with contents
+[
+/OUT:"Debug/TWorldSvr.exe" /INCREMENTAL /NOLOGO /LIBPATH:"..\Lib" /DEBUG /PDB:"Debug/TWorldSvr.pdb" /SUBSYSTEM:WINDOWS /IMPLIB:"Debug/TWorldSvr.lib" /MACHINE:X86 odbc32.lib ws2_32.lib mswsock.lib TNetLibd.Lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\lib\TNetLibd.lib" DelayImp.lib
+".\debug\DBAccess.obj"
+".\debug\DMSender.obj"
+".\debug\RWHandler.obj"
+".\debug\RWSender.obj"
+".\debug\SSHandler.obj"
+".\debug\SSSender.obj"
+".\debug\stdafx.obj"
+".\debug\TCorps.obj"
+".\debug\TGuild.obj"
+".\debug\TMiniDump.obj"
+".\debug\TParty.obj"
+".\debug\TServer.obj"
+".\debug\TWorldSession.obj"
+".\debug\TWorldSvr.obj"
+".\debug\TWorldSvr.res"
+".\debug\TWorldSvr_i.obj"
+]
+Creating command line "link.exe @"c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TWorldSvr\Debug\RSP000023.rsp""
+Creating temporary file "c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TWorldSvr\Debug\BAT000024.bat" with contents
+[
+@echo off
+"c:\users\pierr\desktop\4story - oldschool\sources\tserver\tworldsvr\debug\TWorldSvr.exe" /RegServer
+if errorlevel 1 goto VCReportError
+goto VCEnd
+:VCReportError
+echo Project : error PRJ0019: A tool returned an error code from "???? ????."
+exit 1
+:VCEnd
+]
+Creating command line ""c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TWorldSvr\Debug\BAT000024.bat""
+</pre></table><table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
+Output Window
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>Creating Type Library...
+Processing .\TWorldSvr.idl
+TWorldSvr.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\oaidl.idl
+oaidl.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\objidl.idl
+objidl.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\unknwn.idl
+unknwn.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\wtypes.idl
+wtypes.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\basetsd.h
+basetsd.h
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\guiddef.h
+guiddef.h
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\ocidl.idl
+ocidl.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\oleidl.idl
+oleidl.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\servprov.idl
+servprov.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\urlmon.idl
+urlmon.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\msxml.idl
+msxml.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\oaidl.acf
+oaidl.acf
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\ocidl.acf
+ocidl.acf
+Compiling...
+stdafx.cpp
+Compiling...
+TWorldSvr.cpp
+TWorldSession.cpp
+TServer.cpp
+TParty.cpp
+TMiniDump.cpp
+TGuild.cpp
+TCorps.cpp
+SSSender.cpp
+SSHandler.cpp
+RWSender.cpp
+RWHandler.cpp
+DMSender.cpp
+DBAccess.cpp
+Generating Code...
+c:\users\pierr\desktop\4story - oldschool\sources\tserver\tworldsvr\sshandler.cpp(1190) : warning C4700: local variable 'bAidCountry' used without having been initialized
+Compiling...
+TWorldSvr_i.c
+Compiling resources...
+Linking...
+TWorldSvr : error PRJ0025 : Batch file 'c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TWorldSvr\Debug\BAT000024.bat' contains Unicode contents that could not be translated to user's ANSI code page.
+[
+@echo off
+"c:\users\pierr\desktop\4story - oldschool\sources\tserver\tworldsvr\debug\TWorldSvr.exe" /RegServer
+if errorlevel 1 goto VCReportError
+goto VCEnd
+:VCReportError
+echo Project : error PRJ0019: A tool returned an error code from "???? ????."
+exit 1
+:VCEnd
+]
+???? ????.
+</pre></table><table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
+Results
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>
+Build log was saved at "file://c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TWorldSvr\Debug\BuildLog.htm"
+TWorldSvr - 1 error(s), 1 warning(s)</pre></table><table   width=100% height=20 bgcolor=#CFCFE5><tr><td><font face=arial size=+2>
+</font></table></body></html>

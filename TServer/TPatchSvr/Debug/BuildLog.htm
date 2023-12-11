@@ -1,0 +1,153 @@
+<html>
+<head>
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=Windows-1252">
+</head>
+<body>
+<pre>
+<table width=100% bgcolor=#CFCFE5><tr> <td> <font face=arial size=+3>
+Build Log
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>
+<h3>------- Build started: Project: TPatchSvr, Configuration: Debug|Win32 -------
+</h3>
+</pre></table><table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
+Command Lines
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>
+TPatchSvr : warning PRJ0041 : Cannot find missing dependency 'TPatchSvr.tlb' for file 'TPatchSvr.rc'.  Your project may still build, but may continue to appear out of date until this file is found.
+
+Creating temporary file "c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TPatchSvr\Debug\RSP000011.rsp" with contents
+[
+/D "_DEBUG" /env win32 /Oicf  /tlb "Debug/TPatchSvr.tlb" /h "TPatchSvr.h" /iid "TPatchSvr_i.c" /proxy "TPatchSvr_p.c"
+".\TPatchSvr.idl"
+]
+Creating command line "midl.exe @"c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TPatchSvr\Debug\RSP000011.rsp" /nologo"
+Creating temporary file "c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TPatchSvr\Debug\RSP000012.rsp" with contents
+[
+/Od /I ".\\" /I "..\..\TProtocol" /D "WIN32" /D "_WINDOWS" /D "_DEBUG" /D "_ATL_STATIC_REGISTRY" /D "_MBCS" /Gm /EHsc /RTC1 /MTd /Yu"stdafx.h" /Fp"Debug/TPatchSvr.pch" /Fo"Debug/" /Fd"Debug/vc70.pdb" /W3 /c /Wp64 /ZI /TP
+".\TPatchSvr.cpp"
+".\TPatchSession.cpp"
+".\SqlQuery.cpp"
+".\SqlDirect.cpp"
+".\SqlDatabase.cpp"
+".\SqlBase.cpp"
+".\Session.cpp"
+".\Sender.cpp"
+".\Packet.cpp"
+".\Handler.cpp"
+".\DBAccess.cpp"
+".\BindDesc.cpp"
+]
+Creating command line "cl.exe @"c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TPatchSvr\Debug\RSP000012.rsp" /nologo"
+Creating temporary file "c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TPatchSvr\Debug\RSP000013.rsp" with contents
+[
+/Od /I ".\\" /I "..\..\TProtocol" /D "WIN32" /D "_WINDOWS" /D "_DEBUG" /D "_ATL_STATIC_REGISTRY" /D "_MBCS" /Gm /EHsc /RTC1 /MTd /Yc"stdafx.h" /Fp"Debug/TPatchSvr.pch" /Fo"Debug/" /Fd"Debug/vc70.pdb" /W3 /c /Wp64 /ZI /TP
+".\stdafx.cpp"
+]
+Creating command line "cl.exe @"c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TPatchSvr\Debug\RSP000013.rsp" /nologo"
+Creating temporary file "c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TPatchSvr\Debug\RSP000014.rsp" with contents
+[
+/Od /I ".\\" /I "..\..\TProtocol" /D "WIN32" /D "_WINDOWS" /D "_DEBUG" /D "_ATL_STATIC_REGISTRY" /D "_MBCS" /Gm /EHsc /RTC1 /MTd /Fo"Debug/" /Fd"Debug/vc70.pdb" /W3 /c /Wp64 /ZI /TC
+".\TPatchSvr_i.c"
+]
+Creating command line "cl.exe @"c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TPatchSvr\Debug\RSP000014.rsp" /nologo"
+Creating command line "rc.exe /d "_DEBUG" /l 0x412 /I "Debug" /fo"Debug/TPatchSvr.res" ".\TPatchSvr.rc""
+Creating temporary file "c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TPatchSvr\Debug\RSP000015.rsp" with contents
+[
+/OUT:"Debug/TPatchSvr.exe" /INCREMENTAL /NOLOGO /LIBPATH:"..\Lib" /DEBUG /PDB:"Debug/TPatchSvr.pdb" /SUBSYSTEM:WINDOWS /IMPLIB:"Debug/TPatchSvr.lib" /MACHINE:X86 odbc32.lib ws2_32.lib mswsock.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib
+".\debug\BindDesc.obj"
+".\debug\DBAccess.obj"
+".\debug\Handler.obj"
+".\debug\Packet.obj"
+".\debug\Sender.obj"
+".\debug\Session.obj"
+".\debug\SqlBase.obj"
+".\debug\SqlDatabase.obj"
+".\debug\SqlDirect.obj"
+".\debug\SqlQuery.obj"
+".\debug\stdafx.obj"
+".\debug\TPatchSession.obj"
+".\debug\TPatchSvr.obj"
+".\debug\TPatchSvr.res"
+".\debug\TPatchSvr_i.obj"
+]
+Creating command line "link.exe @"c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TPatchSvr\Debug\RSP000015.rsp""
+Creating temporary file "c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TPatchSvr\Debug\BAT000016.bat" with contents
+[
+@echo off
+"c:\users\pierr\desktop\4story - oldschool\sources\tserver\tpatchsvr\debug\TPatchSvr.exe" /RegServer
+if errorlevel 1 goto VCReportError
+goto VCEnd
+:VCReportError
+echo Project : error PRJ0019: A tool returned an error code from "???? ????."
+exit 1
+:VCEnd
+]
+Creating command line ""c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TPatchSvr\Debug\BAT000016.bat""
+</pre></table><table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
+Output Window
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>Creating Type Library...
+Processing .\TPatchSvr.idl
+TPatchSvr.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\oaidl.idl
+oaidl.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\objidl.idl
+objidl.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\unknwn.idl
+unknwn.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\wtypes.idl
+wtypes.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\basetsd.h
+basetsd.h
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\guiddef.h
+guiddef.h
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\ocidl.idl
+ocidl.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\oleidl.idl
+oleidl.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\servprov.idl
+servprov.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\urlmon.idl
+urlmon.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\msxml.idl
+msxml.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\oaidl.acf
+oaidl.acf
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\ocidl.acf
+ocidl.acf
+Compiling...
+stdafx.cpp
+Compiling...
+TPatchSvr.cpp
+TPatchSession.cpp
+SqlQuery.cpp
+SqlDirect.cpp
+SqlDatabase.cpp
+SqlBase.cpp
+Session.cpp
+Sender.cpp
+Packet.cpp
+Handler.cpp
+DBAccess.cpp
+BindDesc.cpp
+Generating Code...
+Compiling...
+TPatchSvr_i.c
+Compiling resources...
+Linking...
+TPatchSvr : error PRJ0025 : Batch file 'c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TPatchSvr\Debug\BAT000016.bat' contains Unicode contents that could not be translated to user's ANSI code page.
+[
+@echo off
+"c:\users\pierr\desktop\4story - oldschool\sources\tserver\tpatchsvr\debug\TPatchSvr.exe" /RegServer
+if errorlevel 1 goto VCReportError
+goto VCEnd
+:VCReportError
+echo Project : error PRJ0019: A tool returned an error code from "???? ????."
+exit 1
+:VCEnd
+]
+???? ????.
+</pre></table><table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
+Results
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>
+Build log was saved at "file://c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TPatchSvr\Debug\BuildLog.htm"
+TPatchSvr - 1 error(s), 0 warning(s)</pre></table><table   width=100% height=20 bgcolor=#CFCFE5><tr><td><font face=arial size=+2>
+</font></table></body></html>

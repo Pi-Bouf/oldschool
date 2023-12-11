@@ -1,0 +1,112 @@
+<html>
+<head>
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=Windows-1252">
+</head>
+<body>
+<pre>
+<table width=100% bgcolor=#CFCFE5><tr> <td> <font face=arial size=+3>
+Build Log
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>
+<h3>------- Build started: Project: TRelaySvr, Configuration: Debug|Win32 -------
+</h3>
+</pre></table><table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
+Command Lines
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>
+TRelaySvr : warning PRJ0041 : Cannot find missing dependency 'TRelaySvr.tlb' for file 'TRelaySvr.rc'.  Your project may still build, but may continue to appear out of date until this file is found.
+
+Creating temporary file "c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TRelaySvr\Debug\RSP000019.rsp" with contents
+[
+/D "_DEBUG" /env win32 /Oicf  /tlb "Debug/TRelaySvr.tlb" /h "TRelaySvr.h" /iid "TRelaySvr_i.c" /proxy "TRelaySvr_p.c"
+".\TRelaySvr.idl"
+]
+Creating command line "midl.exe @"c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TRelaySvr\Debug\RSP000019.rsp" /nologo"
+Creating temporary file "c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TRelaySvr\Debug\RSP00001A.rsp" with contents
+[
+/Od /I ".\\" /I "..\TNetLib" /I "..\..\TProtocol" /D "WIN32" /D "_WINDOWS" /D "_DEBUG" /D "_ATL_STATIC_REGISTRY" /D "_MBCS" /Gm /EHsc /RTC1 /MTd /Yu"stdafx.h" /Fp"Debug/TRelaySvr.pch" /Fo"Debug/" /Fd"Debug/vc70.pdb" /W3 /c /Wp64 /ZI /TP
+".\UdpSocket.cpp"
+".\TRelaySvr.cpp"
+".\TRelaySession.cpp"
+".\TPlayer.cpp"
+".\TParty.cpp"
+".\TMiniDump.cpp"
+".\TGuild.cpp"
+".\TCorps.cpp"
+".\SSSender.cpp"
+".\SSHandler.cpp"
+".\CSSender.cpp"
+".\CSHandler.cpp"
+]
+Creating command line "cl.exe @"c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TRelaySvr\Debug\RSP00001A.rsp" /nologo"
+Creating temporary file "c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TRelaySvr\Debug\RSP00001B.rsp" with contents
+[
+/Od /I ".\\" /I "..\TNetLib" /I "..\..\TProtocol" /D "WIN32" /D "_WINDOWS" /D "_DEBUG" /D "_ATL_STATIC_REGISTRY" /D "_MBCS" /Gm /EHsc /RTC1 /MTd /Yc"stdafx.h" /Fp"Debug/TRelaySvr.pch" /Fo"Debug/" /Fd"Debug/vc70.pdb" /W3 /c /Wp64 /ZI /TP
+".\stdafx.cpp"
+]
+Creating command line "cl.exe @"c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TRelaySvr\Debug\RSP00001B.rsp" /nologo"
+Creating temporary file "c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TRelaySvr\Debug\RSP00001C.rsp" with contents
+[
+/Od /I ".\\" /I "..\TNetLib" /I "..\..\TProtocol" /D "WIN32" /D "_WINDOWS" /D "_DEBUG" /D "_ATL_STATIC_REGISTRY" /D "_MBCS" /Gm /EHsc /RTC1 /MTd /Fo"Debug/" /Fd"Debug/vc70.pdb" /W3 /c /Wp64 /ZI /TC
+".\TRelaySvr_i.c"
+]
+Creating command line "cl.exe @"c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TRelaySvr\Debug\RSP00001C.rsp" /nologo"
+</pre></table><table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
+Output Window
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>Creating Type Library...
+Processing .\TRelaySvr.idl
+TRelaySvr.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\oaidl.idl
+oaidl.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\objidl.idl
+objidl.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\unknwn.idl
+unknwn.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\wtypes.idl
+wtypes.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\basetsd.h
+basetsd.h
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\guiddef.h
+guiddef.h
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\ocidl.idl
+ocidl.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\oleidl.idl
+oleidl.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\servprov.idl
+servprov.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\urlmon.idl
+urlmon.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\msxml.idl
+msxml.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\oaidl.acf
+oaidl.acf
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\ocidl.acf
+ocidl.acf
+Compiling...
+stdafx.cpp
+Compiling...
+UdpSocket.cpp
+TRelaySvr.cpp
+c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TRelaySvr\TRelaySvr.cpp(1433) : error C2065: 'MEETING_MAPID' : undeclared identifier
+c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TRelaySvr\TRelaySvr.cpp(1433) : error C2065: 'MEETING_SROOM_COUNT' : undeclared identifier
+c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TRelaySvr\TRelaySvr.cpp(1433) : error C3861: 'MEETING_MAPID': identifier not found, even with argument-dependent lookup
+c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TRelaySvr\TRelaySvr.cpp(1436) : error C3861: 'MEETING_MAPID': identifier not found, even with argument-dependent lookup
+TRelaySession.cpp
+TPlayer.cpp
+TParty.cpp
+TMiniDump.cpp
+TGuild.cpp
+TCorps.cpp
+SSSender.cpp
+SSHandler.cpp
+c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TRelaySvr\SSHandler.cpp(542) : error C2065: 'IK_COUNTRY' : undeclared identifier
+c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TRelaySvr\SSHandler.cpp(542) : error C2051: case expression not constant
+c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TRelaySvr\SSHandler.cpp(545) : error C2065: 'IK_AIDCOUNTRY' : undeclared identifier
+c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TRelaySvr\SSHandler.cpp(545) : error C2051: case expression not constant
+CSSender.cpp
+CSHandler.cpp
+Generating Code...
+</pre></table><table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
+Results
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>
+Build log was saved at "file://c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TRelaySvr\Debug\BuildLog.htm"
+TRelaySvr - 8 error(s), 0 warning(s)</pre></table><table   width=100% height=20 bgcolor=#CFCFE5><tr><td><font face=arial size=+2>
+</font></table></body></html>

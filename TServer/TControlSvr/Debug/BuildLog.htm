@@ -1,0 +1,144 @@
+<html>
+<head>
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=Windows-1252">
+</head>
+<body>
+<pre>
+<table width=100% bgcolor=#CFCFE5><tr> <td> <font face=arial size=+3>
+Build Log
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>
+<h3>------- Build started: Project: TControlSvr, Configuration: Debug|Win32 -------
+</h3>
+</pre></table><table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
+Command Lines
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>
+TControlSvr : warning PRJ0041 : Cannot find missing dependency 'TControlSvr.tlb' for file 'TControlSvr.rc'.  Your project may still build, but may continue to appear out of date until this file is found.
+
+Creating temporary file "c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TControlSvr\Debug\RSP00002B.rsp" with contents
+[
+/D "_DEBUG" /env win32 /Oicf  /tlb "Debug/TControlSvr.tlb" /h "TControlSvr.h" /iid "TControlSvr_i.c" /proxy "TControlSvr_p.c"
+".\TControlSvr.idl"
+]
+Creating command line "midl.exe @"c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TControlSvr\Debug\RSP00002B.rsp" /nologo"
+Creating temporary file "c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TControlSvr\Debug\RSP00002C.rsp" with contents
+[
+/Od /I "..\TNetLib" /I "..\..\TProtocol" /D "WIN32" /D "_WINDOWS" /D "_DEBUG" /D "_ATL_STATIC_REGISTRY" /D "_MBCS" /Gm /EHsc /RTC1 /MTd /Yu"stdafx.h" /Fp"Debug/TControlSvr.pch" /Fo"Debug/" /Fd"Debug/vc70.pdb" /W3 /c /Wp64 /ZI /TP
+".\TServer.cpp"
+".\TMiniDump.cpp"
+".\TManager.cpp"
+".\TControlSvr.cpp"
+".\TControlSession.cpp"
+".\Sender.cpp"
+".\PlatformUsage.cpp"
+".\Handler.cpp"
+".\DBAccess.cpp"
+]
+Creating command line "cl.exe @"c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TControlSvr\Debug\RSP00002C.rsp" /nologo"
+Creating temporary file "c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TControlSvr\Debug\RSP00002D.rsp" with contents
+[
+/Od /I "..\TNetLib" /I "..\..\TProtocol" /D "WIN32" /D "_WINDOWS" /D "_DEBUG" /D "_ATL_STATIC_REGISTRY" /D "_MBCS" /Gm /EHsc /RTC1 /MTd /Yc"stdafx.h" /Fp"Debug/TControlSvr.pch" /Fo"Debug/" /Fd"Debug/vc70.pdb" /W3 /c /Wp64 /ZI /TP
+".\stdafx.cpp"
+]
+Creating command line "cl.exe @"c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TControlSvr\Debug\RSP00002D.rsp" /nologo"
+Creating temporary file "c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TControlSvr\Debug\RSP00002E.rsp" with contents
+[
+/Od /I "..\TNetLib" /I "..\..\TProtocol" /D "WIN32" /D "_WINDOWS" /D "_DEBUG" /D "_ATL_STATIC_REGISTRY" /D "_MBCS" /Gm /EHsc /RTC1 /MTd /Fo"Debug/" /Fd"Debug/vc70.pdb" /W3 /c /Wp64 /ZI /TC
+".\TControlSvr_i.c"
+]
+Creating command line "cl.exe @"c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TControlSvr\Debug\RSP00002E.rsp" /nologo"
+Creating command line "rc.exe /d "_DEBUG" /l 0x412 /I "Debug" /fo"Debug/TControlSvr.res" ".\TControlSvr.rc""
+Creating temporary file "c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TControlSvr\Debug\RSP00002F.rsp" with contents
+[
+/OUT:"Debug/TControlSvr.exe" /INCREMENTAL /NOLOGO /LIBPATH:"..\Lib" /DEBUG /PDB:"Debug/TControlSvr.pdb" /SUBSYSTEM:WINDOWS /IMPLIB:"Debug/TControlSvr.lib" /MACHINE:X86 odbc32.lib ws2_32.lib mswsock.lib TNetLibd.Lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\lib\TNetLibd.lib" DelayImp.lib
+".\debug\DBAccess.obj"
+".\debug\Handler.obj"
+".\debug\PlatformUsage.obj"
+".\debug\Sender.obj"
+".\debug\stdafx.obj"
+".\debug\TControlSession.obj"
+".\debug\TControlSvr.obj"
+".\debug\TManager.obj"
+".\debug\TMiniDump.obj"
+".\debug\TServer.obj"
+".\debug\TControlSvr.res"
+".\debug\TControlSvr_i.obj"
+]
+Creating command line "link.exe @"c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TControlSvr\Debug\RSP00002F.rsp""
+Creating temporary file "c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TControlSvr\Debug\BAT000030.bat" with contents
+[
+@echo off
+"c:\users\pierr\desktop\4story - oldschool\sources\tserver\tcontrolsvr\debug\TControlSvr.exe" /RegServer
+if errorlevel 1 goto VCReportError
+goto VCEnd
+:VCReportError
+echo Project : error PRJ0019: A tool returned an error code from "???? ????."
+exit 1
+:VCEnd
+]
+Creating command line ""c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TControlSvr\Debug\BAT000030.bat""
+</pre></table><table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
+Output Window
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>Creating Type Library...
+Processing .\TControlSvr.idl
+TControlSvr.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\oaidl.idl
+oaidl.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\objidl.idl
+objidl.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\unknwn.idl
+unknwn.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\wtypes.idl
+wtypes.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\basetsd.h
+basetsd.h
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\guiddef.h
+guiddef.h
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\ocidl.idl
+ocidl.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\oleidl.idl
+oleidl.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\servprov.idl
+servprov.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\urlmon.idl
+urlmon.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\msxml.idl
+msxml.idl
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\oaidl.acf
+oaidl.acf
+Processing c:\Program Files (x86)\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\ocidl.acf
+ocidl.acf
+Compiling...
+stdafx.cpp
+Compiling...
+TServer.cpp
+TMiniDump.cpp
+TManager.cpp
+TControlSvr.cpp
+TControlSession.cpp
+Sender.cpp
+PlatformUsage.cpp
+Handler.cpp
+DBAccess.cpp
+Generating Code...
+Compiling...
+TControlSvr_i.c
+Compiling resources...
+Linking...
+TControlSvr : error PRJ0025 : Batch file 'c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TControlSvr\Debug\BAT000030.bat' contains Unicode contents that could not be translated to user's ANSI code page.
+[
+@echo off
+"c:\users\pierr\desktop\4story - oldschool\sources\tserver\tcontrolsvr\debug\TControlSvr.exe" /RegServer
+if errorlevel 1 goto VCReportError
+goto VCEnd
+:VCReportError
+echo Project : error PRJ0019: A tool returned an error code from "???? ????."
+exit 1
+:VCEnd
+]
+???? ????.
+</pre></table><table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
+Results
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>
+Build log was saved at "file://c:\Users\pierr\Desktop\4Story - OldSchool\Sources\TServer\TControlSvr\Debug\BuildLog.htm"
+TControlSvr - 1 error(s), 0 warning(s)</pre></table><table   width=100% height=20 bgcolor=#CFCFE5><tr><td><font face=arial size=+2>
+</font></table></body></html>
