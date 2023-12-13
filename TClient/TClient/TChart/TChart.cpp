@@ -989,7 +989,7 @@ void CTChart::InitTFACETEMP( CString strPath )
 	WORD wCount;
 	ar >> wCount;
 
-	for( i=0; i<wCount; i++)
+	for( auto i=0; i<wCount; i++)
 	{
 		BYTE bFACE;
 		BYTE bHAIR;
@@ -1025,7 +1025,7 @@ void CTChart::InitTPANTSTEMP( CString strPath )
 	WORD wCount;
 	ar >> wCount;
 
-	for( i=0; i<wCount; i++)
+	for( auto i=0; i<wCount; i++)
 	{
 		BYTE bPantsID;
 		ar >> bPantsID;
@@ -1058,7 +1058,7 @@ void CTChart::InitTBODYTEMP( CString strPath )
 	WORD wCount;
 	ar >> wCount;
 
-	for( i=0; i<wCount; i++)
+	for( auto i=0; i<wCount; i++)
 	{
 		BYTE bBODY;
 		ar >> bBODY;
@@ -1091,7 +1091,7 @@ void CTChart::InitTHANDTEMP( CString strPath )
 	WORD wCount;
 	ar >> wCount;
 
-	for( i=0; i<wCount; i++)
+	for( auto i=0; i<wCount; i++)
 	{
 		BYTE bHAND;
 		ar >> bHAND;
@@ -1124,7 +1124,7 @@ void CTChart::InitTFOOTTEMP( CString strPath )
 	WORD wCount;
 	ar >> wCount;
 
-	for( i=0; i<wCount; i++)
+	for( auto i=0; i<wCount; i++)
 	{
 		BYTE bFOOT;
 		ar >> bFOOT;
@@ -1412,7 +1412,7 @@ void CTChart::InitTMAPINFO( CString strNodeChartPath, CString strMapCharPath )
 	vTMAPCHART
 		>> wCount;
 
-	for( i=0; i<wCount; i++)
+	for( auto i=0; i<wCount; i++)
 	{
 		LPTMAPINFO pTMAPINFO = new TMAPINFO();
 		DWORD dwMapID;
@@ -2270,7 +2270,7 @@ void CTChart::InitTFORMULA( CString strPath )
 	}
 
 	LPTFORMULA pTFORMULA = CTChart::FindTFORMULA(FTYPE_1ST);
-	for( i=0; i<TMAX_LEVEL; i++)
+	for( auto i=0; i<TMAX_LEVEL; i++)
 		CTChart::m_vLEVELRATE[i] = powf( pTFORMULA->m_fRateX, i);
 }
 
@@ -3074,7 +3074,7 @@ void CTChart::InitTQUESTTEMP( CString strPath)
 		}
 
 		file.Read( &nRewardCount, sizeof(int));
-		for( i=0; i<nRewardCount; i++)
+		for( auto i=0; i<nRewardCount; i++)
 		{
 			LPTREWARD pTREWARD = new TREWARD();
 
@@ -3228,7 +3228,7 @@ void CTChart::InitTRACETEMP( CString strPath )
 	WORD wCount;
 	ar >> wCount;
 
-	for( i=0; i<wCount; i++)
+	for( auto i=0; i<wCount; i++)
 	{
 		BYTE bRACE;
 		BYTE bSEX;

@@ -11,6 +11,19 @@
 
 #pragma warning( disable : 4312)
 
+typedef struct DXGI_JPEG_AC_HUFFMAN_TABLE {
+	int CodeCounts[16];
+	int CodeValues[162];
+};
+
+typedef struct DXGI_JPEG_DC_HUFFMAN_TABLE {
+	int CodeCounts[12];
+	int CodeValues[12];
+};
+
+typedef struct DXGI_JPEG_QUANTIZATION_TABLE {
+	int Elements[64];
+};
 
 #ifndef VC_EXTRALEAN
 #define VC_EXTRALEAN		// 거의 사용되지 않는 내용은 Windows 헤더에서 제외합니다.
