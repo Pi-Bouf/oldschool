@@ -1,0 +1,1442 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{803656e6-d48a-464c-b469-c9a019c37be3}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;jpg;jpeg;jpe;manifest</Extensions>
+    </Filter>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{af63096e-38b6-41b3-adf0-f68066a4a296}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Guild">
+      <UniqueIdentifier>{5c821670-7da2-4459-8ef2-f5724f48cfb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\DetailInfo">
+      <UniqueIdentifier>{ae24d3ee-4bf4-42cb-9f0f-cc4c39965205}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Messenger&amp;Mail">
+      <UniqueIdentifier>{c56e47d6-4f87-4fbf-978e-66008153f8c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Pet">
+      <UniqueIdentifier>{cd437a91-23b9-4e3b-8a42-d6bfd0246d4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Item">
+      <UniqueIdentifier>{84c2b7c7-c81d-431d-92be-04f7957ab2ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Quest">
+      <UniqueIdentifier>{ec96d2e4-7048-4e8b-acc1-543103c04f00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Chatting">
+      <UniqueIdentifier>{e005c81b-49c7-4e99-904c-33fe52d55f21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Map">
+      <UniqueIdentifier>{32f7ebba-e655-4ba3-bae6-e3db3b7eea8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Shop &amp; Cabinet &amp; Trade">
+      <UniqueIdentifier>{8bc13eac-d164-4093-9403-d9089d094363}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Skill">
+      <UniqueIdentifier>{b75548f3-899a-44fe-b9f8-06d7b5323333}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\RSCS">
+      <UniqueIdentifier>{73776f6a-03ad-4c34-a45e-1ff1b6c83446}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Help">
+      <UniqueIdentifier>{d5825e62-6f18-4181-aaf6-fa0d59a26ee5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Gauage Pannel">
+      <UniqueIdentifier>{c2443fa4-0a5f-47d0-a759-e00a392ea5a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Popup">
+      <UniqueIdentifier>{da646bc1-4c9c-453b-b85d-9cda9ba95523}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Inven">
+      <UniqueIdentifier>{9e715e4e-f793-4de6-be54-de72760fb517}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\SystemMenu">
+      <UniqueIdentifier>{b4e40003-f00f-49d8-8c12-0af1093cc970}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Main">
+      <UniqueIdentifier>{cf4458df-fb58-4d1f-817f-d91705700d88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Candidate">
+      <UniqueIdentifier>{47bcb141-0dbb-4125-babd-f30aefa8208c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Base">
+      <UniqueIdentifier>{6f8df1f0-17ee-45f0-a67b-8818eb4419e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\CustomComp">
+      <UniqueIdentifier>{7aa651e9-392f-4081-9cb6-2dfeb2e58531}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Siege">
+      <UniqueIdentifier>{f7296738-b10e-4978-8dd2-9f8730181db8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Auction">
+      <UniqueIdentifier>{7d42223d-95e5-45a7-8b70-eeec4d4dfc33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Auction\MainFrame">
+      <UniqueIdentifier>{ee486962-f5eb-4693-87f3-9e6f0f55bc3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Auction\InnerFrame">
+      <UniqueIdentifier>{22676c18-3f16-432e-a82b-dbeed29d34bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Auction\InnerFrame\Interface">
+      <UniqueIdentifier>{1305aee9-dd72-4ed7-b6f0-1c6fc437d2a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Auction\Utiltiy">
+      <UniqueIdentifier>{21242662-d047-4d5c-9411-141613113fc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Fame">
+      <UniqueIdentifier>{037ac468-c9e0-414c-bd78-5fd0aee48932}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Tournament">
+      <UniqueIdentifier>{565c352e-3125-4239-8249-91f7b09d0b74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Welcome">
+      <UniqueIdentifier>{66102366-41a9-401e-98a6-e959e2853c81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\RPS">
+      <UniqueIdentifier>{63211458-ecd8-459d-9317-719935a8d231}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lobby">
+      <UniqueIdentifier>{8981e3fd-b03c-4843-a29d-9c87527f9683}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{cc5d563f-bc09-4fcc-9b16-e99fd6787d5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Siege">
+      <UniqueIdentifier>{4308ed65-a431-404b-b878-1e2911ed9d4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Item">
+      <UniqueIdentifier>{d2244847-6414-4b2d-bb53-708a9ba12767}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Quest">
+      <UniqueIdentifier>{2210aceb-d5b3-4429-b5c0-3f4fa67d4dc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Party">
+      <UniqueIdentifier>{c4fc96fe-26a8-4925-a07b-3a8951e613cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Skill">
+      <UniqueIdentifier>{cb8ff81b-73b5-45d8-995e-12f4cd3f023b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene">
+      <UniqueIdentifier>{e129c3d9-5e9d-4dd4-b107-00b267e3d456}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\KeyInput">
+      <UniqueIdentifier>{5dc350f3-fdfa-4402-ad47-3f99d11f468e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\In-GameUI">
+      <UniqueIdentifier>{acacf73a-a7b9-46e1-8095-287e28409e62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\PathFinding">
+      <UniqueIdentifier>{697e1932-b894-4554-8a1d-6debfc16c16f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\GameObject">
+      <UniqueIdentifier>{c552743f-3ba9-46cd-bfb8-fd2903252fce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Map">
+      <UniqueIdentifier>{70313eff-2956-4959-828c-2cf8be2b1295}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Camera">
+      <UniqueIdentifier>{d2b3ea22-edc1-4b8b-97a1-ba7924acd34e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\SFX">
+      <UniqueIdentifier>{2b9536c5-c65c-47bc-8600-9dca8d3540fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Curse">
+      <UniqueIdentifier>{b0658db9-5d99-4602-8176-1a409d3f8d2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\TextLink">
+      <UniqueIdentifier>{d307e26f-95e0-4478-9e25-868e9e6e82ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Utility">
+      <UniqueIdentifier>{4c01e631-8e9f-4a52-ada9-058b14297bea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Client">
+      <UniqueIdentifier>{d75916db-5204-4a6f-a2ad-31924a9d37de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Client\Web">
+      <UniqueIdentifier>{40e55f97-117f-48a9-9bf2-2bb810823602}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Client\MD5">
+      <UniqueIdentifier>{9e4c1d2d-f6e7-4d33-8d36-11faaf54c204}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Client\Error Handler">
+      <UniqueIdentifier>{f3a57787-078f-486e-af0b-7358a8acd1fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Client\Packet Spy">
+      <UniqueIdentifier>{49486201-52b4-4770-820c-00bb592cd3e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Client\StrFilter">
+      <UniqueIdentifier>{19bf2338-de73-410a-8b18-0797e4b2ddf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Global">
+      <UniqueIdentifier>{20035545-2e03-4914-9f5c-770a872de0e7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="res\Curse.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="res\Curse_GSP.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\cursor1.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Hand.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Routing.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Sword.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Talk.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\TClient.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="res\PS_ADD.psh">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="res\PS_ADDSIGNED.psh">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="res\PS_ADDSIGNED2X.psh">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="res\PS_ADDSMOOTH.psh">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="res\PS_BLENDCURRENTALPHA.psh">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="res\PS_BLENDDIFFUSEALPHA.psh">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="res\PS_BLENDFACTORALPHA.psh">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="res\PS_BLENDTEXTUREALPHA.psh">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="res\PS_BLENDTEXTUREALPHAPM.psh">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="res\PS_DETAILMAP.psh">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="res\PS_DOTPRODUCT3.psh">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="res\PS_LERP.psh">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="res\PS_MAP.psh">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="res\PS_MODULATE.psh">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="res\PS_MODULATE2X.psh">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="res\PS_MODULATE4X.psh">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="res\PS_MODULATEALPHA_ADDCOLOR.psh">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="res\PS_MODULATECOLOR_ADDALPHA.psh">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="res\PS_MODULATEINVALPHA_ADDCOLOR.psh">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="res\PS_MODULATEINVCOLOR_ADDALPHA.psh">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="res\PS_MULTIPLYADD.psh">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="res\PS_SHADER.psh">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="res\PS_STAGE1.psh">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="res\PS_SUBTRACT.psh">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="res\VS_LVERTEX.vsh">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="res\VS_MESH.vsh">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="res\VS_WMESH.vsh">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\TClient.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="TClient.manifest">
+      <Filter>Resource Files</Filter>
+    </Manifest>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TClient.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="TClientGuildMark.cpp">
+      <Filter>Interface\Guild</Filter>
+    </ClCompile>
+    <ClCompile Include="TCommunityDlg.cpp">
+      <Filter>Interface\Guild</Filter>
+    </ClCompile>
+    <ClCompile Include="TGuildAppInnerFrame.cpp">
+      <Filter>Interface\Guild</Filter>
+    </ClCompile>
+    <ClCompile Include="TGuildApplicationDlg.cpp">
+      <Filter>Interface\Guild</Filter>
+    </ClCompile>
+    <ClCompile Include="TGuildCabinetDlg.cpp">
+      <Filter>Interface\Guild</Filter>
+    </ClCompile>
+    <ClCompile Include="TGuildCmdHelpDlg.cpp">
+      <Filter>Interface\Guild</Filter>
+    </ClCompile>
+    <ClCompile Include="TGuildCommander.cpp">
+      <Filter>Interface\Guild</Filter>
+    </ClCompile>
+    <ClCompile Include="TGuildExpDonDlg.cpp">
+      <Filter>Interface\Guild</Filter>
+    </ClCompile>
+    <ClCompile Include="TGuildMarkMakeDlg.cpp">
+      <Filter>Interface\Guild</Filter>
+    </ClCompile>
+    <ClCompile Include="TGuildMemberFrame.cpp">
+      <Filter>Interface\Guild</Filter>
+    </ClCompile>
+    <ClCompile Include="TGuildMoneyDonDlg.cpp">
+      <Filter>Interface\Guild</Filter>
+    </ClCompile>
+    <ClCompile Include="TGuildNormalFrame.cpp">
+      <Filter>Interface\Guild</Filter>
+    </ClCompile>
+    <ClCompile Include="TGuildNotifyDlg.cpp">
+      <Filter>Interface\Guild</Filter>
+    </ClCompile>
+    <ClCompile Include="TGuildOfferFrame.cpp">
+      <Filter>Interface\Guild</Filter>
+    </ClCompile>
+    <ClCompile Include="TGuildPointLogFrame.cpp">
+      <Filter>Interface\Guild</Filter>
+    </ClCompile>
+    <ClCompile Include="TGuildPointRewardFrame.cpp">
+      <Filter>Interface\Guild</Filter>
+    </ClCompile>
+    <ClCompile Include="TGuildPvPRecordFrame.cpp">
+      <Filter>Interface\Guild</Filter>
+    </ClCompile>
+    <ClCompile Include="TGuildRegularOffer.cpp">
+      <Filter>Interface\Guild</Filter>
+    </ClCompile>
+    <ClCompile Include="TGuildRTTypeFrame.cpp">
+      <Filter>Interface\Guild</Filter>
+    </ClCompile>
+    <ClCompile Include="TGuildSeekFrame.cpp">
+      <Filter>Interface\Guild</Filter>
+    </ClCompile>
+    <ClCompile Include="TGuildTacticsOffer.cpp">
+      <Filter>Interface\Guild</Filter>
+    </ClCompile>
+    <ClCompile Include="TGuildTerritoryFrame.cpp">
+      <Filter>Interface\Guild</Filter>
+    </ClCompile>
+    <ClCompile Include="TGuildVolunteerFrame.cpp">
+      <Filter>Interface\Guild</Filter>
+    </ClCompile>
+    <ClCompile Include="TTacticsInviteDlg.cpp">
+      <Filter>Interface\Guild</Filter>
+    </ClCompile>
+    <ClCompile Include="TDetailInfo.cpp">
+      <Filter>Interface\DetailInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="TDetailInfoDlg.cpp">
+      <Filter>Interface\DetailInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="TDetailInfoManager.cpp">
+      <Filter>Interface\DetailInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="TDetailNameDlg.cpp">
+      <Filter>Interface\DetailInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="TBlockListDlg.cpp">
+      <Filter>Interface\Messenger&amp;Mail</Filter>
+    </ClCompile>
+    <ClCompile Include="TMailAskMoneyDlg.cpp">
+      <Filter>Interface\Messenger&amp;Mail</Filter>
+    </ClCompile>
+    <ClCompile Include="TMailListFrame.cpp">
+      <Filter>Interface\Messenger&amp;Mail</Filter>
+    </ClCompile>
+    <ClCompile Include="TMailRecvDlg.cpp">
+      <Filter>Interface\Messenger&amp;Mail</Filter>
+    </ClCompile>
+    <ClCompile Include="TMailSendDlg.cpp">
+      <Filter>Interface\Messenger&amp;Mail</Filter>
+    </ClCompile>
+    <ClCompile Include="TMessengerBase.cpp">
+      <Filter>Interface\Messenger&amp;Mail</Filter>
+    </ClCompile>
+    <ClCompile Include="TMessengerChat.cpp">
+      <Filter>Interface\Messenger&amp;Mail</Filter>
+    </ClCompile>
+    <ClCompile Include="TMessengerCommander.cpp">
+      <Filter>Interface\Messenger&amp;Mail</Filter>
+    </ClCompile>
+    <ClCompile Include="TMsgChatMemberList.cpp">
+      <Filter>Interface\Messenger&amp;Mail</Filter>
+    </ClCompile>
+    <ClCompile Include="TMsgGroupList.cpp">
+      <Filter>Interface\Messenger&amp;Mail</Filter>
+    </ClCompile>
+    <ClCompile Include="TSMSDlg.cpp">
+      <Filter>Interface\Messenger&amp;Mail</Filter>
+    </ClCompile>
+    <ClCompile Include="TSoulmateFrame.cpp">
+      <Filter>Interface\Messenger&amp;Mail</Filter>
+    </ClCompile>
+    <ClCompile Include="TPetDlg.cpp">
+      <Filter>Interface\Pet</Filter>
+    </ClCompile>
+    <ClCompile Include="TPetMakeDlg.cpp">
+      <Filter>Interface\Pet</Filter>
+    </ClCompile>
+    <ClCompile Include="TPetManageDlg.cpp">
+      <Filter>Interface\Pet</Filter>
+    </ClCompile>
+    <ClCompile Include="TColorPicker.cpp">
+      <Filter>Interface\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="TItemExtPeriodDlg.cpp">
+      <Filter>Interface\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="TItemGambleDlg.cpp">
+      <Filter>Interface\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="TItemRefineDlg.cpp">
+      <Filter>Interface\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="TItemRegGuildDlg.cpp">
+      <Filter>Interface\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="TItemRepairDlg.cpp">
+      <Filter>Interface\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="TItemSlotBaseDlg.cpp">
+      <Filter>Interface\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="TItemUpCashDlg.cpp">
+      <Filter>Interface\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="TItemUpDlg.cpp">
+      <Filter>Interface\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="TItemUpGaugeDlg.cpp">
+      <Filter>Interface\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="TCraftQuestDlg.cpp">
+      <Filter>Interface\Quest</Filter>
+    </ClCompile>
+    <ClCompile Include="TNewQuestDlg.cpp">
+      <Filter>Interface\Quest</Filter>
+    </ClCompile>
+    <ClCompile Include="TNPCTalkDlg.cpp">
+      <Filter>Interface\Quest</Filter>
+    </ClCompile>
+    <ClCompile Include="TChatCommander.cpp">
+      <Filter>Interface\Chatting</Filter>
+    </ClCompile>
+    <ClCompile Include="TChatFrame.cpp">
+      <Filter>Interface\Chatting</Filter>
+    </ClCompile>
+    <ClCompile Include="TChatList.cpp">
+      <Filter>Interface\Chatting</Filter>
+    </ClCompile>
+    <ClCompile Include="TChatTabButton.cpp">
+      <Filter>Interface\Chatting</Filter>
+    </ClCompile>
+    <ClCompile Include="TMinimapDlg.cpp">
+      <Filter>Interface\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="TWorldmapDlg.cpp">
+      <Filter>Interface\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="TCabinetDlg.cpp">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClCompile>
+    <ClCompile Include="TCashCabinetDlg.cpp">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClCompile>
+    <ClCompile Include="TCashShopDlg.cpp">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClCompile>
+    <ClCompile Include="TCtrlList.cpp">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClCompile>
+    <ClCompile Include="TItemRegBox.cpp">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClCompile>
+    <ClCompile Include="TNewCashShopDlg.cpp">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClCompile>
+    <ClCompile Include="TNormalCabinetDlg.cpp">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClCompile>
+    <ClCompile Include="TPortalShopDlgNew.cpp">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClCompile>
+    <ClCompile Include="TPrivateShopDlg.cpp">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClCompile>
+    <ClCompile Include="TRentSkillDlg.cpp">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClCompile>
+    <ClCompile Include="TShopBaseDlg.cpp">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClCompile>
+    <ClCompile Include="TShopDlg.cpp">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClCompile>
+    <ClCompile Include="TShopItem.cpp">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClCompile>
+    <ClCompile Include="TTradeDlg.cpp">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClCompile>
+    <ClCompile Include="TUpItemSellDlg.cpp">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClCompile>
+    <ClCompile Include="TWebCashShopDlg.cpp">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClCompile>
+    <ClCompile Include="TSkillDlg.cpp">
+      <Filter>Interface\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="TRSCSDlg.cpp">
+      <Filter>Interface\RSCS</Filter>
+    </ClCompile>
+    <ClCompile Include="TDynamicHelpDlg.cpp">
+      <Filter>Interface\Help</Filter>
+    </ClCompile>
+    <ClCompile Include="THelpFrame.cpp">
+      <Filter>Interface\Help</Filter>
+    </ClCompile>
+    <ClCompile Include="TGaugePannel.cpp">
+      <Filter>Interface\Gauage Pannel</Filter>
+    </ClCompile>
+    <ClCompile Include="TMaintainPannel.cpp">
+      <Filter>Interface\Gauage Pannel</Filter>
+    </ClCompile>
+    <ClCompile Include="TMiniPopupDlg.cpp">
+      <Filter>Interface\Popup</Filter>
+    </ClCompile>
+    <ClCompile Include="TPopupMenu.cpp">
+      <Filter>Interface\Popup</Filter>
+    </ClCompile>
+    <ClCompile Include="TCharInfoDlg.cpp">
+      <Filter>Interface\Inven</Filter>
+    </ClCompile>
+    <ClCompile Include="TCharPvPInfoDlg.cpp">
+      <Filter>Interface\Inven</Filter>
+    </ClCompile>
+    <ClCompile Include="TCharRankInfoDlg.cpp">
+      <Filter>Interface\Inven</Filter>
+    </ClCompile>
+    <ClCompile Include="TInvenDlg.cpp">
+      <Filter>Interface\Inven</Filter>
+    </ClCompile>
+    <ClCompile Include="TGameSettingFrame.cpp">
+      <Filter>Interface\SystemMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="TKeySettingDlg.cpp">
+      <Filter>Interface\SystemMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="TSettingFrame.cpp">
+      <Filter>Interface\SystemMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="TSystemSettingFrame.cpp">
+      <Filter>Interface\SystemMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="TDurationFrame.cpp">
+      <Filter>Interface\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="TMainUI.cpp">
+      <Filter>Interface\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="TPartyItemLottery.cpp">
+      <Filter>Interface\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="TCandidateFrame.cpp">
+      <Filter>Interface\Candidate</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientUIBase.cpp">
+      <Filter>Interface\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="TFrameGroupBase.cpp">
+      <Filter>Interface\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="TListEx.cpp">
+      <Filter>Interface\CustomComp</Filter>
+    </ClCompile>
+    <ClCompile Include="TNumberEdit.cpp">
+      <Filter>Interface\CustomComp</Filter>
+    </ClCompile>
+    <ClCompile Include="TProgressRegDlg.cpp">
+      <Filter>Interface\CustomComp</Filter>
+    </ClCompile>
+    <ClCompile Include="TSiegeEnd.cpp">
+      <Filter>Interface\Siege</Filter>
+    </ClCompile>
+    <ClCompile Include="TSiegeUI.cpp">
+      <Filter>Interface\Siege</Filter>
+    </ClCompile>
+    <ClCompile Include="TAuctionCommander.cpp">
+      <Filter>Interface\Auction</Filter>
+    </ClCompile>
+    <ClCompile Include="TAuctionMainFrame.cpp">
+      <Filter>Interface\Auction\MainFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="TAuctionBasket.cpp">
+      <Filter>Interface\Auction\InnerFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="TAuctionMyBid.cpp">
+      <Filter>Interface\Auction\InnerFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="TAuctionRegist.cpp">
+      <Filter>Interface\Auction\InnerFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="TAuctionSearch.cpp">
+      <Filter>Interface\Auction\InnerFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="TAuctionInnerFrame.cpp">
+      <Filter>Interface\Auction\InnerFrame\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="TAuctionCategory.cpp">
+      <Filter>Interface\Auction\Utiltiy</Filter>
+    </ClCompile>
+    <ClCompile Include="TAuctionCtrlList.cpp">
+      <Filter>Interface\Auction\Utiltiy</Filter>
+    </ClCompile>
+    <ClCompile Include="TAuctionMsgBox.cpp">
+      <Filter>Interface\Auction\Utiltiy</Filter>
+    </ClCompile>
+    <ClCompile Include="TFameBaseDlg.cpp">
+      <Filter>Interface\Fame</Filter>
+    </ClCompile>
+    <ClCompile Include="TFameListDlg.cpp">
+      <Filter>Interface\Fame</Filter>
+    </ClCompile>
+    <ClCompile Include="TFameRank.cpp">
+      <Filter>Interface\Fame</Filter>
+    </ClCompile>
+    <ClCompile Include="TTournament.cpp">
+      <Filter>Interface\Tournament</Filter>
+    </ClCompile>
+    <ClCompile Include="TTournamentEvent.cpp">
+      <Filter>Interface\Tournament</Filter>
+    </ClCompile>
+    <ClCompile Include="TTournamentGage.cpp">
+      <Filter>Interface\Tournament</Filter>
+    </ClCompile>
+    <ClCompile Include="TTournamentMode.cpp">
+      <Filter>Interface\Tournament</Filter>
+    </ClCompile>
+    <ClCompile Include="TTournamentResult.cpp">
+      <Filter>Interface\Tournament</Filter>
+    </ClCompile>
+    <ClCompile Include="TTournamentSelectTarget.cpp">
+      <Filter>Interface\Tournament</Filter>
+    </ClCompile>
+    <ClCompile Include="TTournamentSelectWinner.cpp">
+      <Filter>Interface\Tournament</Filter>
+    </ClCompile>
+    <ClCompile Include="TWelcome.cpp">
+      <Filter>Interface\Welcome</Filter>
+    </ClCompile>
+    <ClCompile Include="TRpcDlg.cpp">
+      <Filter>Interface\RPS</Filter>
+    </ClCompile>
+    <ClCompile Include="TRpcRewardDlg.cpp">
+      <Filter>Interface\RPS</Filter>
+    </ClCompile>
+    <ClCompile Include="TRpsRewardList.cpp">
+      <Filter>Interface\RPS</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientNET.cpp">
+      <Filter>Lobby</Filter>
+    </ClCompile>
+    <ClCompile Include="TNetGM.cpp">
+      <Filter>Lobby</Filter>
+    </ClCompile>
+    <ClCompile Include="TNetHandler.cpp">
+      <Filter>Lobby</Filter>
+    </ClCompile>
+    <ClCompile Include="TNetSender.cpp">
+      <Filter>Lobby</Filter>
+    </ClCompile>
+    <ClCompile Include="CSHandler.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="CSSender.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="CSSenderAll.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientGame.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientGM.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientSession.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="TRelayHandler.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="TRelaySender.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="TSiegeManager.cpp">
+      <Filter>Game\Siege</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientInven.cpp">
+      <Filter>Game\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientItem.cpp">
+      <Filter>Game\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientQClass.cpp">
+      <Filter>Game\Quest</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientQuest.cpp">
+      <Filter>Game\Quest</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientTerm.cpp">
+      <Filter>Game\Quest</Filter>
+    </ClCompile>
+    <ClCompile Include="TPartyCommander.cpp">
+      <Filter>Game\Party</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientMaintain.cpp">
+      <Filter>Game\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientSkill.cpp">
+      <Filter>Game\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="TCinematicDlg.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="TScenePlayer.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientKEY.cpp">
+      <Filter>Game\KeyInput</Filter>
+    </ClCompile>
+    <ClCompile Include="TKeySettingDefines.cpp">
+      <Filter>Game\KeyInput</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientNumber.cpp">
+      <Filter>Game\In-GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientTalkBox.cpp">
+      <Filter>Game\In-GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientFlag.cpp">
+      <Filter>Game\PathFinding</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientArrow.cpp">
+      <Filter>Game\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientChar.cpp">
+      <Filter>Game\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientFake.cpp">
+      <Filter>Game\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientGate.cpp">
+      <Filter>Game\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientMonster.cpp">
+      <Filter>Game\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientMoveObj.cpp">
+      <Filter>Game\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientNpc.cpp">
+      <Filter>Game\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientObjBase.cpp">
+      <Filter>Game\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientObject.cpp">
+      <Filter>Game\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientPet.cpp">
+      <Filter>Game\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientRecall.cpp">
+      <Filter>Game\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientSwitch.cpp">
+      <Filter>Game\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="TSiegeGodBall.cpp">
+      <Filter>Game\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="TSiegeGodTower.cpp">
+      <Filter>Game\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientBSP.cpp">
+      <Filter>Game\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientMAP.cpp">
+      <Filter>Game\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientCAM.cpp">
+      <Filter>Game\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientSfx.cpp">
+      <Filter>Game\SFX</Filter>
+    </ClCompile>
+    <ClCompile Include="Curse.cpp">
+      <Filter>Game\Curse</Filter>
+    </ClCompile>
+    <ClCompile Include="TTextLinkData.cpp">
+      <Filter>Game\TextLink</Filter>
+    </ClCompile>
+    <ClCompile Include="TTextLinker.cpp">
+      <Filter>Game\TextLink</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Client</Filter>
+    </ClCompile>
+    <ClCompile Include="TClient.cpp">
+      <Filter>Client</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientMsgBox.cpp">
+      <Filter>Client</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientNICEventSink.cpp">
+      <Filter>Client</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientWnd.cpp">
+      <Filter>Client</Filter>
+    </ClCompile>
+    <ClCompile Include="TNationOption.cpp">
+      <Filter>Client</Filter>
+    </ClCompile>
+    <ClCompile Include="TClientWebCtrl.cpp">
+      <Filter>Client\Web</Filter>
+    </ClCompile>
+    <ClCompile Include="md5.cpp">
+      <Filter>Client\MD5</Filter>
+    </ClCompile>
+    <ClCompile Include="TMailSender.cpp">
+      <Filter>Client\Error Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="TMiniDump.cpp">
+      <Filter>Client\Error Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="TSystemInfo.cpp">
+      <Filter>Client\Error Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="PacketSpyAcks.cpp">
+      <Filter>Client\Packet Spy</Filter>
+    </ClCompile>
+    <ClCompile Include="PacketSpyDlg.cpp">
+      <Filter>Client\Packet Spy</Filter>
+    </ClCompile>
+    <ClCompile Include="TStrFilter.cpp">
+      <Filter>Client\StrFilter</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TClientGuildMark.h">
+      <Filter>Interface\Guild</Filter>
+    </ClInclude>
+    <ClInclude Include="TCommunityDlg.h">
+      <Filter>Interface\Guild</Filter>
+    </ClInclude>
+    <ClInclude Include="TGuildAppInnerFrame.h">
+      <Filter>Interface\Guild</Filter>
+    </ClInclude>
+    <ClInclude Include="TGuildApplicationDlg.h">
+      <Filter>Interface\Guild</Filter>
+    </ClInclude>
+    <ClInclude Include="TGuildCabinetDlg.h">
+      <Filter>Interface\Guild</Filter>
+    </ClInclude>
+    <ClInclude Include="TGuildCmdHelpDlg.h">
+      <Filter>Interface\Guild</Filter>
+    </ClInclude>
+    <ClInclude Include="TGuildCommander.h">
+      <Filter>Interface\Guild</Filter>
+    </ClInclude>
+    <ClInclude Include="TGuildExpDonDlg.h">
+      <Filter>Interface\Guild</Filter>
+    </ClInclude>
+    <ClInclude Include="TGuildMarkMakeDlg.h">
+      <Filter>Interface\Guild</Filter>
+    </ClInclude>
+    <ClInclude Include="TGuildMemberFrame.h">
+      <Filter>Interface\Guild</Filter>
+    </ClInclude>
+    <ClInclude Include="TGuildMoneyDonDlg.h">
+      <Filter>Interface\Guild</Filter>
+    </ClInclude>
+    <ClInclude Include="TGuildNormalFrame.h">
+      <Filter>Interface\Guild</Filter>
+    </ClInclude>
+    <ClInclude Include="TGuildNotifyDlg.h">
+      <Filter>Interface\Guild</Filter>
+    </ClInclude>
+    <ClInclude Include="TGuildOfferFrame.h">
+      <Filter>Interface\Guild</Filter>
+    </ClInclude>
+    <ClInclude Include="TGuildPointLogFrame.h">
+      <Filter>Interface\Guild</Filter>
+    </ClInclude>
+    <ClInclude Include="TGuildPointRewardFrame.h">
+      <Filter>Interface\Guild</Filter>
+    </ClInclude>
+    <ClInclude Include="TGuildPvPRecordFrame.h">
+      <Filter>Interface\Guild</Filter>
+    </ClInclude>
+    <ClInclude Include="TGuildRegularOffer.h">
+      <Filter>Interface\Guild</Filter>
+    </ClInclude>
+    <ClInclude Include="TGuildRTTypeFrame.h">
+      <Filter>Interface\Guild</Filter>
+    </ClInclude>
+    <ClInclude Include="TGuildSeekFrame.h">
+      <Filter>Interface\Guild</Filter>
+    </ClInclude>
+    <ClInclude Include="TGuildTacticsOffer.h">
+      <Filter>Interface\Guild</Filter>
+    </ClInclude>
+    <ClInclude Include="TGuildTerritoryFrame.h">
+      <Filter>Interface\Guild</Filter>
+    </ClInclude>
+    <ClInclude Include="TGuildVolunteerFrame.h">
+      <Filter>Interface\Guild</Filter>
+    </ClInclude>
+    <ClInclude Include="TTacticsInviteDlg.h">
+      <Filter>Interface\Guild</Filter>
+    </ClInclude>
+    <ClInclude Include="TDetailInfo.h">
+      <Filter>Interface\DetailInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="TDetailInfoDlg.h">
+      <Filter>Interface\DetailInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="TDetailInfoManager.h">
+      <Filter>Interface\DetailInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="TDetailNameDlg.h">
+      <Filter>Interface\DetailInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="TBlockListDlg.h">
+      <Filter>Interface\Messenger&amp;Mail</Filter>
+    </ClInclude>
+    <ClInclude Include="TMailAskMoneyDlg.h">
+      <Filter>Interface\Messenger&amp;Mail</Filter>
+    </ClInclude>
+    <ClInclude Include="TMailListFrame.h">
+      <Filter>Interface\Messenger&amp;Mail</Filter>
+    </ClInclude>
+    <ClInclude Include="TMailRecvDlg.h">
+      <Filter>Interface\Messenger&amp;Mail</Filter>
+    </ClInclude>
+    <ClInclude Include="TMailSendDlg.h">
+      <Filter>Interface\Messenger&amp;Mail</Filter>
+    </ClInclude>
+    <ClInclude Include="TMessengerBase.h">
+      <Filter>Interface\Messenger&amp;Mail</Filter>
+    </ClInclude>
+    <ClInclude Include="TMessengerChat.h">
+      <Filter>Interface\Messenger&amp;Mail</Filter>
+    </ClInclude>
+    <ClInclude Include="TMessengerCommander.h">
+      <Filter>Interface\Messenger&amp;Mail</Filter>
+    </ClInclude>
+    <ClInclude Include="TMsgChatMemberList.h">
+      <Filter>Interface\Messenger&amp;Mail</Filter>
+    </ClInclude>
+    <ClInclude Include="TMsgGroupList.h">
+      <Filter>Interface\Messenger&amp;Mail</Filter>
+    </ClInclude>
+    <ClInclude Include="TSMSDlg.h">
+      <Filter>Interface\Messenger&amp;Mail</Filter>
+    </ClInclude>
+    <ClInclude Include="TSoulmateFrame.h">
+      <Filter>Interface\Messenger&amp;Mail</Filter>
+    </ClInclude>
+    <ClInclude Include="TPetDlg.h">
+      <Filter>Interface\Pet</Filter>
+    </ClInclude>
+    <ClInclude Include="TPetMakeDlg.h">
+      <Filter>Interface\Pet</Filter>
+    </ClInclude>
+    <ClInclude Include="TPetManageDlg.h">
+      <Filter>Interface\Pet</Filter>
+    </ClInclude>
+    <ClInclude Include="TColorPicker.h">
+      <Filter>Interface\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="TItemExtPeriodDlg.h">
+      <Filter>Interface\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="TItemGambleDlg.h">
+      <Filter>Interface\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="TItemRefineDlg.h">
+      <Filter>Interface\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="TItemRegGuildDlg.h">
+      <Filter>Interface\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="TItemRepairDlg.h">
+      <Filter>Interface\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="TItemSlotBaseDlg.h">
+      <Filter>Interface\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="TItemUpCashDlg.h">
+      <Filter>Interface\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="TItemUpDlg.h">
+      <Filter>Interface\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="TItemUpGaugeDlg.h">
+      <Filter>Interface\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="TCraftQuestDlg.h">
+      <Filter>Interface\Quest</Filter>
+    </ClInclude>
+    <ClInclude Include="TNewQuestDlg.h">
+      <Filter>Interface\Quest</Filter>
+    </ClInclude>
+    <ClInclude Include="TNPCTalkDlg.h">
+      <Filter>Interface\Quest</Filter>
+    </ClInclude>
+    <ClInclude Include="TChatCommander.h">
+      <Filter>Interface\Chatting</Filter>
+    </ClInclude>
+    <ClInclude Include="TChatFrame.h">
+      <Filter>Interface\Chatting</Filter>
+    </ClInclude>
+    <ClInclude Include="TChatList.h">
+      <Filter>Interface\Chatting</Filter>
+    </ClInclude>
+    <ClInclude Include="TChatTabButton.h">
+      <Filter>Interface\Chatting</Filter>
+    </ClInclude>
+    <ClInclude Include="TMinimapDlg.h">
+      <Filter>Interface\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="TWorldmapDlg.h">
+      <Filter>Interface\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="TCabinetDlg.h">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClInclude>
+    <ClInclude Include="TCashCabinetDlg.h">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClInclude>
+    <ClInclude Include="TCashShopDlg.h">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClInclude>
+    <ClInclude Include="TCtrlList.h">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClInclude>
+    <ClInclude Include="TItemRegBox.h">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClInclude>
+    <ClInclude Include="TNewCashShopDlg.h">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClInclude>
+    <ClInclude Include="TNormalCabinetDlg.h">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClInclude>
+    <ClInclude Include="TPortalShopDlgNew.h">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClInclude>
+    <ClInclude Include="TPrivateShopDlg.h">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClInclude>
+    <ClInclude Include="TRentSkillDlg.h">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClInclude>
+    <ClInclude Include="TShopBaseDlg.h">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClInclude>
+    <ClInclude Include="TShopDlg.h">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClInclude>
+    <ClInclude Include="TShopItem.h">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClInclude>
+    <ClInclude Include="TTradeDlg.h">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClInclude>
+    <ClInclude Include="TUpItemSellDlg.h">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClInclude>
+    <ClInclude Include="TWebCashShopDlg.h">
+      <Filter>Interface\Shop &amp; Cabinet &amp; Trade</Filter>
+    </ClInclude>
+    <ClInclude Include="TSkillDlg.h">
+      <Filter>Interface\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="TRSCSDlg.h">
+      <Filter>Interface\RSCS</Filter>
+    </ClInclude>
+    <ClInclude Include="TDynamicHelpDlg.h">
+      <Filter>Interface\Help</Filter>
+    </ClInclude>
+    <ClInclude Include="THelpFrame.h">
+      <Filter>Interface\Help</Filter>
+    </ClInclude>
+    <ClInclude Include="TGaugePannel.h">
+      <Filter>Interface\Gauage Pannel</Filter>
+    </ClInclude>
+    <ClInclude Include="TMaintainPannel.h">
+      <Filter>Interface\Gauage Pannel</Filter>
+    </ClInclude>
+    <ClInclude Include="TMiniPopupDlg.h">
+      <Filter>Interface\Popup</Filter>
+    </ClInclude>
+    <ClInclude Include="TPopupMenu.h">
+      <Filter>Interface\Popup</Filter>
+    </ClInclude>
+    <ClInclude Include="TCharInfoDlg.h">
+      <Filter>Interface\Inven</Filter>
+    </ClInclude>
+    <ClInclude Include="TCharPvPInfoDlg.h">
+      <Filter>Interface\Inven</Filter>
+    </ClInclude>
+    <ClInclude Include="TCharRankInfoDlg.h">
+      <Filter>Interface\Inven</Filter>
+    </ClInclude>
+    <ClInclude Include="TInvenDlg.h">
+      <Filter>Interface\Inven</Filter>
+    </ClInclude>
+    <ClInclude Include="TGameSettingFrame.h">
+      <Filter>Interface\SystemMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="TKeySettingDlg.h">
+      <Filter>Interface\SystemMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="TSettingFrame.h">
+      <Filter>Interface\SystemMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="TSystemSettingFrame.h">
+      <Filter>Interface\SystemMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="TDurationFrame.h">
+      <Filter>Interface\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="TMainUI.h">
+      <Filter>Interface\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="TPartyItemLottery.h">
+      <Filter>Interface\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="TCandidateFrame.h">
+      <Filter>Interface\Candidate</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientUIBase.h">
+      <Filter>Interface\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="TFrameGroupBase.h">
+      <Filter>Interface\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="TInnerFrame.h">
+      <Filter>Interface\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="TListEx.h">
+      <Filter>Interface\CustomComp</Filter>
+    </ClInclude>
+    <ClInclude Include="TNumberEdit.h">
+      <Filter>Interface\CustomComp</Filter>
+    </ClInclude>
+    <ClInclude Include="TProgressRegDlg.h">
+      <Filter>Interface\CustomComp</Filter>
+    </ClInclude>
+    <ClInclude Include="TSiegeEnd.h">
+      <Filter>Interface\Siege</Filter>
+    </ClInclude>
+    <ClInclude Include="TSiegeUI.h">
+      <Filter>Interface\Siege</Filter>
+    </ClInclude>
+    <ClInclude Include="TAuctionCommander.h">
+      <Filter>Interface\Auction</Filter>
+    </ClInclude>
+    <ClInclude Include="TAuctionMainFrame.h">
+      <Filter>Interface\Auction\MainFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="TAuctionBasket.h">
+      <Filter>Interface\Auction\InnerFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="TAuctionMyBid.h">
+      <Filter>Interface\Auction\InnerFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="TAuctionRegist.h">
+      <Filter>Interface\Auction\InnerFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="TAuctionSearch.h">
+      <Filter>Interface\Auction\InnerFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="TAuctionInnerFrame.h">
+      <Filter>Interface\Auction\InnerFrame\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="TAuctionCategory.h">
+      <Filter>Interface\Auction\Utiltiy</Filter>
+    </ClInclude>
+    <ClInclude Include="TAuctionCtrlList.h">
+      <Filter>Interface\Auction\Utiltiy</Filter>
+    </ClInclude>
+    <ClInclude Include="TAuctionMsgBox.h">
+      <Filter>Interface\Auction\Utiltiy</Filter>
+    </ClInclude>
+    <ClInclude Include="TFameBaseDlg.h">
+      <Filter>Interface\Fame</Filter>
+    </ClInclude>
+    <ClInclude Include="TFameListDlg.h">
+      <Filter>Interface\Fame</Filter>
+    </ClInclude>
+    <ClInclude Include="TFameRank.h">
+      <Filter>Interface\Fame</Filter>
+    </ClInclude>
+    <ClInclude Include="TTournament.h">
+      <Filter>Interface\Tournament</Filter>
+    </ClInclude>
+    <ClInclude Include="TTournamentEvent.h">
+      <Filter>Interface\Tournament</Filter>
+    </ClInclude>
+    <ClInclude Include="TTournamentGage.h">
+      <Filter>Interface\Tournament</Filter>
+    </ClInclude>
+    <ClInclude Include="TTournamentMode.h">
+      <Filter>Interface\Tournament</Filter>
+    </ClInclude>
+    <ClInclude Include="TTournamentResult.h">
+      <Filter>Interface\Tournament</Filter>
+    </ClInclude>
+    <ClInclude Include="TTournamentSelectTarget.h">
+      <Filter>Interface\Tournament</Filter>
+    </ClInclude>
+    <ClInclude Include="TTournamentSelectWinner.h">
+      <Filter>Interface\Tournament</Filter>
+    </ClInclude>
+    <ClInclude Include="TWelcome.h">
+      <Filter>Interface\Welcome</Filter>
+    </ClInclude>
+    <ClInclude Include="TRpcDlg.h">
+      <Filter>Interface\RPS</Filter>
+    </ClInclude>
+    <ClInclude Include="TRpcRewardDlg.h">
+      <Filter>Interface\RPS</Filter>
+    </ClInclude>
+    <ClInclude Include="TRpsRewardList.h">
+      <Filter>Interface\RPS</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientNET.h">
+      <Filter>Lobby</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientGame.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientSession.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="TSiegeManager.h">
+      <Filter>Game\Siege</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientInven.h">
+      <Filter>Game\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientItem.h">
+      <Filter>Game\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientQClass.h">
+      <Filter>Game\Quest</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientQuest.h">
+      <Filter>Game\Quest</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientTerm.h">
+      <Filter>Game\Quest</Filter>
+    </ClInclude>
+    <ClInclude Include="TPartyCommander.h">
+      <Filter>Game\Party</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientMaintain.h">
+      <Filter>Game\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientSkill.h">
+      <Filter>Game\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="TCinematicDlg.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="TScenePlayer.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientKEY.h">
+      <Filter>Game\KeyInput</Filter>
+    </ClInclude>
+    <ClInclude Include="TKeySettingDefines.h">
+      <Filter>Game\KeyInput</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientNumber.h">
+      <Filter>Game\In-GameUI</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientTalkBox.h">
+      <Filter>Game\In-GameUI</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientFlag.h">
+      <Filter>Game\PathFinding</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientArrow.h">
+      <Filter>Game\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientChar.h">
+      <Filter>Game\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientFake.h">
+      <Filter>Game\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientGate.h">
+      <Filter>Game\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientMonster.h">
+      <Filter>Game\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientMoveObj.h">
+      <Filter>Game\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientNpc.h">
+      <Filter>Game\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientObjBase.h">
+      <Filter>Game\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientObject.h">
+      <Filter>Game\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientPet.h">
+      <Filter>Game\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientRecall.h">
+      <Filter>Game\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientSwitch.h">
+      <Filter>Game\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="TSiegeGodBall.h">
+      <Filter>Game\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="TSiegeGodTower.h">
+      <Filter>Game\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientBSP.h">
+      <Filter>Game\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientMAP.h">
+      <Filter>Game\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientCAM.h">
+      <Filter>Game\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientSfx.h">
+      <Filter>Game\SFX</Filter>
+    </ClInclude>
+    <ClInclude Include="Curse.h">
+      <Filter>Game\Curse</Filter>
+    </ClInclude>
+    <ClInclude Include="TTextLinkData.h">
+      <Filter>Game\TextLink</Filter>
+    </ClInclude>
+    <ClInclude Include="TTextLinker.h">
+      <Filter>Game\TextLink</Filter>
+    </ClInclude>
+    <ClInclude Include="TSharedPtr.h">
+      <Filter>Game\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Client</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Client</Filter>
+    </ClInclude>
+    <ClInclude Include="TClient.h">
+      <Filter>Client</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientMsgBox.h">
+      <Filter>Client</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientNICEventSink.h">
+      <Filter>Client</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientWnd.h">
+      <Filter>Client</Filter>
+    </ClInclude>
+    <ClInclude Include="TNationOption.h">
+      <Filter>Client</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientWebCtrl.h">
+      <Filter>Client\Web</Filter>
+    </ClInclude>
+    <ClInclude Include="md5.h">
+      <Filter>Client\MD5</Filter>
+    </ClInclude>
+    <ClInclude Include="TMailSender.h">
+      <Filter>Client\Error Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="TMiniDump.h">
+      <Filter>Client\Error Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="TSystemInfo.h">
+      <Filter>Client\Error Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="PacketSpyAcks.h">
+      <Filter>Client\Packet Spy</Filter>
+    </ClInclude>
+    <ClInclude Include="PacketSpyDlg.h">
+      <Filter>Client\Packet Spy</Filter>
+    </ClInclude>
+    <ClInclude Include="TStrFilter.h">
+      <Filter>Client\StrFilter</Filter>
+    </ClInclude>
+    <ClInclude Include="TClientType.h">
+      <Filter>Global</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
