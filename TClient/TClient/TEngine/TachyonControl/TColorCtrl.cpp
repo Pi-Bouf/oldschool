@@ -643,7 +643,7 @@ void CTColorCtrl::rgb_cube_data::Generate( CDC &dc, CPalette *pPalette)
 			}
 		}
 
-		for( nR=0; nR<=nHalf; nR++)
+		for( auto nR=0; nR<=nHalf; nR++)
 		{
 			for( int nB=0; nB<=nHalf; nB++)
 			{

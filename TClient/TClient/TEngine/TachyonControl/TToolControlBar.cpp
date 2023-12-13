@@ -2426,7 +2426,7 @@ void CTToolControlBar::_RecalcPositionsImpl()
 						bHorz ? 0 : -nNearestMetric);
 
 					(bHorz ? ptBtnPosCurr.x : ptBtnPosCurr.y) -= nNearestMetric;
-					for( j = nBtnWithNearestWidth + 1; j<i; j++)
+					for( auto j = nBtnWithNearestWidth + 1; j<i; j++)
 					{
 						if(!arrBtnVisibility[j])
 							continue;
@@ -2461,7 +2461,7 @@ void CTToolControlBar::_RecalcPositionsImpl()
 	int nRowStart = 0;
 	int nSizeRow = 0;
 
-	for( i=0; i<nReviewCount; i++)
+	for( auto i=0; i<nReviewCount; i++)
 	{
 		CTBarButton *pTBB = _GetButtonPtr(i);
 		CSize szTBB = *pTBB;
@@ -2528,7 +2528,7 @@ void CTToolControlBar::_RecalcPositionsImpl()
 		int nIdx0 = -1;
 		int nIdx1 = -1;
 
-		for( i=0; i<nCountOfButtons; i++)
+		for( auto i=0; i<nCountOfButtons; i++)
 		{
 			CTBarButton *pTBB = _GetButtonPtr(i);
 			if( pTBB == pTbbHidden0 )

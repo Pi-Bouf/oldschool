@@ -1335,8 +1335,10 @@ void CTPaintManager::SyncSysColors()
 		_tcscpy( lf.lfFaceName, strVertFontFaceForNt4);
 	m_FontBoldVertX.CreateFontIndirect(&lf);
 
+	int i;
+
 	COLORREF clrDefaultExtendColor = ::GetSysColor(COLOR_3DFACE);
-	for( int i = m_colors.GetSize(); i <= __TMFC_MAX_SYS_COLOR_VAL; i++)
+	for( i = m_colors.GetSize(); i <= __TMFC_MAX_SYS_COLOR_VAL; i++)
 		m_colors.Add(clrDefaultExtendColor);
 
 	HBRUSH hDefaultExtendBrush = ::GetSysColorBrush(COLOR_3DFACE);

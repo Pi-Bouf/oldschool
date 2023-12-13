@@ -589,7 +589,7 @@ void CTDockBar::RemoveAllPlaceHolders( BOOL bSearchPlaceHolder)
 	}
 
 	nCount = vPlaceHolders.GetSize();
-	for( i=0; i<nCount; i++)
+	for( auto i=0; i<nCount; i++)
 	{
 		CControlBar *pBar = vPlaceHolders[i];
 		RemovePlaceHolder( pBar, bSearchPlaceHolder);
@@ -932,7 +932,8 @@ void CTDockBar::_NewRowDockControlBar( CControlBar *pBarDocked,
 	int nIdxDockedBar = FindBar(pBarDocked);
 	int nIncrement = bLessIndex ? -1 : 1;
 
-	for( int i = nIdxDockedBar; TRUE; i += nIncrement)
+	int i;
+	for( i = nIdxDockedBar; TRUE; i += nIncrement)
 	{
 		CControlBar *pBar = (CControlBar *) m_arrBars[i];
 
@@ -1801,7 +1802,7 @@ void CTDockBar::_InjectCircle( CFrameWnd *pFrame, UINT nCircleNo)
 		return;
 
 	CTDockBar *vCircleNew[4] = { NULL, NULL, NULL, NULL};
-	for( nDockSide = 0; nDockSide < 4; nDockSide++)
+	for( auto nDockSide = 0; nDockSide < 4; nDockSide++)
 	{
 		UINT nID = vCircleOld[nDockSide]->GetDlgCtrlID();
 		vCircleNew[nDockSide] = new CTDockBar(nCircleNo);
@@ -2329,7 +2330,7 @@ void CTDynamicDockBar::_VisibleLayoutBuild( VisibleLayout& _vl)
 		int nRowMinExtent = bHorz ? nMinHW : nMinVH;
 		int nRowExtent = bHorz ? pBar->m_szDockedH.cx : pBar->m_szDockedV.cy;
 
-		for( i=1; i<nRowSize; i++)
+		for( auto i=1; i<nRowSize; i++)
 		{
 			pBar = pVLI->m_vRow[i];
 
@@ -2481,7 +2482,7 @@ void CTDynamicDockBar::_VisibleLayoutAlign( VisibleLayout& _vl, CSize _size)
 	HANDLE hDWP = ::BeginDeferWindowPos(_vl.m_nTotalBarsCount);
 	CPoint ptOffs( 0, 0);
 
-	for( nRow=0; nRow<nRowsCount; nRow++)
+	for( auto nRow=0; nRow<nRowsCount; nRow++)
 	{
 		VisibleLayoutItem *pVLI = _vl.m_vRows[nRow];
 		int nRowSize = pVLI->m_vRow.GetSize();

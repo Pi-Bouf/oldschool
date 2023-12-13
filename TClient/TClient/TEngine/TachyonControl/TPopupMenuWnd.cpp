@@ -2661,7 +2661,7 @@ BOOL CTPopupMenuWnd::_BuildItems( CMenu *pBuildMenu, BOOL bTopLevel)
 			::GetCurrentDirectory( _MAX_PATH, szCurrDir);
 
 			int nLenCurDir = _tcslen(szCurrDir);
-			for( nItemIndex=0; nItemIndex<nRecentCount; nItemIndex++)
+			for( auto nItemIndex=0; nItemIndex<nRecentCount; nItemIndex++)
 			{
 				CString strDisplayName(_T(""));
 
@@ -3813,6 +3813,7 @@ void CTPopupMenuWnd::_GetItemRect( int nIndex, RECT &rcItem)
 	rect.left = nMenuBorderSize + 1;
 	rect.right = m_szFullItems.cx + nMenuBorderSize - 1;
 
+	int it;
 	for( int i=0, it=0; i<nIndex && it != m_items_all.GetSize(); i++, it++)
 	{
 		MENUITEMDATA &mi = m_items_all[it];
@@ -5058,7 +5059,8 @@ int CTPopupMenuWnd::_GetNextItem( next_item next)
 			return IDX_NOTHING;
 		}
 
-		for( int it = m_nCurIndex + 1; it < m_items_all.GetSize(); it++)
+		int it;
+		for( it = m_nCurIndex + 1; it < m_items_all.GetSize(); it++)
 		{
 			MENUITEMDATA &mi = m_items_all[it];
 

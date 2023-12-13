@@ -13,6 +13,9 @@
 	#define __DEFAULT_PAINT_MANAGER_CLASS	CTPaintManagerXP
 #endif
 
+#define CX_BORDER   1
+#define CY_BORDER   1
+
 #define __TMFC_MIN_SYS_COLOR_VAL			0L
 #define __TMFC_MAX_SYS_COLOR_VAL			49L
 #define __TMFC_COLOR_MAP_BASE				1000L

@@ -328,7 +328,7 @@ void CTControlBar::CFriendlyFrameWnd::SetDockState( const CDockState& state,
 			pInfo->m_pBar->m_nMRUWidth = pInfo->m_nMRUWidth;
 	}
 
-	for( i=0; i<arrProps.GetSize(); i++)
+	for( auto i=0; i<arrProps.GetSize(); i++)
 	{
 		ItemData item = arrProps[i];
 
@@ -342,7 +342,7 @@ void CTControlBar::CFriendlyFrameWnd::SetDockState( const CDockState& state,
 		pBar->m_szFloated = item.m_szFloated;
 	}
 
-	for( i=0; i<state.m_arrBarInfo.GetSize(); i++)
+	for( auto i=0; i<state.m_arrBarInfo.GetSize(); i++)
 	{
 		CControlBarInfo *pInfo = (CControlBarInfo *) state.m_arrBarInfo[i];
 
@@ -356,7 +356,7 @@ void CTControlBar::CFriendlyFrameWnd::SetDockState( const CDockState& state,
 		}
 	}
 
-	for( i=0; i<state.m_arrBarInfo.GetSize(); i++)
+	for( auto i=0; i<state.m_arrBarInfo.GetSize(); i++)
 	{
 		CControlBarInfo *pInfo = (CControlBarInfo *) state.m_arrBarInfo[i];
 
@@ -733,7 +733,7 @@ void CTControlBar::CDockStateSite::StateSet() const
 	m_pDockSite->RecalcLayout();
 
 	nCount = m_arrBarStates.GetSize();
-	for( i=0; i<nCount; i++)
+	for( auto i=0; i<nCount; i++)
 	{
 		CDockStateBar *pState = m_arrBarStates[i];
 		pState->StateSet( m_pDockSite, NULL);
@@ -744,7 +744,7 @@ void CTControlBar::CDockStateSite::StateSet() const
 		m_arrProps);
 
 	nCount = m_arrBarStates.GetSize();
-	for( i=0; i<nCount; i++)
+	for( auto i=0; i<nCount; i++)
 	{
 		CDockStateBar *pState = m_arrBarStates[i];
 		pState->PreSyncAttributes( m_pDockSite, NULL);
@@ -753,7 +753,7 @@ void CTControlBar::CDockStateSite::StateSet() const
 	m_pDockSite->RecalcLayout();
 	nCount = m_arrBarStates.GetSize();
 
-	for( i=0; i<nCount; i++)
+	for( auto i=0; i<nCount; i++)
 	{
 		CDockStateBar *pState = m_arrBarStates[i];
 
@@ -771,7 +771,7 @@ void CTControlBar::CDockStateSite::StateSet() const
 		}
 	}
 
-	for( pos = m_pDockSite->m_listControlBars.GetHeadPosition(); pos;)
+	for( auto pos = m_pDockSite->m_listControlBars.GetHeadPosition(); pos;)
 	{
 		CControlBar *pBar = (CControlBar *) m_pDockSite->m_listControlBars.GetNext(pos);
 
@@ -1846,7 +1846,7 @@ void CTControlBar::_GetNextRowBars( BOOL bNextRow,
 	BOOL bHorz = IsDockedHorizontally();
 	int nBarWidth = 0;
 
-	for( i = nFirstToReview; TRUE; i += nIncrement )
+	for( auto i = nFirstToReview; TRUE; i += nIncrement )
 	{
 		if( i < 0 || i >= nTotalDockCount )
 			break;
@@ -2522,7 +2522,7 @@ CSize CTControlBar::CalcDynamicLayout( int nLength,
 	}
 	else
 	{
-		for( i=nReviewStart; i<=nReviewStop; i++)
+		for( auto i=nReviewStart; i<=nReviewStop; i++)
 		{
 			CControlBar *pBar = (CControlBar *) m_pDockBar->m_arrBars[i];
 
@@ -2592,7 +2592,7 @@ CSize CTControlBar::CalcDynamicLayout( int nLength,
 		}
 
 		nCountOfMinSizedBars = 0;
-		for( i=nReviewStart; i<=nReviewStop; i++)
+		for( auto i=nReviewStart; i<=nReviewStop; i++)
 		{
 			CControlBar *pBar = (CControlBar *) m_pDockBar->m_arrBars[i];
 
@@ -2626,7 +2626,7 @@ CSize CTControlBar::CalcDynamicLayout( int nLength,
 			int nPassMax = 2 * abs(nCalcExtentDiff);
 			int nPass = 0;
 
-			i = nReviewStart;
+			auto i = nReviewStart;
 			while(nCalcExtentDiff != 0 && nCountOfMinSizedBars != nCountBarsInRowReal && nPass < nPassMax)
 			{
 				if( i == nReviewStop + 1 )
@@ -2727,7 +2727,7 @@ CSize CTControlBar::CalcDynamicLayout( int nLength,
 		SWP_NOOWNERZORDER|
 		SWP_NOACTIVATE;
 
-	for( i = nReviewStart; i<=nReviewStop; i++)
+	for( auto i = nReviewStart; i<=nReviewStop; i++)
 	{
 		CControlBar *pBar = (CControlBar *) m_pDockBar->m_arrBars[i];
 
@@ -3268,7 +3268,7 @@ UINT CTControlBar::NcButtons_HitTest( CPoint point,
 	return nFirstHT;
 }
 
-UINT CTControlBar::OnNcHitTest( CPoint point)
+LRESULT CTControlBar::OnNcHitTest( CPoint point)
 {
 	UINT nHT = NcButtons_HitTest(point);
 
@@ -3361,7 +3361,11 @@ void CTControlBar::_GetDeepNcModeMetrics( BOOL& bEnableResizerLeft,
 	BOOL bFirstVisibleOnRow = TRUE;
 	BOOL bPrevRowExist = FALSE;
 
-	for( int i = nOwnIdx - 1; i > 0; i--)
+	/**
+	@WARN: Check behind, the for( i--; i>0; i--) statement
+*/
+	int i;
+	for( auto i = nOwnIdx - 1; i > 0; i--)
 	{
 		CControlBar *pBar = (CControlBar *) pDockBar->m_arrBars[i];
 
@@ -3401,7 +3405,7 @@ void CTControlBar::_GetDeepNcModeMetrics( BOOL& bEnableResizerLeft,
 	BOOL bLastVisibleOnRow = TRUE;
 	BOOL bNextRowExist = FALSE;
 
-	for( i = nOwnIdx + 1; i<nCount; i++)
+	for( auto i = nOwnIdx + 1; i<nCount; i++)
 	{
 		CControlBar *pBar = (CControlBar *) pDockBar->m_arrBars[i];
 
@@ -4456,7 +4460,7 @@ void CTControlBar::_RowResizingStop( BOOL bCancel)
 						_GetNextRowBars( FALSE, vNextRow);
 
 					nCount = vNextRow.GetSize();
-					for( i=0; i<nCount; i++)
+					for( auto i=0; i<nCount; i++)
 					{
 						CTControlBar *pBar = (CTControlBar *) vNextRow[i];
 
@@ -5703,7 +5707,7 @@ void CTControlBar::_CompressRowSpace( int nSpaceNeeded,
 	if( nSpaceAvail > nSpaceNeeded )
 		nSpaceAvail = nSpaceNeeded;
 
-	for( i=nCount; i>0; i--)
+	for( auto i=nCount; i>0; i--)
 	{
 		CControlBar *pBar = arrPrevBars[i - 1];
 		CRect &rcBar = vBarRects[i - 1];
@@ -5722,7 +5726,7 @@ void CTControlBar::_CompressRowSpace( int nSpaceNeeded,
 			break;
 	}
 
-	for( i=0; i<nCount; i++)
+	for( auto i=0; i<nCount; i++)
 	{
 		CControlBar *pBar = arrPrevBars[i];
 		CRect& rcBar = vBarRects[i];
@@ -7181,7 +7185,7 @@ void CTControlBar::DraggingState::CalcStateFixed( CPoint ptTrack)
 						if( nOffsetBarPrev < nOffsetBarPrevMax )
 							nOffsetBarPrev = nOffsetBarPrevMax;
 
-						for( i = nCountInRowBefore; i>0; i--)
+						for( auto i = nCountInRowBefore; i>0; i--)
 						{
 							BarRepositionData& brd = vRepositionPrev[i - 1];
 							int nMetric = bHorzSliding ? brd.m_rcDst.right : brd.m_rcDst.bottom;
@@ -7246,7 +7250,7 @@ void CTControlBar::DraggingState::CalcStateFixed( CPoint ptTrack)
 						if( nOffsetBarNext > nOffsetBarNextMax)
 							nOffsetBarNext = nOffsetBarNextMax;
 
-						for( i=0; i<nCountInRowAfter; i++)
+						for( auto i=0; i<nCountInRowAfter; i++)
 						{
 							BarRepositionData& brd = vRepositionNext[i];
 							int nMetric = bHorzSliding ? brd.m_rcDst.left : brd.m_rcDst.top;
@@ -7993,7 +7997,7 @@ void CTControlBar::DraggingState::CalcStateDynamic( CPoint ptTrack)
 				rcCircle0.top < rcCircle0.bottom &&
 				rcTestCircle0.PtInRect(ptTrack))
 			{
-				for( i=0; i<4; i++)
+				for( auto i=0; i<4; i++)
 				{
 					DWORD dwDockStyle = _dwDockBarMap[i][1];
 
@@ -8112,7 +8116,7 @@ void CTControlBar::DraggingState::CalcStateDynamic( CPoint ptTrack)
 						_sizeMaxInner.cy = ::MulDiv( _sizeMaxInner.cy, 3, 4);
 
 						UINT nSrcBarCircleNo = ((CTDockBar *) m_pBarSrc->m_pDockBar)->_GetCircleNo();
-						for( i=0; i<4; i++)
+						for( auto i=0; i<4; i++)
 						{
 							DWORD dwDockStyle = _dwDockBarMap[i][1];
 
@@ -9722,7 +9726,7 @@ void CTControlBar::_UpdateVisibilityInRow()
 	LONG nExtentDesizred = nDelayedRowUpdateMetric;
 	while( nExtentDesizred>0 && nCountInRow > 0 )
 	{
-		for( i=0; i<nCountInRow;)
+		for( auto i=0; i<nCountInRow;)
 		{
 			CTControlBar *pBar = vRow[i];
 			LONG &nRealBarExtentRef = bHorz ? pBar->m_szDockedH.cx : pBar->m_szDockedV.cy;
@@ -10054,7 +10058,7 @@ void CTControlBar::_PreSyncRowMetrics()
 	LONG &nCrossMetricOwnRef = bHorz ? m_szDockedH.cy : m_szDockedV.cx;
 	LONG nCrossMetricOther = -1;
 
-	for( i=0; i<nCount && nOwnMetric>0;)
+	for( auto i=0; i<nCount && nOwnMetric>0;)
 	{
 		CTControlBar *pBar = vRow[i];
 		LONG &nRefBarMetric = bHorz ? pBar->m_szDockedH.cx : pBar->m_szDockedV.cy;
