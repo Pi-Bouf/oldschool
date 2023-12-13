@@ -56,7 +56,7 @@ void TCMLParser::Load( char* fname, TCMLParserProgress* pProgress)
 	}
 
 	fread( &nCount, sizeof(int), 1, pFILE);
-	for( i=0; i<nCount; i++)
+	for( auto i=0; i<nCount; i++)
 	{
 		LP_TCML_LOGFONT pFONT = new TCML_LOGFONT();
 
