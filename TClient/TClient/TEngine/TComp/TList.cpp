@@ -516,7 +516,7 @@ void TList::AddTextSetting(INT iRow, INT iColunm, INT iStart, INT iEnd, DWORD dw
 	 setting.dwColor = dwColor;
 	 setting.dwUser = dwInfo;
 	 
-	 itr->second->m_TextSettingSet.insert(setting);
+	 itr->second->m_TextSettingSet.push_back(setting);
 
 	 m_bNeedUpdateRender = TRUE;
 }

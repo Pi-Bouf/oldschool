@@ -5,16 +5,12 @@
 CTachyonRes*	g_pImagePool = NULL;
 CTachyonRes*	g_pMenuPool = NULL;
 
-struct LessLOGFONT : public binary_function<LOGFONT, LOGFONT, bool>
-{	
-	bool operator()(const LOGFONT& _Left, const LOGFONT& _Right) const
-	{	
-		return(	_Left.lfHeight < _Right.lfHeight ||
-				_Left.lfWidth < _Right.lfWidth ||
-				_Left.lfItalic < _Right.lfItalic ||
-				_Left.lfUnderline < _Right.lfUnderline ||
-				_Left.lfStrikeOut < _Right.lfStrikeOut ||
-				std::string(_Left.lfFaceName) < std::string(_Right.lfFaceName) );
+struct LessLOGFONT
+{
+	bool operator()(const LOGFONT& left, const LOGFONT& right) const
+	{
+		return std::tie(left.lfHeight, left.lfWidth, left.lfItalic, left.lfUnderline, left.lfStrikeOut, std::string(left.lfFaceName))
+			< std::tie(right.lfHeight, right.lfWidth, right.lfItalic, right.lfUnderline, right.lfStrikeOut, std::string(right.lfFaceName));
 	}
 };
 typedef std::map<LOGFONT, CFont*, LessLOGFONT> CFONT_MAP;

@@ -51,18 +51,33 @@ public:
 
 		bool operator < (const TextSetting& l) const
 		{
-			if( iStart == l.iStart )
+			if (iStart == l.iStart)
 			{
-				if( iEnd == l.iEnd )
+				if (iEnd == l.iEnd)
 					return dwColor < l.dwColor;
 				else
 					return iEnd < l.iEnd;
 			}
 			else
 				return iStart < l.iStart;
-		}
+		};
+
+		bool operator ==(const TextSetting& rhs) const
+		{
+			if (iStart == rhs.iStart &&
+				iEnd == rhs.iEnd &&
+				dwColor == rhs.dwColor)
+				return true;
+
+			return false;
+		};
+
+		bool operator !=(const TextSetting& rhs) const
+		{
+			return !operator == (rhs);
+		};
 	};
-	typedef ::std::set<TextSetting> TextSettingSet;
+	typedef ::std::vector<TextSetting> TextSettingSet;
 
 	struct TextOutputData
 	{

@@ -702,12 +702,12 @@ void THttpCtrl::OnChar( UINT nChar, int nRepCnt, UINT nFlags)
 
 	MultiByteToWideChar(
 		nTCP, 0,
-		(LPCSTR) &nChar,
+		(LPCSTR)&nChar,
 		sizeof(UINT),
-		&wTLANG, 1);
+		reinterpret_cast<LPWSTR>(&wTLANG), 1);
 
-	for( int i=0; i<nRepCnt; i++)
-		pCaret->InsertText( &wTLANG, 1);
+	for (int i = 0; i < nRepCnt; i++)
+		pCaret->InsertText(reinterpret_cast<OLECHAR*>(&wTLANG), 1);
 
 	pCaret->Release();
 	pDS->Release();

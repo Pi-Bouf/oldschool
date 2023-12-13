@@ -6,6 +6,20 @@
 #if !defined(AFX_STDAFX_H__944DD3E7_59CF_4318_BAE1_015912087125__INCLUDED_)
 #define AFX_STDAFX_H__944DD3E7_59CF_4318_BAE1_015912087125__INCLUDED_
 
+typedef struct DXGI_JPEG_AC_HUFFMAN_TABLE {
+	int CodeCounts[16];
+	int CodeValues[162];
+};
+
+typedef struct DXGI_JPEG_DC_HUFFMAN_TABLE {
+	int CodeCounts[12];
+	int CodeValues[12];
+};
+
+typedef struct DXGI_JPEG_QUANTIZATION_TABLE {
+	int Elements[64];
+};
+
 #pragma warning( disable : 4786 4530 4503)
 
 #if _MSC_VER > 1000

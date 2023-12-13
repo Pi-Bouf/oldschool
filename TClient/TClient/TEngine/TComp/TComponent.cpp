@@ -1717,7 +1717,7 @@ void TComponent::AddTextSetting(INT iStart, INT iEnd, DWORD dwColor, DWORD dwUse
 	data.dwUser = dwUser;
 	data.iType = iType;
 
-	m_TextSettingSet.insert(data);
+	m_TextSettingSet.push_back(data);
 
 	m_bNeedUpdateTextSetting = TRUE;
 }
@@ -1777,20 +1777,25 @@ void TComponent::RemoveTextSetting(INT iStart, INT iEnd)
 
 		inData.iStart = data.iStart;
 		inData.iEnd = iStart - 1;
-		m_TextSettingSet.insert( inData );
+		m_TextSettingSet.push_back( inData );
 
 		inData.iStart = iEnd + 1;
 		inData.iEnd = data.iEnd;
-		m_TextSettingSet.insert( inData );
+		m_TextSettingSet.push_back( inData );
 	}
 
 	m_bNeedUpdateTextSetting = TRUE;
 }
 void TComponent::RemoveTextSetting(const TextSetting& data)
 {
-	TextSettingSet::iterator itr = m_TextSettingSet.find(data);
-	if( itr != m_TextSettingSet.end() )
-		m_TextSettingSet.erase(itr);
+	auto it = m_TextSettingSet.begin();
+	while (it != m_TextSettingSet.end())
+	{
+		if (*it == data)
+			it = m_TextSettingSet.erase(it);
+		else
+			++it;
+	}
 
 	m_bNeedUpdateTextSetting = TRUE;
 }
