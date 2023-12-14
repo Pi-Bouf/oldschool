@@ -2,6 +2,13 @@
 **/.idea/*
 
 **/*.obj
+**/*.cod
+**/*.idb
+**/*.pch
+**/*.res
+**/*.htm
+**/*.FileListAbsolute.txt
+**/*.exp
 **/*.tlog
 **/*.log
 **/*.pdb

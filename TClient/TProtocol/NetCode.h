@@ -120,6 +120,18 @@
 
 #define TUTORIAL_MAPID					2010
 
+inline void CalcMoney(INT64 dlMoney, DWORD& dwGold, DWORD& dwSilver, DWORD& dwCooper)
+{
+	dwCooper = DWORD(dlMoney % MONEY_MULTIPLY);
+	dwSilver = DWORD((dlMoney / MONEY_MULTIPLY) % MONEY_MULTIPLY);
+	dwGold = DWORD(dlMoney / MONEY_MULTIPLY / MONEY_MULTIPLY);
+}
+
+inline INT64 CalcMoney(DWORD dwGold, DWORD dwSilver, DWORD dwCopper)
+{
+	return dwCopper + dwSilver * MONEY_MULTIPLY + __int64(dwGold) * MONEY_MULTIPLY * MONEY_MULTIPLY;
+}
+
 typedef enum GAMBLE_RESULT
 {
 	GAMBLE_SUCCESS = 0,
@@ -735,6 +747,7 @@ typedef enum TOURNAMENT_RESULT
 	TOURNAMENT_CLASS,			//지원할 수 없는 직업입니다.
 	TOURNAMENT_MONEY,			//돈이 부족합니다.
 	TOURNAMENT_ITEM,			//필요아이템(허가서) 부족.
+	TOURNAMENT_LEVEL,
 	TOURNAMENT_FAIL
 };
 

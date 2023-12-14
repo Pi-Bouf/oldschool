@@ -3656,7 +3656,7 @@ DWORD CTMapSvrModule::OnDM_LOADCHAR_ACK( LPPACKETBUF pBUF)
 	pBUF->m_packet
 		>> wCount;
 
-	for(i=0; i<wCount; i++)
+	for( auto i=0; i<wCount; i++)
 	{
 		BYTE bCabinetID;
 		BYTE bUse;
@@ -3671,7 +3671,7 @@ DWORD CTMapSvrModule::OnDM_LOADCHAR_ACK( LPPACKETBUF pBUF)
 	pBUF->m_packet
 		>> wCount;
 
-	for(i=0; i<wCount; i++)
+	for( auto i=0; i<wCount; i++)
 	{
 		BYTE bStorageType;
 		DWORD dwStorageID;
@@ -3738,7 +3738,7 @@ DWORD CTMapSvrModule::OnDM_LOADCHAR_ACK( LPPACKETBUF pBUF)
 		>> wCount;
 	pPlayer->m_vRemainSkill.clear();
 
-	for( i=0; i<wCount; i++)
+	for( auto i=0; i<wCount; i++)
 	{
 		WORD wSkillID;
 		BYTE bSLevel;
@@ -3780,7 +3780,7 @@ DWORD CTMapSvrModule::OnDM_LOADCHAR_ACK( LPPACKETBUF pBUF)
 	pBUF->m_packet
 		>> wCount;
 
-	for( i=0; i<wCount; i++)
+	for( auto i=0; i<wCount; i++)
 	{
 		WORD wESkillID;
 		BYTE bESLevel;
@@ -3843,7 +3843,7 @@ DWORD CTMapSvrModule::OnDM_LOADCHAR_ACK( LPPACKETBUF pBUF)
 	pBUF->m_packet
 		>> wCount;
 
-	for( i=0; i<wCount; i++)
+	for( auto i=0; i<wCount; i++)
 	{
 		CQuest *pQUEST = NULL;
 
@@ -3890,7 +3890,7 @@ DWORD CTMapSvrModule::OnDM_LOADCHAR_ACK( LPPACKETBUF pBUF)
 	pBUF->m_packet
 		>> wCount;
 
-	for( i=0; i<wCount; i++)
+	for( auto i=0; i<wCount; i++)
 	{
 		DWORD dwQuestID;
 		DWORD dwTermID;
@@ -3923,7 +3923,7 @@ DWORD CTMapSvrModule::OnDM_LOADCHAR_ACK( LPPACKETBUF pBUF)
 	pBUF->m_packet
 		>> wCount;
 
-	for( i=0; i<wCount; i++)
+	for( auto i=0; i<wCount; i++)
 	{
 		BYTE bInvenID;
 		BYTE bInvenSave;
@@ -3950,7 +3950,7 @@ DWORD CTMapSvrModule::OnDM_LOADCHAR_ACK( LPPACKETBUF pBUF)
 	pBUF->m_packet
 		>> wCount;
 
-	for( i=0; i<wCount; i++)
+	for( auto i=0; i<wCount; i++)
 	{
 		DWORD dwTick;
 		WORD wDelayGroup;
@@ -3970,7 +3970,7 @@ DWORD CTMapSvrModule::OnDM_LOADCHAR_ACK( LPPACKETBUF pBUF)
 	pBUF->m_packet
 		>> wCount;
 
-	for( i=0; i<wCount; i++)
+	for( auto i=0; i<wCount; i++)
 	{
 		CString strName;
 		WORD wPetID;
@@ -4005,7 +4005,7 @@ DWORD CTMapSvrModule::OnDM_LOADCHAR_ACK( LPPACKETBUF pBUF)
 	pBUF->m_packet
 		>> wCount;
 
-	for(i=0; i<wCount; i++)
+	for( auto i=0; i<wCount; i++)
 	{
 		WORD wItemID;
 		BYTE bType;
@@ -4054,7 +4054,7 @@ DWORD CTMapSvrModule::OnDM_LOADCHAR_ACK( LPPACKETBUF pBUF)
 	pBUF->m_packet
 		>> wCount;
 
-	for( i=0; i<wCount; i++)
+	for( auto i=0; i<wCount; i++)
 	{
 		DWORD dwLiveTick;
 		DWORD dwID;
@@ -4170,7 +4170,7 @@ DWORD CTMapSvrModule::OnDM_LOADCHAR_ACK( LPPACKETBUF pBUF)
 	pBUF->m_packet
 		>> wCount;
 
-	for( i=0; i<wCount; i++)
+	for( auto i=0; i<wCount; i++)
 	{
 		DWORD dwRecallID;
 		WORD wESkillID;
@@ -4229,7 +4229,7 @@ DWORD CTMapSvrModule::OnDM_LOADCHAR_ACK( LPPACKETBUF pBUF)
 	pBUF->m_packet
 		>> wCount;
 
-	for(i=0; i<wCount; i++)
+	for( auto i=0; i<wCount; i++)
 	{
 		LPTPROTECTED pProtected = new TPROTECTED();
 
@@ -4254,7 +4254,7 @@ DWORD CTMapSvrModule::OnDM_LOADCHAR_ACK( LPPACKETBUF pBUF)
 			>> pPlayer->m_aPvPRecord[cr][0]
 			>> pPlayer->m_aPvPRecord[cr][1];
 	}
-	for(i = 0; i < TCLASS_COUNT; i++)
+	for( auto i = 0; i < TCLASS_COUNT; i++)
 	{		
 		pPlayer->m_dwTotalLose += pPlayer->m_aPvPRecord[i][0];
 		pPlayer->m_dwTotalWin += pPlayer->m_aPvPRecord[i][1];
@@ -4263,7 +4263,7 @@ DWORD CTMapSvrModule::OnDM_LOADCHAR_ACK( LPPACKETBUF pBUF)
 	pBUF->m_packet
 		>> wCount;
 
-	for(i=0; i<wCount; i++)
+	for( auto i=0; i<wCount; i++)
 	{
 		TRECORDSET set;
 		pBUF->m_packet
@@ -4280,7 +4280,7 @@ DWORD CTMapSvrModule::OnDM_LOADCHAR_ACK( LPPACKETBUF pBUF)
 	pBUF->m_packet
 		>> wCount;
 	
-	for(i = 0; i < wCount; i++)
+	for( auto i = 0; i < wCount; i++)
 	{
 		TRECORDSET set;
 		
@@ -4300,7 +4300,7 @@ DWORD CTMapSvrModule::OnDM_LOADCHAR_ACK( LPPACKETBUF pBUF)
 
 	if(wCount)
 	{
-		for(i = 0; i < TCLASS_COUNT; i++)
+		for( auto i = 0; i < TCLASS_COUNT; i++)
 		{
 			pBUF->m_packet
 				>> pPlayer->m_aDuelScore[i][0]
@@ -4316,7 +4316,7 @@ DWORD CTMapSvrModule::OnDM_LOADCHAR_ACK( LPPACKETBUF pBUF)
 
 	if(wCount)
 	{
-		for( i = 0; i < wCount; i++)
+		for( auto i = 0; i < wCount; i++)
 		{
 			pBUF->m_packet
 				>> dwAuctionID;
@@ -4330,7 +4330,7 @@ DWORD CTMapSvrModule::OnDM_LOADCHAR_ACK( LPPACKETBUF pBUF)
 
 	if(wCount)
 	{
-		for( i = 0; i < wCount; i++)
+		for( auto i = 0; i < wCount; i++)
 		{
 			pBUF->m_packet
 				>> dwAuctionID;			
@@ -4344,7 +4344,7 @@ DWORD CTMapSvrModule::OnDM_LOADCHAR_ACK( LPPACKETBUF pBUF)
 
 	if(wCount)
 	{
-		for(i = 0; i < wCount; i++ )
+		for( auto i = 0; i < wCount; i++ )
 		{
 			pBUF->m_packet
 				>> dwAuctionID;				
@@ -5218,7 +5218,7 @@ DWORD CTMapSvrModule::OnDM_SAVECHAR_REQ( LPPACKETBUF pBUF)
 	pBUF->m_packet
 		>> bCabinetCount;
 
-	for(i=0; i<bCabinetCount; i++)
+	for( auto i=0; i<bCabinetCount; i++)
 	{
 		BYTE bCabinetID;
 		BYTE bUse;
@@ -5259,7 +5259,7 @@ DWORD CTMapSvrModule::OnDM_SAVECHAR_REQ( LPPACKETBUF pBUF)
 
 	DEFINE_QUERY(&m_db, CSPSaveSkill);
 	query->m_dwCharID = dwCharID;
-	for(i=0; i<bSkillCount; i++)
+	for( auto i=0; i<bSkillCount; i++)
 	{
 		pBUF->m_packet
 			>> query->m_wSkill
@@ -5276,7 +5276,7 @@ DWORD CTMapSvrModule::OnDM_SAVECHAR_REQ( LPPACKETBUF pBUF)
 
 	DEFINE_QUERY(&m_db, CSPSaveSkillMaintain);
 	query->m_dwCharID = dwCharID;
-	for(i=0; i<wMaintainCnt; i++)
+	for( auto i=0; i<wMaintainCnt; i++)
 	{
 		pBUF->m_packet
 			>> query->m_wSkillID
@@ -5297,7 +5297,7 @@ DWORD CTMapSvrModule::OnDM_SAVECHAR_REQ( LPPACKETBUF pBUF)
 	pBUF->m_packet
 		>> wDuringItem;
 
-	for(i=0; i<wDuringItem; i++)
+	for( auto i=0; i<wDuringItem; i++)
 	{
 		BYTE bKind;
 		WORD wItemID;
@@ -5344,7 +5344,7 @@ DWORD CTMapSvrModule::OnDM_SAVECHAR_REQ( LPPACKETBUF pBUF)
 
 	DEFINE_QUERY(&m_db, CSPSaveItemUsed)
 	query->m_dwCharID = dwCharID;
-	for(i=0; i<wIUCnt; i++)
+	for( auto i=0; i<wIUCnt; i++)
 	{
 		pBUF->m_packet
 			>> query->m_wDelayGroupID
@@ -5389,7 +5389,7 @@ DWORD CTMapSvrModule::OnDM_SAVECHAR_REQ( LPPACKETBUF pBUF)
 	pBUF->m_packet
 		>> wCount;
 
-	for( i=0; i<wCount; i++)
+	for( auto i=0; i<wCount; i++)
 	{
 		pBUF->m_packet
 			>> query->m_dwQuestID
@@ -5408,7 +5408,7 @@ DWORD CTMapSvrModule::OnDM_SAVECHAR_REQ( LPPACKETBUF pBUF)
 	pBUF->m_packet
 		>> wCount;
 
-	for( i=0; i<wCount; i++)
+	for( auto i=0; i<wCount; i++)
 	{
 		pBUF->m_packet
 			>> query->m_dwQuestID
@@ -5441,7 +5441,7 @@ DWORD CTMapSvrModule::OnDM_SAVECHAR_REQ( LPPACKETBUF pBUF)
 		>> wCount;
 
 	query->m_bDelete = FALSE;
-	for(i=0; i<wCount; i++)
+	for( auto i=0; i<wCount; i++)
 	{
 		pBUF->m_packet
 			>> query->m_dwMonID
@@ -5465,7 +5465,7 @@ DWORD CTMapSvrModule::OnDM_SAVECHAR_REQ( LPPACKETBUF pBUF)
 
 	DEFINE_QUERY(&m_db, CSPSaveRecallMaintain);
 	query->m_dwCharID = dwCharID;
-	for(i=0; i<wMaintainCnt; i++)
+	for( auto i=0; i<wMaintainCnt; i++)
 	{
 		pBUF->m_packet
 			>> query->m_dwRecallID
@@ -5492,7 +5492,7 @@ DWORD CTMapSvrModule::OnDM_SAVECHAR_REQ( LPPACKETBUF pBUF)
 	CString strPetName;
 	__int64 timeUse;
 
-	for(i=0; i<bCount; i++)
+	for( auto i=0; i<bCount; i++)
 	{
 		pBUF->m_packet
 			>> query->m_wPetID
@@ -5518,7 +5518,7 @@ DWORD CTMapSvrModule::OnDM_SAVECHAR_REQ( LPPACKETBUF pBUF)
 	__TIMETODB(0, query->m_dlDate);
 	query->Call();
 
-	for(i=0; i<wCount; i++)
+	for( auto i=0; i<wCount; i++)
 	{
 		pBUF->m_packet
 			>> strName
@@ -5548,7 +5548,7 @@ DWORD CTMapSvrModule::OnDM_SAVECHAR_REQ( LPPACKETBUF pBUF)
 	__TIMETODB(0, query->m_timeDuel);
 	query->Call();
 
-	for(i = 0 ; i < wCount; i++)
+	for( auto i = 0 ; i < wCount; i++)
 	{
 		pBUF->m_packet
 			>> strName
@@ -5568,7 +5568,7 @@ DWORD CTMapSvrModule::OnDM_SAVECHAR_REQ( LPPACKETBUF pBUF)
 	DEFINE_QUERY(&m_db,CSPDuelScore)
 	query->m_dwCharID = dwCharID;	
 
-	for(i = 0; i < TCLASS_COUNT; i++)
+	for( auto i = 0; i < TCLASS_COUNT; i++)
 	{
 		pBUF->m_packet
 			>> query->m_aDuelScore[i][0]
@@ -5586,7 +5586,7 @@ DWORD CTMapSvrModule::OnDM_SAVECHAR_REQ( LPPACKETBUF pBUF)
 	pBUF->m_packet
 		>> wCount;
 
-	for(i=0; i<wCount; i++)
+	for( auto i=0; i<wCount; i++)
 	{
 		pBUF->m_packet
             >> query->m_dwTarget
@@ -5607,7 +5607,7 @@ DWORD CTMapSvrModule::OnDM_SAVECHAR_REQ( LPPACKETBUF pBUF)
 	pBUF->m_packet
 		>> wCount;
 
-	for(i = 0; i < wCount; i++)
+	for( auto i = 0; i < wCount; i++)
 	{
 		pBUF->m_packet
 			>> query->m_dwAuctionID;
@@ -8977,7 +8977,7 @@ DWORD CTMapSvrModule::OnMW_CHARSTATINFOANS_REQ(LPPACKETBUF pBUF)
 }
 DWORD CTMapSvrModule::OnMW_LOCALENABLE_REQ(LPPACKETBUF pBUF)
 {
-	static bCurStatus = BS_NORMAL;
+	static INT bCurStatus = BS_NORMAL;
 
 	BYTE bStatus;
 	DWORD dwSecond;
@@ -9757,7 +9757,7 @@ DWORD CTMapSvrModule::OnMW_TMSOUT_REQ(LPPACKETBUF pBUF)
 }
 DWORD CTMapSvrModule::OnMW_CASTLEENABLE_REQ(LPPACKETBUF pBUF)
 {
-	static bCurStatus = BS_NORMAL;
+	static INT bCurStatus = BS_NORMAL;
 
 	BYTE bStatus;
 	DWORD dwSecond;
@@ -11913,7 +11913,7 @@ DWORD CTMapSvrModule::OnMW_RECALLMONDATA_REQ(LPPACKETBUF pBUF)
 	pBUF->m_packet
 		>> wMaintainCnt;
 
-	for(i=0; i<wMaintainCnt; i++)
+	for( auto i=0; i<wMaintainCnt; i++)
 	{
 		CTSkill * pMaintain = new CTSkill();
 		pBUF->m_packet
@@ -15539,8 +15539,8 @@ DWORD CTMapSvrModule::OnMW_HELPMESSAGE_REQ(LPPACKETBUF pBUF)
 
 DWORD CTMapSvrModule::OnMW_MISSIONENABLE_REQ(LPPACKETBUF pBUF)
 {
-	static bCurStatus = BS_NORMAL;
-	static dwCurStart = 0;
+	static INT bCurStatus = BS_NORMAL;
+	static INT dwCurStart = 0;
 
 	BYTE bStatus;
 	DWORD dwStart;

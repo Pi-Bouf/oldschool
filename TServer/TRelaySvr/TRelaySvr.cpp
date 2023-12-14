@@ -1430,12 +1430,15 @@ void CTRelaySvrModule::ClearCharData(CTPlayer * pPlayer)
 
 BYTE CTRelaySvrModule::IsMeetingRoom(WORD wMapID, BYTE bIsSmall)
 {
-	BYTE bIn = wMapID >= MEETING_MAPID && wMapID <= MEETING_MAPID + MEETING_SROOM_COUNT;
+	// TODO Fix that
+	//BYTE bIn = wMapID >= MEETING_MAPID && wMapID <= MEETING_MAPID + MEETING_SROOM_COUNT;
 
-	if(bIsSmall)
-		bIn = bIn && wMapID != MEETING_MAPID;
+	//if(bIsSmall)
+	//	bIn = bIn && wMapID != MEETING_MAPID;
 
-	return bIn;
+	//return bIn;
+
+	return 0;
 }
 
 #ifdef	DEF_UDPLOG

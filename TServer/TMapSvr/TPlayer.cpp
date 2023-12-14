@@ -1993,7 +1993,7 @@ BYTE CTPlayer::OnQuestComplete( LPMAPTSKILLTEMP pSKILLTEMP,
 		PushTItem(&vITEM);
 		vITEM.clear();
 
-		for(i=0; i<vItemID.size(); i++)
+		for( auto i=0; i<vItemID.size(); i++)
 			_AtlModule.CheckQuest(
 				this,
 				0,
@@ -2009,7 +2009,7 @@ BYTE CTPlayer::OnQuestComplete( LPMAPTSKILLTEMP pSKILLTEMP,
 		vCount.clear();
 	}
 
-	for( i=0; i<INT(pQUEST->m_vReward.size()); i++)
+	for( auto i=0; i<INT(pQUEST->m_vReward.size()); i++)
 		if( pQUEST->m_vReward[i]->m_bRewardType != RT_ITEM &&
 			pQUEST->m_vReward[i]->m_bRewardType != RT_MAGICITEM )
 		{
@@ -2081,7 +2081,7 @@ BYTE CTPlayer::OnQuestComplete( LPMAPTSKILLTEMP pSKILLTEMP,
 				}
 		}
 
-	for( i=0; i<INT(pQUEST->m_vTerm.size()); i++)
+	for( auto i=0; i<INT(pQUEST->m_vTerm.size()); i++)
 		if( pQUEST->m_vTerm[i]->m_bTermType == QTT_GETITEM )
 		{
 			BYTE bRemain = pQUEST->m_vTerm[i]->m_bCount;

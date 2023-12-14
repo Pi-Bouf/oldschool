@@ -2499,7 +2499,7 @@ DWORD CTMapSvrModule::OnCS_SKILLUSE_REQ(LPPACKETBUF pBUF)
 			dwAggro = pSkill->m_pTSKILL->GetAggro(pATTACK->m_bLevel);
 
 		if(dwAggro)
-			for(i=0; i<vMONSTER.size(); i++)
+			for(auto i=0; i<vMONSTER.size(); i++)
 			{
 				CTMonster *pMON = pPlayer->m_pMAP->FindMonster(vMONSTER[i]);
 				if(pMON)
@@ -2856,7 +2856,7 @@ DWORD CTMapSvrModule::OnCS_LOOPSKILL_REQ(LPPACKETBUF pBUF)
 	}
 
 	if(bAttackType != OT_MON &&	pSkill->GetAggro())
-		for(i=0; i<vMONSTER.size(); i++)
+		for(auto i=0; i<vMONSTER.size(); i++)
 		{
 			CTMonster * pMON = pPlayer->m_pMAP->FindMonster(vMONSTER[i]);
 			if(pMON)

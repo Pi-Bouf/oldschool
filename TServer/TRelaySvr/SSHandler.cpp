@@ -494,7 +494,7 @@ DWORD CTRelaySvrModule::OnRW_RELAYSVR_ACK(LPPACKETBUF pBUF)
 	DWORD dwID;
 	CString strMsg;
 
-	for(i=0; i<wCount; i++)
+	for(auto i=0; i<wCount; i++)
 	{
 		pBUF->m_packet
 			>> dwID
@@ -539,12 +539,13 @@ DWORD CTRelaySvrModule::OnRW_CHANGENAME_ACK(LPPACKETBUF pBUF)
 			m_mapPLAYERNAME.insert( MAPPLAYERNAME::value_type(strChgName, pPlayer) );
 		}
 		break;
-	case IK_COUNTRY:
-		pPlayer->m_bCountry = bValue;
-		break;
-	case IK_AIDCOUNTRY:
-		pPlayer->m_bAidCountry = bValue;
-		break;
+	// TODO add that !
+	//case IK_COUNTRY:
+	//	pPlayer->m_bCountry = bValue;
+	//	break;
+	//case IK_AIDCOUNTRY:
+	//	pPlayer->m_bAidCountry = bValue;
+	//	break;
 	}
 
 	return EC_NOERROR;

@@ -2799,7 +2799,7 @@ DWORD CTWorldSvrModule::OnDM_GUILDUPDATE_REQ(LPPACKETBUF pBUF)
 
 	pBUF->m_packet
 		>> bCount;
-	for(i=0; i<bCount; i++)
+	for( auto i=0; i<bCount; i++)
 	{
 		pBUF->m_packet
 			>> dwEnemy;

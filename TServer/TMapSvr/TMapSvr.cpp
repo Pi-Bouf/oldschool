@@ -6842,7 +6842,7 @@ BYTE CTMapSvrModule::MonMoneyTake(CTPlayer * pPlayer, DWORD dwMonID)
 				}
 
 			DWORD dwMonMoney = pMon->m_dwMoney;
-			for( i=0; i<DWORD(vParty.size()); i++)
+			for( auto i=0; i<DWORD(vParty.size()); i++)
 			{
 				if(wTotalLevel == 0) wTotalLevel = 1;
 				DWORD dwMoney = pMon->m_dwMoney * vParty[i]->m_bLevel / wTotalLevel;
@@ -7739,6 +7739,7 @@ void CTMapSvrModule::LocalReward()
 	}
 
 	MAPPLAYER::iterator itChar;
+	int ll;
 	for(ll=0; ll<m_vOccupation.size(); ll++)
 	{
 		LPTLOCAL pLocal = m_vOccupation[ll];
