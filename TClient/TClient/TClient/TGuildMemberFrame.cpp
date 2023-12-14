@@ -118,7 +118,8 @@ CTGuildMemberFrame::~CTGuildMemberFrame()
 void CTGuildMemberFrame::ChangePage( INT nType )
 {
 	BOOL bFind = FALSE;
-	for( INT s=0 ; s < TPVPM_COUNT ; ++s )
+	INT s;
+	for( s=0 ; s < TPVPM_COUNT ; ++s )
 	{
 		if( nType == m_nTABType[s] )
 		{

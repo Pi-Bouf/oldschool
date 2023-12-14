@@ -209,7 +209,7 @@ void CTClientRecall::InitRecall( CD3DDevice *pDevice,
 		m_vScaleSFX = CTMath::Inverse(&m_vScale);
 		m_vPosition = m_vScale * m_vWorld;
 
-		for( i=0; i<TMONSKILL_COUNT; i++)
+		for( auto i=0; i<TMONSKILL_COUNT; i++)
 		{
 			LPTSKILL pTSKILL = CTChart::FindTSKILLTEMP(m_pTEMP->m_wTSKILL[i]);
 

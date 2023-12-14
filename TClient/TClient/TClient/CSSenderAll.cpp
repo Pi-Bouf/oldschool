@@ -558,7 +558,7 @@ void CTClientGame::SendCS_SKILLUSE_REQ( CTClientObjBase *pATTACK,
 	}
 
 	bCount = bCount > BYTE(pPARAM->m_vTARGET.size()) ? bCount - BYTE(pPARAM->m_vTARGET.size()) : 0;
-	for( i=0; i<bCount; i++)
+	for( auto i=0; i<bCount; i++)
 	{
 		packet
 			<< pPARAM->m_vTBOUND[i]->m_dwID
@@ -802,7 +802,7 @@ void CTClientGame::SendCS_LOOPSKILL_REQ( CTClientObjBase *pATTACK,
 	}
 
 	bCount = bCount > BYTE(vTARGET.size()) ? bCount - BYTE(vTARGET.size()) : 0;
-	for( i=0; i<bCount; i++)
+	for( auto i=0; i<bCount; i++)
 	{
 		packet
 			<< vTBOUND[i]->m_dwID

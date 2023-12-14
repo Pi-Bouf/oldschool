@@ -225,7 +225,7 @@ CTChatFrame::CTChatFrame(TComponent *pParent, LP_FRAMEDESC pDesc, CTClientGame* 
 
 	CString strTMARK, strCMD, strTOK;
 	strTMARK.AppendChar(CHAT_CMD_MARK);
-	for( i=0; i<CHAT_COUNT; ++i )
+	for( auto i=0; i<CHAT_COUNT; ++i )
 	{
 		if( CHAT_MODE_CMD[i] == (DWORD)T_INVALID )
 			continue;

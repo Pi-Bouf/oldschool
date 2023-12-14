@@ -365,7 +365,7 @@ int CTClientGame::OnCS_CHARINFO_ACK( CTachyonSession *pSession, CPacket *pPacket
 	(*pPacket)
 		>> bCount;
 
-	for( i=0; i<bCount; i++)
+	for( auto i=0; i<bCount; i++)
 	{
 		CTClientSkill *pTSKILL = new CTClientSkill();
 		WORD wSkillID;
@@ -385,7 +385,7 @@ int CTClientGame::OnCS_CHARINFO_ACK( CTachyonSession *pSession, CPacket *pPacket
 	(*pPacket)
 		>> bCount;
 
-	for( i=0; i<bCount; i++)
+	for( auto i=0; i<bCount; i++)
 	{
 		CTClientMaintain *pTMAINTAIN = new CTClientMaintain();
 
@@ -431,7 +431,7 @@ int CTClientGame::OnCS_CHARINFO_ACK( CTachyonSession *pSession, CPacket *pPacket
 	(*pPacket)
 		>> bCount;
 
-	for( i=0; i<bCount; i++)
+	for( auto i=0; i<bCount; i++)
 	{
 		BYTE bSetID;
 
@@ -449,7 +449,7 @@ int CTClientGame::OnCS_CHARINFO_ACK( CTachyonSession *pSession, CPacket *pPacket
 	(*pPacket)
 		>> bCount;
 
-	for( i=0; i<bCount; i++)
+	for( auto i=0; i<bCount; i++)
 	{
 		DWORD dwTick;
 		WORD wDelayGroupID;
@@ -634,10 +634,10 @@ int CTClientGame::OnCS_CHARINFO_ACK( CTachyonSession *pSession, CPacket *pPacket
 
 	m_pChatFrame->ToggleTacticsChatMode( m_pMainChar->m_dwTacticsID );
 
-#ifndef TEST_MODE
-	if ( CTNationOption::INSTALL_APEX )
-		StartApexClient( pSession );
-#endif
+//#ifndef TEST_MODE
+//	if ( CTNationOption::INSTALL_APEX )
+//		StartApexClient( pSession );
+//#endif
 
 	(*pPacket)
 		>> m_pMainChar->m_dwPvPMonthPoint;
@@ -925,7 +925,7 @@ int CTClientGame::OnCS_ENTER_ACK( CTachyonSession *pSession, CPacket *pPacket)
 	pTEQUIP->m_wItemID = 0;
 	(*pPacket) >> bCount;
 
-	for( i=0; i<bCount; i++)
+	for( auto i=0; i<bCount; i++)
 	{
 		CTClientItem *pTITEM = new CTClientItem();
 
@@ -8680,7 +8680,7 @@ int CTClientGame::OnCS_CABINETLIST_ACK(CTachyonSession *pSession, CPacket *pPack
 
 	BYTE bFirstID = TMAX_CABINET_CNT;
 
-	for(i=0; i<bCount; ++i)
+	for( auto i=0; i<bCount; ++i)
 	{
 		BYTE bCabinetID;
 		BYTE bOpen;
@@ -11982,7 +11982,7 @@ int CTClientGame::OnCS_HEROLIST_ACK( CTachyonSession *pSession, CPacket *pPacket
 	(*pPacket)
 		>> bCastleCount;
 
-	for( i=0 ; i < bCastleCount ; ++i)
+	for( auto i=0 ; i < bCastleCount ; ++i)
 	{
 		WORD wCaltleID;
 		CString strHeroName;
@@ -14053,22 +14053,22 @@ int CTClientGame::OnCS_CASHSHOPSTOP_ACK( CTachyonSession *pSession, CPacket *pPa
 
 int CTClientGame::OnCS_APEXDATA_ACK( CTachyonSession *pSession, CPacket *pPacket)
 {
-#ifndef TEST_MODE
-	char cBuf[MAX_APEXPACKET];
-
-	int nBufLen;
-
-	(*pPacket)
-		>> nBufLen;
-	//	>> cBuf
-
-	pPacket->DetachBinary( (LPVOID)cBuf );
-
-	if(m_pApexfRec)
-	{
-		m_pApexfRec( cBuf, nBufLen );
-	}
-#endif
+//#ifndef TEST_MODE
+//	char cBuf[MAX_APEXPACKET];
+//
+//	int nBufLen;
+//
+//	(*pPacket)
+//		>> nBufLen;
+//	//	>> cBuf
+//
+//	pPacket->DetachBinary( (LPVOID)cBuf );
+//
+//	if(m_pApexfRec)
+//	{
+//		m_pApexfRec( cBuf, nBufLen );
+//	}
+//#endif
 
 	return TERR_NONE;
 }

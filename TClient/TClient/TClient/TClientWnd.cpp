@@ -1166,7 +1166,7 @@ void CTClientWnd::InitResource( CString strGroupID,
 	CTClientGuildMark::LoadBakingTexture();
 	SetMainFrame(&m_TNet);
 
-	for( i=0; i<TFRAME_COUNT; i++)
+	for( auto i=0; i<TFRAME_COUNT; i++)
 	{
 		LP_FRAMEDESC pDESC = m_pTParser->FindFrameTemplate(dwGameUI[i]);
 
@@ -1281,7 +1281,7 @@ void CTClientWnd::InitResource( CString strGroupID,
 	CTDetailInfoDlg* pChatInfoDlg = static_cast<CTDetailInfoDlg *>( m_MainGame.m_vTFRAME[TFRAME_CHAT_DETAIL_INFO] );
 	pChatInfoDlg->ShowCloseButton(TRUE);
 
-	for( i=0; i<TGAUGE_FRAME_COUNT; i++)
+	for( auto i=0; i<TGAUGE_FRAME_COUNT; i++)
 		m_MainGame.m_vTGAUGEFRAME[i] = (CTClientUIBase *) m_MainGame.m_vTFRAME[TFRAME_GAUGE]->FindKid(dwGaugeFrameID[i]);
 
 	m_MainGame.m_pNotifyFrame = (CTDynamicHelpDlg *) m_MainGame.m_vTGAUGEFRAME[TGAUGE_FRAME_NOTIFY];
@@ -1338,7 +1338,7 @@ void CTClientWnd::InitResource( CString strGroupID,
 	((CTWorldmapDlg *) m_MainGame.m_vTFRAME[TFRAME_WORLDMAP])->m_pHost = m_MainGame.m_pMainChar;
 	((CTWorldmapDlg *) m_MainGame.m_vTFRAME[TFRAME_WORLDMAP])->m_pDead = &m_MainGame.m_vMainDead;
 
-	for( i=0; i<TGAUGE_COUNT; i++)
+	for( auto i=0; i<TGAUGE_COUNT; i++)
 	{
 		TFrame *pTFRAME;
 		if( dwGaugeID[i][0] )
@@ -1362,7 +1362,7 @@ void CTClientWnd::InitResource( CString strGroupID,
 		}
 	}
 
-	for( i=0; i<TTEXT_COUNT; i++)
+	for( auto i=0; i<TTEXT_COUNT; i++)
 	{
 		TFrame *pTFRAME;
 		if( dwTextID[i][0] )
@@ -1386,7 +1386,7 @@ void CTClientWnd::InitResource( CString strGroupID,
 
 	m_MainGame.m_vTTEXT[0]->m_bNoHIT = TRUE;
 	
-	for( i=0; i<TLEADERMARK_COUNT; i++)
+	for( auto i=0; i<TLEADERMARK_COUNT; i++)
 	{
 		TFrame *pTFRAME;
 		if( dwLeaderMarkID[i][0] )
@@ -1400,7 +1400,7 @@ void CTClientWnd::InitResource( CString strGroupID,
 		m_MainGame.m_vTLEADERMARK[i] = pTFRAME->FindKid(dwLeaderMarkID[i][2]);
 	}
 
-	for( i=0; i<TPANNEL_COUNT; i++)
+	for( auto i=0; i<TPANNEL_COUNT; i++)
 	{
 		TFrame *pTFRAME;
 		if( dwPannelID[i][0] )
@@ -1414,7 +1414,7 @@ void CTClientWnd::InitResource( CString strGroupID,
 		m_MainGame.m_vTPANNEL[i] = pTFRAME->FindKid(dwPannelID[i][2]);
 	}
 
-	for( i=0; i<TFACEIMG_COUNT; i++)
+	for( auto i=0; i<TFACEIMG_COUNT; i++)
 	{
 		TFrame *pTFRAME;
 		if( dwFaceImgID[i][0] )
@@ -1441,7 +1441,7 @@ void CTClientWnd::InitResource( CString strGroupID,
 	}
 
 
-	for( i=0; i<TLEVELIMG_COUNT; i++)
+	for( auto i=0; i<TLEVELIMG_COUNT; i++)
 	{
 		TFrame* pTFRAME;
 		if( dwLevelImgID[i][0] )
@@ -1457,7 +1457,7 @@ void CTClientWnd::InitResource( CString strGroupID,
 		m_MainGame.m_vTLEVELIMG[i]->ShowComponent(FALSE);
 	}
 
-	for( i=0; i<TFACEBACKIMG_COUNT; i++)
+	for( auto i=0; i<TFACEBACKIMG_COUNT; i++)
 	{
 		TFrame* pTFRAME;
 		if( dwFACEBACKImgID[i][0] )
@@ -1473,7 +1473,7 @@ void CTClientWnd::InitResource( CString strGroupID,
 		m_MainGame.m_vTFACEBACKIMG[i]->ShowComponent(FALSE);
 	}
 
-	for( i=0; i<THUD_BASE_COUNT; i++)
+	for( auto i=0; i<THUD_BASE_COUNT; i++)
 	{
 		TFrame *pTFRAME = (TFrame *) m_MainGame.FindKid(dwHudBaseID[i][0]);
 		m_MainGame.m_vTHUDBASE[i] = pTFRAME->FindKid(dwHudBaseID[i][1]);
@@ -1481,7 +1481,7 @@ void CTClientWnd::InitResource( CString strGroupID,
 		m_MainGame.m_vTHUDBASE[i]->ShowComponent(FALSE);
 	}
 
-	for( i=0; i<THUD_GAUGE_COUNT; i++)
+	for( auto i=0; i<THUD_GAUGE_COUNT; i++)
 	{
 		TFrame *pTFRAME = (TFrame *) m_MainGame.FindKid(dwHudGaugeID[i][0]);
 		m_MainGame.m_vTHUDGAUGE[i] = (TGauge*) pTFRAME->FindKid(dwHudGaugeID[i][1]);
@@ -1490,7 +1490,7 @@ void CTClientWnd::InitResource( CString strGroupID,
 		m_MainGame.m_vTHUDGAUGE[i]->ShowComponent(FALSE);
 	}
 
-	for( i=0; i<THUD_TEXT_COUNT; i++)
+	for( auto i=0; i<THUD_TEXT_COUNT; i++)
 	{
 		TFrame *pTFRAME = (TFrame *) m_MainGame.FindKid(dwHudTextID[i][0]);
 		m_MainGame.m_vTHUDTEXT[i] = pTFRAME->FindKid(dwHudTextID[i][1]);
@@ -1518,13 +1518,13 @@ void CTClientWnd::InitResource( CString strGroupID,
 		pTPITFONT->m_bOutLine = TRUE;
 	}
 
-	for( i=0; i<5; i++)
+	for( auto i=0; i<5; i++)
 	{
 		m_MessageBox.AddFrame( dwMsgBoxID[i][1], dwMsgBoxID[i][0]);
 		m_MessageBox.FindFrame(dwMsgBoxID[i][1])->EnableFloat(TRUE);
 	}
 
-	for( i=0; i<TNETFRAME_COUNT; i++)
+	for( auto i=0; i<TNETFRAME_COUNT; i++)
 	{
 		m_TNet.AddFrame(dwFrameID[i][1], dwFrameID[i][0]);
 		m_pTNetFRAME[i] = m_TNet.FindFrame(dwFrameID[i][1]);
@@ -1550,7 +1550,7 @@ void CTClientWnd::InitResource( CString strGroupID,
 	for( itFRAME = m_TNet.m_mapFrame.begin(); itFRAME != m_TNet.m_mapFrame.end(); itFRAME++)
 		(*itFRAME).second->m_bSND = FALSE;
 
-	for( i=0; i<TPANNEL_COUNT; i++)
+	for( auto i=0; i<TPANNEL_COUNT; i++)
 		m_MainGame.m_vTMAINTAIN[i] = ((CTGaugePannel *) m_MainGame.m_vTFRAME[TFRAME_GAUGE])->m_vTMAINTAIN[i];
 
 	m_TNet.SetLevel(ID_FRAME_LOGIN);
@@ -2267,7 +2267,7 @@ void CTClientWnd::InitUI( BOOL bResetOnlyPosition)
 			m_MainGame.m_vTFRAME[ dwInvenPosID[i][0] ]->EnableFloat( bInvenEnable[i][1] );
 		}
 
-		for( i=0; i<MAX_SUBINVEN; i++)
+		for( auto i=0; i<MAX_SUBINVEN; i++)
 		{
 			TComponent *pTPOS = vTPOS.FindKid( dwInvenPosID[i][1] );
 

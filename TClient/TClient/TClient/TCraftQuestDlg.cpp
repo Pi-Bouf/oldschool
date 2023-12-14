@@ -210,7 +210,7 @@ HRESULT CTCraftQuestDlg::Render( DWORD dwTickCount )
 		{
 			m_pTTOPREWARD = pTREWARD[0];
 
-			for( i=0; i<TREWARDITEMCOUNT; i++)
+			for( auto i=0; i<TREWARDITEMCOUNT; i++)
 			{
 				m_pITEM[i]->ShowComponent(FALSE);
 

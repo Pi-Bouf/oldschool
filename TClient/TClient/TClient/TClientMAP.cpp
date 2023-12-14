@@ -77,7 +77,7 @@ CTClientMAP::CTClientMAP()
 		m_vUNIT[i] = FALSE;
 	}
 
-	for( i=0; i<TDRAWCELL_COUNT; i++)
+	for( auto i=0; i<TDRAWCELL_COUNT; i++)
 	{
 		m_vTOBJ[i].m_vTOBJ.clear();
 		m_vTNPC[i].m_vTOBJ.clear();
@@ -133,7 +133,7 @@ CTClientMAP::~CTClientMAP()
 		m_vUNIT[i] = FALSE;
 	}
 
-	for( i=0; i<TDRAWCELL_COUNT; i++)
+	for( auto i=0; i<TDRAWCELL_COUNT; i++)
 	{
 		while(!m_vTOBJ[i].m_vTOBJ.empty())
 		{
@@ -190,7 +190,7 @@ void CTClientMAP::ReleaseMAP()
 		m_vDRAWOBJ[i].clear();
 	}
 
-	for( i=0; i<TDRAWCELL_COUNT; i++)
+	for( auto i=0; i<TDRAWCELL_COUNT; i++)
 	{
 		ClearMAPOBJ(
 			&m_vTOBJ[i],
@@ -944,10 +944,10 @@ void CTClientMAP::LoadMAPOBJ( CD3DDevice *pDevice,
 		pINST->m_bMode = (*pTMAPNPC)[i]->m_bMode;
 		pINST->m_bCamp = (*pTMAPNPC)[i]->m_bCamp;
 
-		// ±¹°¡ID¸¦ µÎ°³·Î ³ª´« ÀÌÀ¯´Â m_bCountryID´Â Áß¸³Áö¿ª NPC°°Àº °æ¿ì
-		// ÇØ´ç ±¹°¡ID(µåÇÁ°Ö,Å©¶ô½Ã¿Â)·Î ¼¼ÆÃµÇ±â ¶§¹®¿¡ ¿ø·¡ Áß¸³Áö¿ª NPCÀÎ °æ¿ì¸¦ ¾Ë±â À§ÇØ¼­ ¿À¸®Áö³Î ±¹°¡ID¸¦ µû·Î º¸Á¸ÇÑ´Ù.
+		// ï¿½ï¿½ï¿½ï¿½IDï¿½ï¿½ ï¿½Î°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ m_bCountryIDï¿½ï¿½ ï¿½ß¸ï¿½ï¿½ï¿½ï¿½ï¿½ NPCï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+		// ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ID(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,Å©ï¿½ï¿½ï¿½Ã¿ï¿½)ï¿½ï¿½ ï¿½ï¿½ï¿½ÃµÇ±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß¸ï¿½ï¿½ï¿½ï¿½ï¿½ NPCï¿½ï¿½ ï¿½ï¿½ì¸¦ ï¿½Ë±ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½IDï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 		pINST->m_bOriginalContryID = (*pTMAPNPC)[i]->m_bCountryID;
-		pINST->m_bContryID = (*pTMAPNPC)[i]->m_bCountryID; // <- ¾ê´Â ÃßÈÄ¿¡ ÆÐÅ¶À» ÅëÇØ¼­ ´Ù½Ã º¯°æ µÉ °ÍÀÌ´Ù.
+		pINST->m_bContryID = (*pTMAPNPC)[i]->m_bCountryID; // <- ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ä¿ï¿½ ï¿½ï¿½Å¶ï¿½ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ì´ï¿½.
 
 		pINST->InitTNPC(
 			pDevice,
@@ -1000,7 +1000,7 @@ void CTClientMAP::LoadMAPOBJ( CD3DDevice *pDevice,
 			pINST->InitCollision();
 	}
 
-	for( i=0; i<INT(pTMAPSFX->size()); i++)
+	for( auto i=0; i<INT(pTMAPSFX->size()); i++)
 	{
 		if( pTSFX->m_wCount >= WORD(pTSFX->m_vTSFX.size()) )
 			pTSFX->m_vTSFX.push_back(new CTClientSFX());
@@ -1036,7 +1036,7 @@ void CTClientMAP::LoadMAPOBJ( CD3DDevice *pDevice,
 		pINST->m_dwInstID = CTachyonSFX::RegSFX( pINST, (*pTMAPSFX)[i]->m_bBias);
 	}
 
-	for( i=0; i<INT(pTMAPSND->size()); i++)
+	for( auto i=0; i<INT(pTMAPSND->size()); i++)
 	{
 		if( pTSND->m_wCount >= WORD(pTSND->m_vTSND.size()) )
 			pTSND->m_vTSND.push_back(new SNDIDX());
@@ -1079,7 +1079,7 @@ void CTClientMAP::ClearMAPOBJ( LPTOBJBLOCK pTOBJ,
 	for( WORD i=0; i<pTOBJ->m_wCount; i++)
 		pTOBJ->m_vTOBJ[i]->Release();
 
-	for( i=0; i<pTNPC->m_wCount; i++)
+	for( auto i=0; i<pTNPC->m_wCount; i++)
 	{
 		LPMAPOBJECT pTMAPNPC = pTNPC->m_vTOBJ[i]->m_bNPCType == TNPC_MAPPORTAL ?
 			&m_mapTPortal : &m_mapTNpc;
@@ -1092,7 +1092,7 @@ void CTClientMAP::ClearMAPOBJ( LPTOBJBLOCK pTOBJ,
 		pTNPC->m_vTOBJ[i]->Release();
 	}
 
-	for( i=0; i<pTSFX->m_wCount; i++)
+	for( auto i=0; i<pTSFX->m_wCount; i++)
 	{
 		CTClientSFX *pINST = (CTClientSFX *) pTSFX->m_vTSFX[i];
 		MAPTSFX::iterator finder = CTachyonSFX::m_mapINST.find( pINST->m_dwInstID);
@@ -1104,7 +1104,7 @@ void CTClientMAP::ClearMAPOBJ( LPTOBJBLOCK pTOBJ,
 		pINST->Release();
 	}
 
-	for( i=0; i<pTSND->m_wCount; i++)
+	for( auto i=0; i<pTSND->m_wCount; i++)
 	{
 		if(pTSND->m_vTSND[i]->m_pSND)
 			pTSND->m_vTSND[i]->m_pSND->Unlock(pTSND->m_vTSND[i]->m_nIndex);
@@ -1145,7 +1145,7 @@ void CTClientMAP::CheckMAPOBJ( CD3DDevice *pDevice,
 				m_vLOCK[i] = FALSE;
 			}
 
-			for( i=0; i<TDRAWCELL_COUNT; i++)
+			for( auto i=0; i<TDRAWCELL_COUNT; i++)
 				if( vTCELL[i] != 0xFFFF )
 				{
 					int nLocalX = m_nTCellX + i % TDRAWCELL_WIDTH - nTCellX;
@@ -1696,7 +1696,7 @@ void CTClientMAP::ResetTRSCS( LPDIRECT3DTEXTURE9 pTBACKTEX,
 	pTRSCS->m_pDevice->m_pDevice->SetRenderState( D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
 	pTRSCS->m_pDevice->m_pDevice->SetRenderState( D3DRS_TEXTUREFACTOR, 0xFFF0F020);
 
-	for( i=0; i<BYTE(pTRSCS->m_vTCORPS.m_vTSQUAD.size()); i++)
+	for( auto i=0; i<BYTE(pTRSCS->m_vTCORPS.m_vTSQUAD.size()); i++)
 		if( pTRSCS->m_vTCORPS.m_vTSQUAD[i]->m_wPartyID == pTRSCS->m_pHost->m_wPartyID || pTRSCS->m_pHost->m_dwChiefID == pTRSCS->m_pHost->m_dwID )
 			for( BYTE j=0; j<BYTE(pTRSCS->m_vTCORPS.m_vTSQUAD[i]->m_vTUNIT.size()); j++)
 				if( pTRSCS->m_vTCORPS.m_vTSQUAD[i]->m_vTUNIT[j]->m_wMapID == pTRSCS->m_wMapID &&
@@ -2212,7 +2212,7 @@ void CTClientMAP::ResetTMINIMAP( LPDIRECT3DTEXTURE9 pTARGET,
 		}
 	}
 
-	for( i=0; i<TDRAWCELL_COUNT; i++)
+	for( auto i=0; i<TDRAWCELL_COUNT; i++)
 	{
 		if(!m_vLOCK[i])
 			continue;
@@ -2252,7 +2252,7 @@ void CTClientMAP::ResetTMINIMAP( LPDIRECT3DTEXTURE9 pTARGET,
 	}
 
 	VTSQUAD& vCORPS = m_pTRSCS->m_vTCORPS.m_vTSQUAD;
-	for( i=0; i<WORD(vCORPS.size()); ++i )
+	for( auto i=0; i<WORD(vCORPS.size()); ++i )
 	{
 		for( j=0; j<WORD(vCORPS[i]->m_vTUNIT.size()); ++j )
 		{
@@ -2456,7 +2456,7 @@ void CTClientMAP::ResetTMINIMAPOBJ( CD3DDevice *pDevice,
 
 	vPOS *= vSCALE;
 
-	// ÈÊ³¯ Àû¿ëÇÔ.
+	// ï¿½Ê³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 	//vPOS._11 = TMINIMAPOBJTEX_SIZE / TMINIMAPTEX_SIZE;
 	//vPOS._22 = 1.0f;
 	//vPOS._33 = TMINIMAPOBJTEX_SIZE / TMINIMAPTEX_SIZE;
@@ -2712,7 +2712,7 @@ BYTE CTClientMAP::CheckVB( LPDIRECT3DDEVICE9 pDevice,
 			m_pMAP->m_bLOAD[i] = FALSE;
 		}
 
-		for( i=0; i<9; i++)
+		for( auto i=0; i<9; i++)
 		{
 			int nLocalX = nUnitX - m_pMAP->m_nUnitX + i % 3;
 			int nLocalZ = nUnitZ - m_pMAP->m_nUnitZ + i / 3;
@@ -2764,7 +2764,7 @@ BYTE CTClientMAP::CheckVB( LPDIRECT3DDEVICE9 pDevice,
 				m_pMAP->m_bLOCK[i] = FALSE;
 			}
 
-			for( i=0; i<9; i++)
+			for( auto i=0; i<9; i++)
 			{
 				int nLocalX = nCellX - m_pMAP->m_nCellX + i % 3;
 				int nLocalZ = nCellZ - m_pMAP->m_nCellZ + i / 3;
@@ -2786,7 +2786,7 @@ BYTE CTClientMAP::CheckVB( LPDIRECT3DDEVICE9 pDevice,
 				}
 			}
 
-			for( i=0; i<9; i++)
+			for( auto i=0; i<9; i++)
 				if(!m_pMAP->m_bLOCK[i])
 					m_pMAP->FreeDIFFUSE(i);
 
@@ -2856,7 +2856,7 @@ BYTE CTClientMAP::CheckVB( LPDIRECT3DDEVICE9 pDevice,
 			}
 		}
 
-		for( i=0; i<9; i++)
+		for( auto i=0; i<9; i++)
 			if( m_pMAP->m_bUNIT[i] != 0xFF && !IsValidLoadUNIT( m_pTLOADJOINT, i) )
 			{
 				for( WORD j=0; j<TOBJCELL_COUNT; j++)
@@ -2999,7 +2999,7 @@ void CTClientMAP::ResetVisibleOBJ( CD3DDevice *pDevice,
 	m_vTCOLLNPC.clear();
 	m_vDRAWBSP.clear();
 
-	for( i=0; i<TDRAWCELL_COUNT; i++)
+	for( auto i=0; i<TDRAWCELL_COUNT; i++)
 		if(m_vLOCK[i])
 		{
 			for( WORD j=0; j<m_vTOBJ[i].m_wCount; j++)
@@ -3012,7 +3012,7 @@ void CTClientMAP::ResetVisibleOBJ( CD3DDevice *pDevice,
 			}
 		}
 
-	for( i=0; i<TDRAWCELL_COUNT; i++)
+	for( auto i=0; i<TDRAWCELL_COUNT; i++)
 		if(m_vLOCK[i])
 		{
 			for( WORD j=0; j<m_vTNPC[i].m_wCount; j++)
@@ -3025,7 +3025,7 @@ void CTClientMAP::ResetVisibleOBJ( CD3DDevice *pDevice,
 			}
 		}
 
-	for( i=0; i<9; i++)
+	for( auto i=0; i<9; i++)
 		if(m_vUNIT[i])
 		{
 			for( WORD j=0; j<m_vTSILHOUETTE[m_pMAP->m_bUNIT[i]].m_wCount; j++)
@@ -3039,7 +3039,7 @@ void CTClientMAP::ResetVisibleOBJ( CD3DDevice *pDevice,
 				}
 		}
 
-	for( i=0; i<9; i++)
+	for( auto i=0; i<9; i++)
 		if(m_vUNIT[i])
 		{
 			for( WORD j=0; j<m_vBIGOBJ[m_pMAP->m_bUNIT[i]].m_wCount; j++)
@@ -3358,7 +3358,7 @@ BYTE CTClientMAP::CheckCollision( CTClientObjBase *pOBJ,
 						fHEIGHT += fSizeY;
 						fHEIGHT -= fPosY;
 
-						for( i=0; i<2; i++)
+						for( auto i=0; i<2; i++)
 						{
 							D3DXVECTOR3 vTS = vTSTART;
 							D3DXVECTOR3 vTE = vTEND;
@@ -3574,7 +3574,7 @@ void CTClientMAP::CalcMAPOBJ( CD3DDevice *pDevice,
 			}
 
 	if(pGame->m_bEnableNPCTick)
-		for( i=0; i<TDRAWCELL_COUNT; i++)
+		for( auto i=0; i<TDRAWCELL_COUNT; i++)
 			if(m_vLOCK[i])
 				for( WORD j=0; j<m_vTNPC[i].m_wCount; j++)
 				{
@@ -3582,7 +3582,7 @@ void CTClientMAP::CalcMAPOBJ( CD3DDevice *pDevice,
 					pNPC->CalcTick( pDevice, m_pMAP->m_pRES, dwTick);
 				}
 
-	for( i=0; i<9; i++)
+	for( auto i=0; i<9; i++)
 		if(m_vUNIT[i])
 			for( WORD j=0; j<m_vTSILHOUETTE[m_pMAP->m_bUNIT[i]].m_wCount; j++)
 			{
@@ -3590,7 +3590,7 @@ void CTClientMAP::CalcMAPOBJ( CD3DDevice *pDevice,
 				m_vTSILHOUETTE[m_pMAP->m_bUNIT[i]].m_vTOBJ[j]->CalcTick( pDevice->m_pDevice, dwTick);
 			}
 
-	for( i=0; i<9; i++)
+	for( auto i=0; i<9; i++)
 		if(m_vUNIT[i])
 			for( WORD j=0; j<m_vBIGOBJ[m_pMAP->m_bUNIT[i]].m_wCount; j++)
 			{
@@ -4124,7 +4124,7 @@ BYTE CTClientMAP::HitTestHeight( FLOAT *pDIST,
 						&vPOINT[k]);
 				}
 
-				for( k=0; k<2; k++)
+				for( auto k=0; k<2; k++)
 				{
 					D3DXVECTOR3 vPOLY[3] = {
 						vPOINT[nIndex[k][0]],
@@ -4304,7 +4304,7 @@ void CTClientMAP::DoTLOADCMD_OBJ( CD3DDevice *pDevice,
 	}
 	mapTBSP.clear();
 
-	for( i=0; i<INT(pTINFO->m_vUnitID.size()); i++)
+	for( auto i=0; i<INT(pTINFO->m_vUnitID.size()); i++)
 	{
 		BYTE bINDEX = BYTE(HIWORD(pTINFO->m_vUnitID[i]));
 		WORD wUnitID = LOWORD(pTINFO->m_vUnitID[i]);
@@ -4314,7 +4314,7 @@ void CTClientMAP::DoTLOADCMD_OBJ( CD3DDevice *pDevice,
 		LoadTNPC( &vTNPC[bINDEX], wUnitID);
 	}
 
-	for( i=0; i<INT(pTINFO->m_vTBSPINFO.size()); i++)
+	for( auto i=0; i<INT(pTINFO->m_vTBSPINFO.size()); i++)
 	{
 		LPTBSPINFO pTDATA = pTINFO->m_vTBSPINFO[i];
 
@@ -4339,7 +4339,7 @@ void CTClientMAP::DoTLOADCMD_OBJ( CD3DDevice *pDevice,
 
 	SMART_LOCKCS(&pTAPP->m_cs);
 	if( m_pMAP && !pTAPP->m_bCancelLoad )
-		for( i=0; i<INT(pTINFO->m_vUnitID.size()); i++)
+		for( auto i=0; i<INT(pTINFO->m_vUnitID.size()); i++)
 		{
 			BYTE bINDEX = BYTE(HIWORD(pTINFO->m_vUnitID[i]));
 			WORD wUnitID = LOWORD(pTINFO->m_vUnitID[i]);
@@ -4404,7 +4404,7 @@ void CTClientMAP::DoTLOADCMD_OBJ( CD3DDevice *pDevice,
 			}
 		}
 
-	for( i=0; i<9; i++)
+	for( auto i=0; i<9; i++)
 	{
 		MAPTHEIGHTINFO::iterator itHEIGHT;
 
@@ -4434,4 +4434,3 @@ void CTClientMAP::DoTLOADCMD_OBJ( CD3DDevice *pDevice,
 		}
 	}
 }
- 

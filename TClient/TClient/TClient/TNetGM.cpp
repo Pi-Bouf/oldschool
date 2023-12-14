@@ -92,10 +92,10 @@ int CTClientWnd::OnGM_NETCABLE_DISCONNECTED()
 
 	SaveCustomCompPos();
 
-#ifndef TEST_MODE
-	if ( CTNationOption::INSTALL_APEX )
-		CHCEnd();
-#endif
+//#ifndef TEST_MODE
+//	if ( CTNationOption::INSTALL_APEX )
+//		CHCEnd();
+//#endif
 
 	OnGM_CLOSE_MSGBOX();
 
@@ -118,10 +118,10 @@ int CTClientWnd::OnGM_EXIT_GAME()
 
 	SaveCustomCompPos();
 
-#ifndef TEST_MODE
-	if ( CTNationOption::INSTALL_APEX )
-		CHCEnd();
-#endif
+//#ifndef TEST_MODE
+//	if ( CTNationOption::INSTALL_APEX )
+//		CHCEnd();
+//#endif
 
 	OnGM_CLOSE_MSGBOX();
 
@@ -145,10 +145,10 @@ int CTClientWnd::OnGM_EXIT_GAME()
 
 int CTClientWnd::OnGM_EXIT()
 {
-#ifndef TEST_MODE
-	if ( CTNationOption::INSTALL_APEX )
-		CHCEnd();	
-#endif
+//#ifndef TEST_MODE
+//	if ( CTNationOption::INSTALL_APEX )
+//		CHCEnd();	
+//#endif
 	SaveCustomCompPos();
 	PostQuitMessage(0);
 	return TERR_NONE;
@@ -211,7 +211,7 @@ int CTClientWnd::OnGM_SELECT_CHANNEL()
 				vSTATGRP[bSTATUS].push_back(i);
 		}
 
-		for(i=0; i<TSTATUS_COUNT; ++i)
+		for(auto i=0; i<TSTATUS_COUNT; ++i)
 		{
 			BYTE bCNT = (BYTE) vSTATGRP[i].size();
 			if( bCNT )

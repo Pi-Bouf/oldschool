@@ -1,7 +1,7 @@
 #pragma once
 
 #ifndef TEST_MODE
-#include "ApexClient.h"
+// #include "ApexClient.h"
 #include <HShield.h>
 #include <HSUpChk.h>
 #endif
@@ -14,10 +14,10 @@ public:
 	CTClientGame();
 	virtual ~CTClientGame();
 
-	void StartApexClient( CTachyonSession *pSession );
-#ifndef TEST_MODE
-	_FUNC_C_REC		m_pApexfRec;
-#endif
+//	void StartApexClient( CTachyonSession *pSession );
+//#ifndef TEST_MODE
+//	_FUNC_C_REC		m_pApexfRec;
+//#endif
 
 	static CTClientGame* m_pINSTANCE;
 	static CTClientGame* GetInstance();

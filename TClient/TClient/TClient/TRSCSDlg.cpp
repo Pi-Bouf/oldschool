@@ -129,7 +129,7 @@ void CTRSCSDlg::ResetVisible()
 		m_vTCOMP[i]->ShowComponent(!m_bMinimize);
 	}
 
-	for( i=0; i<TRSCSHOTKEY_COUNT; i++ )
+	for( auto i=0; i<TRSCSHOTKEY_COUNT; i++ )
 	{
 		m_pTSQUADNAME[i]->EnableComponent(!m_bMinimize && !m_bHideSquad);
 		m_pTSQUADNAME[i]->ShowComponent(!m_bMinimize && !m_bHideSquad);
@@ -164,7 +164,7 @@ void CTRSCSDlg::ResetCORPS()
 
 	m_pTSQUAD->RemoveAll();
 
-	for( i=0; i<INT(m_vTCORPS.m_vTSQUAD.size()); i++)
+	for( auto i=0; i<INT(m_vTCORPS.m_vTSQUAD.size()); i++)
 	{
 		static DWORD dwTCMD[TRSCSCMD_COUNT + 1] = {
 			TSTR_TCMD_NONE,
@@ -249,7 +249,7 @@ void CTRSCSDlg::ResetUNIT()
 	if(!m_pTCURSQUAD)
 		return;
 
-	for( i=0; i<INT(m_pTCURSQUAD->m_vTUNIT.size()); i++)
+	for( auto i=0; i<INT(m_pTCURSQUAD->m_vTUNIT.size()); i++)
 	{
 		int nIndex = m_pTUNIT->AddString("");
 		m_pTUNIT->SetItemData( nIndex, 0, (DWORD) m_pTCURSQUAD->m_vTUNIT[i]);

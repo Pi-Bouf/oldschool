@@ -285,7 +285,8 @@ void CTCharPvPInfoDlg::ResetData(
 	}
 
 	{
-		for( INT i=0 ; i < m_vLatestPvPInfo.size() ; ++i )
+		int i;
+		for( i=0 ; i < m_vLatestPvPInfo.size() ; ++i )
 		{
 			m_pL_COL2[ i ]->m_strText = m_vLatestPvPInfo[ i ]->m_strName;
 			m_pL_COL3[ i ]->m_strText = m_vLatestPvPInfo[ i ]->m_bWin ?

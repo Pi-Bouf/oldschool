@@ -68,6 +68,7 @@
     <OutDir>.\Exec\</OutDir>
     <IntDir>.\Release\</IntDir>
     <LinkIncremental>false</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Test Release|Win32'">
     <OutDir>.\Exec\</OutDir>
@@ -123,11 +124,12 @@
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ExceptionHandling>Async</ExceptionHandling>
     </ClCompile>
     <Link>
       <AdditionalDependencies>D3d9.lib;D3dx9.lib;EngineLib.lib;winmm.lib;Advapi32.lib;Imm32.lib;dsound.lib;dxguid.lib;strmiids.lib;Version.lib;XTrap4Client_mt.lib;dbghelp.lib;AHClientInterface.lib;Psapi.lib;HShield.lib;HSUpChk.lib;NPGameLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)TClient.exe</OutputFile>
-      <AdditionalLibraryDirectories>..\..\NPGame\MT;..\TEngine\Lib;..\..\XTrap\client;..\..\APex\client;..\..\HShield\Lib\Win\x86\Multithreaded\HShield;..\..\HShield\Lib\Win\x86\Multithreaded\Update;..\..\Includes\DX\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\NPGame\MT;..\TEngine\Lib;..\..\XTrap\client;..\..\Apex\Client;..\..\HShield\Lib\Win\x86\Multithreaded\HShield;..\..\HShield\Lib\Win\x86\Multithreaded\Update;..\..\Includes\DirectX9 (June 2010)\Lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <ProgramDatabaseFile />
       <StripPrivateSymbols />
@@ -140,6 +142,7 @@
       <SetChecksum>false</SetChecksum>
       <BaseAddress />
       <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
     <ResourceCompile>
       <PreprocessorDefinitions>KOREA;%(PreprocessorDefinitions)</PreprocessorDefinitions>

@@ -106,7 +106,7 @@ CTGaugePannel::CTGaugePannel( TComponent *pParent, LP_FRAMEDESC pDesc, TCMLParse
 		pTFRAME->MoveComponent(point);
 	}
 
-	for( i=0; i<TPANNEL_COUNT; i++)
+	for( auto i=0; i<TPANNEL_COUNT; i++)
 	{
 		TComponent *pTFRAME = FindKid(vMaintainID[i][1]);
 
@@ -347,7 +347,7 @@ CTGaugePannel::CTGaugePannel( TComponent *pParent, LP_FRAMEDESC pDesc, TCMLParse
 				m_pTHOTKEYSM[i][j] = m_pTHOTKEYFRM[i]->FindKid(CTClientGame::m_vTICONSM[j]);
 			}
 
-			for( j=0; j<THOTKEYCTRL_COUNT; j++)
+			for( auto j=0; j<THOTKEYCTRL_COUNT; j++)
 				m_pTHOTKEYCTRL[i][j] = m_pTHOTKEYFRM[i]->FindKid(dwHotkeyBaseID[j]);
 		}
 	}
@@ -407,7 +407,7 @@ ITDetailInfoPtr CTGaugePannel::GetTInfoKey( const CPoint& point )
 
 	if(m_pMainRecall)
 	{
-		for( i=0; i<TRECALLAI_COUNT; i++)
+		for( auto i=0; i<TRECALLAI_COUNT; i++)
 		{
 			pInfo = GetTInfoKey_RecallAi( point, i);
 
@@ -415,7 +415,7 @@ ITDetailInfoPtr CTGaugePannel::GetTInfoKey( const CPoint& point )
 				return pInfo;
 		}
 
-		for( i=0; i<TMONSKILL_COUNT; i++)
+		for( auto i=0; i<TMONSKILL_COUNT; i++)
 		{
 			pInfo = GetTInfoKey_RecallSkill( point, i);
 
@@ -869,7 +869,8 @@ void CTGaugePannel::UpdateQuestINFO( CTClientQuest *pTQUEST)
 	{
 		int nCount = m_pQList->GetItemCount();
 
-		for( int i=0; i<nCount; i++)
+		int i;
+		for( i=0; i<nCount; i++)
 		{
 			DWORD dwQuestID = m_pQList->GetItemData( i, 1);
 
@@ -886,7 +887,7 @@ void CTGaugePannel::UpdateQuestINFO( CTClientQuest *pTQUEST)
 		nCount = INT(pTQUEST->m_pTQUEST->m_vTTERM.size());
 		nIndex++;
 
-		for( i=0; i<nCount; i++)
+		for( auto i=0; i<nCount; i++)
 		{
 			CTClientTerm *pTERM = pTQUEST->FindTTerm(pTQUEST->m_pTQUEST->m_vTTERM[i]);
 			CString strRESULT;
@@ -1025,7 +1026,7 @@ void CTGaugePannel::CalcRecallTick( CTClientRecall *pTRECALL)
 			}
 		}
 
-		for( i=0; i<TRECALLAI_COUNT; ++i)
+		for( auto i=0; i<TRECALLAI_COUNT; ++i)
 			m_pTRECALLAISM[i]->ShowComponent(pTRECALL->m_bSubAI == i || pTRECALL->m_bAI == i ? TRUE : FALSE);
 	}
 	else
@@ -1036,7 +1037,7 @@ void CTGaugePannel::CalcRecallTick( CTClientRecall *pTRECALL)
 			m_pTRECALLSKILLSM[i]->ShowComponent(FALSE);
 		}
 
-		for( i=0; i<TRECALLAI_COUNT; ++i)
+		for( auto i=0; i<TRECALLAI_COUNT; ++i)
 			m_pTRECALLAISM[i]->ShowComponent(FALSE);
 	}
 }
@@ -1065,7 +1066,7 @@ void CTGaugePannel::ResetRecallUI( CTClientRecall *pTRECALL)
 			}
 		}
 
-		for( i=0; i<TRECALLAI_COUNT; ++i)
+		for( auto i=0; i<TRECALLAI_COUNT; ++i)
 		{
 			m_pTRECALLAIDOWN[i]->ShowComponent(TRUE);
 			m_pTRECALLAI[i]->ShowComponent(TRUE);
@@ -1088,7 +1089,7 @@ void CTGaugePannel::ResetRecallUI( CTClientRecall *pTRECALL)
 			m_pTRECALLSKILL[i]->ShowComponent(FALSE);
 		}
 
-		for( i=0; i<TRECALLAI_COUNT; ++i)
+		for( auto i=0; i<TRECALLAI_COUNT; ++i)
 		{
 			m_pTRECALLAIDOWN[i]->ShowComponent(FALSE);
 			m_pTRECALLAI[i]->ShowComponent(FALSE);
@@ -1355,7 +1356,7 @@ void CTGaugePannel::ReleaseHotkey()
 		m_bHotkeyID[i] = i;
 	}
 
-	for( i=0; i<MAX_HOTKEY_INVEN; i++)
+	for( auto i=0; i<MAX_HOTKEY_INVEN; i++)
 		for( BYTE j=0; j<MAX_HOTKEY_POS; j++)
 		{
 			m_vTHOTKEY[i][j].m_bType = HOTKEY_NONE;
@@ -1494,14 +1495,14 @@ void CTGaugePannel::PushIcon( CPoint point)
 			}
 		}
 
-	for( i=0; i<TMONSKILL_COUNT; i++)
+	for( auto i=0; i<TMONSKILL_COUNT; i++)
 		if(m_pTRECALLSKILL[i]->HitTest(point))
 		{
 			m_pTRECALLSKILLDOWN[i]->SetCurImage(1);
 			return;
 		}
 
-	for( i=0; i<TRECALLAI_COUNT; i++)
+	for( auto i=0; i<TRECALLAI_COUNT; i++)
 		if(m_pTRECALLAI[i]->HitTest(point))
 		{
 			m_pTRECALLAIDOWN[i]->SetCurImage(1);
@@ -1515,10 +1516,10 @@ void CTGaugePannel::ReleaseIcon()
 		for( BYTE j=0; j<MAX_HOTKEY_POS; j++)
 			m_pTHOTKEYDOWN[i][j]->SetCurImage(0);
 
-	for( i=0; i<TMONSKILL_COUNT; i++)
+	for( auto i=0; i<TMONSKILL_COUNT; i++)
 		m_pTRECALLSKILLDOWN[i]->SetCurImage(0);
 
-	for( i=0; i<TRECALLAI_COUNT; i++)
+	for( auto i=0; i<TRECALLAI_COUNT; i++)
 		m_pTRECALLAIDOWN[i]->SetCurImage(0);
 }
 

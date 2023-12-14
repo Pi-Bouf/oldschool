@@ -271,7 +271,7 @@ void CTPetDlg::EnableTLIGHT(CD3DCamera* pCamera, BYTE bENABLE)
 			m_pCDevice->m_vConstantVS[VC_PROJ],
 			vCONST, 4);
 
-		for( i=0; i<TLIGHT_COUNT; ++i)
+		for( auto i=0; i<TLIGHT_COUNT; ++i)
 		{
 			memcpy( &vCONST[i * 4], &D3DXVECTOR4(
 				m_vLights[i].m_Light.Ambient.r,
@@ -285,7 +285,7 @@ void CTPetDlg::EnableTLIGHT(CD3DCamera* pCamera, BYTE bENABLE)
 			m_pCDevice->m_vConstantVS[VC_LIGHTAMBIENT],
 			vCONST, TLIGHT_COUNT);
 
-		for( i=0; i<TLIGHT_COUNT; ++i)
+		for( auto i=0; i<TLIGHT_COUNT; ++i)
 		{
 			memcpy( &vCONST[i * 4], &D3DXVECTOR4(
 				m_vLights[i].m_Light.Diffuse.r,
@@ -299,7 +299,7 @@ void CTPetDlg::EnableTLIGHT(CD3DCamera* pCamera, BYTE bENABLE)
 			m_pCDevice->m_vConstantVS[VC_LIGHTDIFFUSE],
 			vCONST, TLIGHT_COUNT);
 
-		for( i=0; i<TLIGHT_COUNT; ++i)
+		for( auto i=0; i<TLIGHT_COUNT; ++i)
 		{
 			memcpy( &vCONST[i * 4], &D3DXVECTOR4(
 				m_vLights[i].m_Light.Direction.x,

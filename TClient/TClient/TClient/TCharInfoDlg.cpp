@@ -100,24 +100,24 @@ CTCharInfoDlg::CTCharInfoDlg( TComponent *pParent, LP_FRAMEDESC pDesc, TCMLParse
 	}
 
 
-	for( i=0; i<TCHARPANE_COUNT; i++)
+	for( auto i=0; i<TCHARPANE_COUNT; i++)
 		m_vTCHARPANE[i] = FindKid(dwTextID[i]);
 
-	for( i=0; i<TCHARSTAT_COUNT; i++)
+	for( auto i=0; i<TCHARSTAT_COUNT; i++)
 	{
 		m_vTCHARSTAT[i] = m_vTCHARFRAME[TCHARFRAME_STAT]->FindKid(dwValueID[i]);
 		m_vTCHARSTAT[i]->m_bWordBreak = FALSE;
 		m_vTCHARSTATTEXT[i] = m_vTCHARFRAME[TCHARFRAME_STAT]->FindKid( dwTextID[i]);
 	}
 
-	for( i=0; i<TCHARBASIC_COUNT; i++)
+	for( auto i=0; i<TCHARBASIC_COUNT; i++)
 	{
 		m_vTCHARBASIC[i] = m_vTCHARFRAME[TCHARFRAME_BASIC]->FindKid(dwValueID[i]);
 		m_vTCHARBASIC[i]->m_bWordBreak = FALSE;
 		m_vTCHARBASICTEXT[i] = m_vTCHARFRAME[TCHARFRAME_BASIC]->FindKid( dwTextID[i] );
 	}
 
-	for( i=0; i<TCHARADV_COUNT; i++)
+	for( auto i=0; i<TCHARADV_COUNT; i++)
 	{
 		m_vTCHARADV[i] = m_vTCHARFRAME[TCHARFRAME_ADV]->FindKid(dwValueID[i]);
 		m_vTCHARBASIC[i]->m_bWordBreak = FALSE;
@@ -177,7 +177,7 @@ CTCharInfoDlg::CTCharInfoDlg( TComponent *pParent, LP_FRAMEDESC pDesc, TCMLParse
 		ID_CTRLINST_INVEN_4,
 		ID_CTRLINST_INVEN_5};
 
-	for( i=0; i<MAX_SUBINVEN; ++i)
+	for( auto i=0; i<MAX_SUBINVEN; ++i)
 		m_pTSUBINVEN[i] = (TImageList *) FindKid(dwInvenID[i]);
 
 	m_pTDEFINVEN = FindKid(ID_CTRLINST_DEFINVEN);
@@ -415,7 +415,7 @@ void CTCharInfoDlg::EnableTLIGHT( CD3DCamera *pCamera,
 			m_pDevice->m_vConstantVS[VC_PROJ],
 			vCONST, 4);
 
-		for( i=0; i<TLIGHT_COUNT; i++)
+		for( auto i=0; i<TLIGHT_COUNT; i++)
 		{
 			memcpy( &vCONST[i * 4], &D3DXVECTOR4(
 				m_vLIGHT[i].m_Light.Ambient.r,
@@ -429,7 +429,7 @@ void CTCharInfoDlg::EnableTLIGHT( CD3DCamera *pCamera,
 			m_pDevice->m_vConstantVS[VC_LIGHTAMBIENT],
 			vCONST, TLIGHT_COUNT);
 
-		for( i=0; i<TLIGHT_COUNT; i++)
+		for( auto i=0; i<TLIGHT_COUNT; i++)
 		{
 			memcpy( &vCONST[i * 4], &D3DXVECTOR4(
 				m_vLIGHT[i].m_Light.Diffuse.r,
@@ -443,7 +443,7 @@ void CTCharInfoDlg::EnableTLIGHT( CD3DCamera *pCamera,
 			m_pDevice->m_vConstantVS[VC_LIGHTDIFFUSE],
 			vCONST, TLIGHT_COUNT);
 
-		for( i=0; i<TLIGHT_COUNT; i++)
+		for( auto i=0; i<TLIGHT_COUNT; i++)
 		{
 			memcpy( &vCONST[i * 4], &D3DXVECTOR4(
 				m_vLIGHT[i].m_Light.Direction.x,

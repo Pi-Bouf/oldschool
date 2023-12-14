@@ -485,7 +485,8 @@ BOOL CTMiniDump::GetExceptionDetail(_EXCEPTION_POINTERS* pExceptionInfo, CString
 					outFirstStack = strTEMP;
 		
 				g_strEnumMod.Empty();
-				EnumerateLoadedModules(hProcess, EnumerateLoadedModulesProc, &stackFrame.AddrPC.Offset);
+				// TODO enable it again ??
+				// EnumerateLoadedModules(hProcess, EnumerateLoadedModulesProc, &stackFrame.AddrPC.Offset);
 				outResult += g_strEnumMod + "\n";
 			} 
 			else

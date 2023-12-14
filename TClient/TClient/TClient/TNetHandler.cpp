@@ -255,7 +255,7 @@ int CTClientWnd::OnCS_GROUPLIST_ACK( CTachyonSession *pSession, CPacket *pPacket
 
 	std::sort(vGRPS.begin(), vGRPS.end(), _compare_group);
 
-	for( i=0; i<bCount; i++)
+	for( auto i=0; i<bCount; i++)
 	{
 		int nIndex = pLIST->AddItem( _T(""), (DWORD) vGRPS[i]);
 

@@ -470,7 +470,7 @@ void CTClientNET::ResetConstant()
 		m_pDevice->m_vConstantVS[VC_LIGHTAMBIENT],
 		vCONST, TLIGHT_COUNT);
 
-	for( i=0; i<TLIGHT_COUNT; i++)
+	for( auto i=0; i<TLIGHT_COUNT; i++)
 	{
 		memcpy( &vCONST[i * 4], &D3DXVECTOR4(
 			m_pLIGHT[i].m_Light.Diffuse.r,
@@ -484,7 +484,7 @@ void CTClientNET::ResetConstant()
 		m_pDevice->m_vConstantVS[VC_LIGHTDIFFUSE],
 		vCONST, TLIGHT_COUNT);
 
-	for( i=0; i<TLIGHT_COUNT; i++)
+	for( auto i=0; i<TLIGHT_COUNT; i++)
 	{
 		memcpy( &vCONST[i * 4], &D3DXVECTOR4(
 			m_pLIGHT[i].m_Light.Direction.x,

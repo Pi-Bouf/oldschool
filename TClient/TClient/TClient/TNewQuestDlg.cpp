@@ -7,19 +7,18 @@
 
 CPoint CTNewQuestDlg::m_ptPOS = CPoint(0,0);
 
-struct binary_qclass : public binary_function< CTClientQClass *, CTClientQClass *, bool>
+struct binary_qclass
 {
-	bool operator () ( const CTClientQClass * &_Left, const CTClientQClass * &_Right) const
+	bool operator()(const CTClientQClass* const& _Left, const CTClientQClass* const& _Right) const
 	{
 		return _Left->m_pTQCLASS && _Left->m_pTQCLASS->m_bMAIN ? true : false;
-	};
+	}
 };
-
-struct binary_tquest : public binary_function< CTClientQuest *, CTClientQuest *, bool>
+struct binary_tquest
 {
-	bool operator () ( const CTClientQuest * &_Left, const CTClientQuest * &_Right) const
+	bool operator()(const CTClientQuest* _Left, const CTClientQuest* _Right) const
 	{
-		return binary_quest()( _Left->m_pTQUEST, _Right->m_pTQUEST);
+		return binary_quest()(_Left->m_pTQUEST, _Right->m_pTQUEST);
 	};
 };
 
@@ -223,7 +222,7 @@ HRESULT CTNewQuestDlg::Render( DWORD dwTickCount )
 		{
 			m_pTTOPREWARD = pTREWARD[0];
 
-			for( i=0; i<TREWARDITEMCOUNT; i++)
+			for( auto i=0; i<TREWARDITEMCOUNT; i++)
 			{
 				m_pSKILL[i]->ShowComponent(FALSE);
 				m_pITEM[i]->ShowComponent(FALSE);
@@ -663,7 +662,7 @@ void CTNewQuestDlg::ResetTQUEST( LPTQUEST pTQUEST)
 			INT nRewardItemCount = 0;
 
 			// 보상목록
-			 for( i=0; i<INT(pTMISSION->m_vTREWARD.size()); i++)
+			 for( auto i=0; i<INT(pTMISSION->m_vTREWARD.size()); i++)
 			{
 				CString strREWARD;
 				strREWARD.Empty();

@@ -1347,7 +1347,9 @@ void CTTournament::CalcScheduleTop()
 	{
 		m_pCurrentGroup->m_pCurrentStep = NULL;
 		BOOL bFind = FALSE;
-		for( INT i=0 ; i < m_pCurrentGroup->m_vSchedule.size() ; ++i )
+		INT i;
+
+		for( i=0 ; i < m_pCurrentGroup->m_vSchedule.size() ; ++i )
 		{
 			if( m_pCurrentGroup->m_vSchedule[i]->m_bStep == m_pCurrentGroup->m_bCurrentStep )
 			{

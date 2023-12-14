@@ -8,6 +8,8 @@
 #define VC_EXTRALEAN		// Exclude rarely-used stuff from Windows headers
 #endif
 
+#pragma comment(lib, "legacy_stdio_definitions.lib")
+
 typedef struct DXGI_JPEG_AC_HUFFMAN_TABLE {
 	int CodeCounts[16];
 	int CodeValues[162];

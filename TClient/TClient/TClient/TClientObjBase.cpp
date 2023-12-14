@@ -1474,7 +1474,7 @@ void CTClientObjBase::ReleaseData()
 	for( BYTE i=0; i<TWEAPON_COUNT; i++)
 		m_vWeaponPOS[i] = 0xFFFFFFFF;
 
-	for( i=0; i<TAD_COUNT; i++)
+	for( auto i=0; i<TAD_COUNT; i++)
 	{
 		m_dwAttackDelay[i] = 0;
 		m_dwAttackDelayRate[i] = 0;
@@ -1535,7 +1535,7 @@ void CTClientObjBase::ReleaseData()
 		m_vVCOLLISION.pop_back();
 	}
 
-	for( i=0; i<TNUMBERPOS_COUNT; i++)
+	for( auto i=0; i<TNUMBERPOS_COUNT; i++)
 		m_vDamageTick[i] = 0;
 	m_vTDAMAGE.clear();
 
@@ -1872,7 +1872,7 @@ void CTClientObjBase::ResetWeaponPOS(
 		m_vWeaponPOS[i] = 0xFFFFFFFF;
 	}
 
-	for( i=0; i<TWEAPON_COUNT; i++)
+	for( auto i=0; i<TWEAPON_COUNT; i++)
 	{
 		BYTE bMode = GetEquipModeIndex(
 			vWEAPON[i],
@@ -2016,7 +2016,7 @@ void CTClientObjBase::ResetWeaponPOS(
 		}
 	}
 
-	for( i=0; i<TSLASHSFX_COUNT; i++)
+	for( auto i=0; i<TSLASHSFX_COUNT; i++)
 	{
 		BYTE bResetKEY = TRUE;
 
@@ -2107,10 +2107,10 @@ void CTClientObjBase::ResetEQUIP( CD3DDevice *pDevice,
 	CTClientInven *pTEQUIP = FindTInven(m_pTRANS ? INVEN_TRANS : INVEN_EQUIP);
 
 	BYTE i;
-	for( i=0; i<TCLEAR_COUNT; i++)
+	for( auto i=0; i<TCLEAR_COUNT; i++)
 		SetCloth( pDevice, vCLEAR[i], 0, 0);
 
-	for( i=0; i<TWEAPON_COUNT; i++)
+	for( auto i=0; i<TWEAPON_COUNT; i++)
 		m_vWeaponPOS[i] = 0xFFFFFFFF;
 
 	ClearEquip();
@@ -2121,13 +2121,13 @@ void CTClientObjBase::ResetEQUIP( CD3DDevice *pDevice,
 	BOOL bCostumeHide[TREPLACE_COUNT] = { FALSE, };
 
 	if( pTEQUIP )
-		for( i=0 ; i < TREPLACE_COUNT ; ++i )
+		for( auto i=0 ; i < TREPLACE_COUNT ; ++i )
 			pReplaceItem[ i ] = pTEQUIP->FindTItem( vREPLACE[i] );
 
 	DWORD dwCostumeHide = 0;
 	if( !IsDisguise() )
 	{
-		for( i=7 ; i < 11 ; ++i )
+		for( auto i=7 ; i < 11 ; ++i )
 			if( pReplaceItem[ i ] )
 			{
 				LPTITEMVISUAL pTCostumeVISUAL = pReplaceItem[ i ]->GetVisual();
@@ -2135,7 +2135,7 @@ void CTClientObjBase::ResetEQUIP( CD3DDevice *pDevice,
 					dwCostumeHide |= pTCostumeVISUAL->m_dwCostumeHide;
 			}
 
-		for( i=0 ; i < TREPLACE_COUNT ; ++i )
+		for( auto i=0 ; i < TREPLACE_COUNT ; ++i )
 			if( (dwCostumeHide & vCOSTUMEHIDE[ i ]) == vCOSTUMEHIDE[ i ])
 			{
 				pReplaceItem[ i ] = NULL;
@@ -2143,7 +2143,7 @@ void CTClientObjBase::ResetEQUIP( CD3DDevice *pDevice,
 			}
 	}
 
-	for( i=0; i<TREPLACE_COUNT; i++)
+	for( auto i=0; i<TREPLACE_COUNT; i++)
 	{
 		BOOL bUseDefault = TRUE;
 
@@ -2247,7 +2247,7 @@ BYTE CTClientObjBase::GetEquipModeIndex( BYTE bEquipPOS,
 
 void CTClientObjBase::ResetOBJPart( CD3DDevice *pDevice)
 {
-	static dwCOSTUME[4] =
+	static int dwCOSTUME[4] =
 	{
 		ES_COSTUME_HAT,
 		ES_COSTUME_DRESS,
@@ -3397,7 +3397,7 @@ FLOAT CTClientObjBase::GetPolyHeight( LPD3DXVECTOR3 pPOLY,
 			vCENTER += pPOLY[i];
 		vCENTER /= 3.0f;
 
-		for( i=0; i<3; i++)
+		for( auto i=0; i<3; i++)
 		{
 			FLOAT fLocal = D3DXVec2Length(&D3DXVECTOR2(
 				pPOLY[i].x - vCENTER.x,
@@ -3430,7 +3430,7 @@ FLOAT CTClientObjBase::GetPolyHeight( LPD3DXVECTOR3 pPOLY,
 		}
 		fDist = TMIN_HEIGHT;
 
-		for( i=0; i<3; i++)
+		for( auto i=0; i<3; i++)
 		{
 			D3DXVECTOR2 vA(
 				pPOLY[(i + 1) % 3].x - pPOLY[i].x,
@@ -4202,7 +4202,7 @@ OBJHIT CTClientObjBase::HitTest( CTClientCAM *pCamera,
 			&vPOINT[i]);
 	}
 
-	for( i=0; i<6; i++)
+	for( auto i=0; i<6; i++)
 	{
 		D3DXPLANE vPLANE;
 
@@ -4427,7 +4427,7 @@ BYTE CTClientObjBase::HitBox( LPD3DXVECTOR3 pSTART,
 			&vPOINT[i]);
 	}
 
-	for( i=0; i<6; i++)
+	for( auto i=0; i<6; i++)
 	{
 		POINTWINDING vWINDING;
 
@@ -5606,7 +5606,7 @@ void CTClientObjBase::CalcTick( LPDIRECT3DDEVICE9 pDevice,
 	for( int i=0; i<TSLASHSFX_COUNT; i++)
 		m_vTSLASH[i].CalcTick(dwTick);
 
-	for( i=0; i<TNUMBERPOS_COUNT; i++)
+	for( auto i=0; i<TNUMBERPOS_COUNT; i++)
 		m_vDamageTick[i] -= min( m_vDamageTick[i], dwTick);
 
 	if(m_bSubActEnd)
@@ -6369,7 +6369,7 @@ CTClientItem *CTClientObjBase::FindSkillWeapon( LPTSKILL pTSKILL)
 
 		if(pEQUIP)
 		{
-			static dwEquipID[] = {
+			static int dwEquipID[] = {
 				ES_PRMWEAPON,
 				ES_SNDWEAPON,
 				ES_LONGWEAPON};

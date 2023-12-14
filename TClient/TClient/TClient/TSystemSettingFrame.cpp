@@ -75,13 +75,13 @@ CTSystemSettingFrame::CTSystemSettingFrame(TComponent *pParent, LP_FRAMEDESC pDe
 		m_pTSFXDETAIL[i] = (TButton *) FindKid(dwSFXDETAIL[i]);
 	}
 
-	for( i=0; i<TEXTURE_DETAIL_COUNT; i++)
+	for( auto i=0; i<TEXTURE_DETAIL_COUNT; i++)
 	{
 		m_pTTEXDETAIL[i] = (TButton *) FindKid(dwTEXDETAIL[i]);
 		m_pTTEXDETAIL[i]->m_menu[TNM_LCLICK] = GM_SELECT_TEXTURE_DETAIL;
 	}
 
-	for( i=0; i<TSYSTEM_CHECK_COUNT; i++)
+	for( auto i=0; i<TSYSTEM_CHECK_COUNT; i++)
 	{
 		m_pTSYSCHECK[i] = (TButton *) FindKid(dwTSYSCHECK[i]);
 		m_pTSYSCHECKOPTION[i] = pTOPTION[i];
@@ -90,7 +90,7 @@ CTSystemSettingFrame::CTSystemSettingFrame(TComponent *pParent, LP_FRAMEDESC pDe
 	m_pTRANGESLIDE = (TScroll *) FindKid(ID_CTRLINST_OBJ_RANGE);
 	m_pTRANGESLIDE->SetScrollType(FALSE);
 
-	for( i=0; i<TSOUND_OPTION_COUNT; i++)
+	for( auto i=0; i<TSOUND_OPTION_COUNT; i++)
 	{
 		m_pTSNDCHECK[i] = (TButton *) FindKid(dwTSNDCHECK[i]);
 		m_pTSNDSLIDE[i] = (TScroll *) FindKid(dwTSNDSLIDE[i]);
@@ -117,14 +117,14 @@ void CTSystemSettingFrame::UpdateUI( CD3DDevice *pDevice)
 		m_pTSFXDETAIL[i]->Select(i == m_bTSFXDETAILOPTION ? TRUE : FALSE);
 	}
 
-	for( i=0; i<TEXTURE_DETAIL_COUNT; i++)
+	for( auto i=0; i<TEXTURE_DETAIL_COUNT; i++)
 		m_pTTEXDETAIL[i]->Select((i == pDevice->m_option.m_nTextureDetail) ? TRUE : FALSE);
 
-	for( i=0; i<TSYSTEM_CHECK_COUNT; i++)
+	for( auto i=0; i<TSYSTEM_CHECK_COUNT; i++)
 		m_pTSYSCHECK[i]->Select((*m_pTSYSCHECKOPTION[i]) ? TRUE : FALSE);
 	m_pTRANGESLIDE->SetScrollPos( 100, INT(((*m_pTRANGEOPTION) - TMIN_RANGEOPTION) * 100.0f / (TMAX_RANGEOPTION - TMIN_RANGEOPTION)));
 
-	for( i=0; i<TSOUND_OPTION_COUNT; i++)
+	for( auto i=0; i<TSOUND_OPTION_COUNT; i++)
 	{
 		m_pTSNDSLIDE[i]->SetScrollPos( VOLUME_MAX, (*m_pTSNDVOLUME[i]));
 		m_pTSNDCHECK[i]->Select((*m_pTSNDENABLE[i]) ? TRUE : FALSE);
@@ -158,7 +158,7 @@ void CTSystemSettingFrame::OnLButtonDown( UINT nFlags, CPoint pt)
 		m_bTSFXDETAILOPTION = bTSFXDETAIL;
 		CTachyonSFX::SetOptionLOD( m_bTSFXDETAILOPTION );
 
-		for( i=0; i<TOPTIONLEVEL_COUNT; i++)
+		for( auto i=0; i<TOPTIONLEVEL_COUNT; i++)
 		{
 			m_pTMAPDETAIL[i]->Select(i == (*m_pTMAPDETAILOPTION) ? TRUE : FALSE);
 			m_pTOBJDETAIL[i]->Select(i == (*m_pTOBJDETAILOPTION) ? TRUE : FALSE);
@@ -168,10 +168,10 @@ void CTSystemSettingFrame::OnLButtonDown( UINT nFlags, CPoint pt)
 		if( (*m_pTSYSCHECKOPTION[TSYSTEM_CHECK_SCREEN_MODE]) != m_pTSYSCHECK[TSYSTEM_CHECK_SCREEN_MODE]->IsStateDown() )
 			m_pCommandHandler->m_vCOMMAND.push_back(GM_TOGGLE_SCREEN_MODE);
 
-		for( i=0; i<TSYSTEM_CHECK_COUNT; i++)
+		for( auto i=0; i<TSYSTEM_CHECK_COUNT; i++)
 			(*m_pTSYSCHECKOPTION[i]) = m_pTSYSCHECK[i]->IsStateDown() ? TRUE : FALSE;
 
-		for( i=0; i<TSOUND_OPTION_COUNT; i++)
+		for( auto i=0; i<TSOUND_OPTION_COUNT; i++)
 			(*m_pTSNDENABLE[i]) = m_pTSNDCHECK[i]->IsStateDown() ? TRUE : FALSE;
 
 		if((*m_pTSNDENABLE[TSOUND_OPTION_MASTER]))

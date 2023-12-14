@@ -40,7 +40,7 @@ void CTClientChar::ReleaseData()
 	for( BYTE i=0; i<TRECALL_MAX; i++)
 		m_vTRECALL[i] = FALSE;
 
-	for( i=0; i<TPOINT_COUNT; i++)
+	for( auto i=0; i<TPOINT_COUNT; i++)
 		m_vTSKILLPOINT[i] = 0;
 
 	m_strGUILD.Empty();

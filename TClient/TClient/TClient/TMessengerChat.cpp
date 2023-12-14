@@ -393,7 +393,7 @@ void CTMessengerChat::OnChatMsg(const CString& strSender, const CString& strMess
 			INT iRow = m_pChatList->AddString(line.strMSG);
 			m_pChatList->SetUserColor( iRow, 0, TCOLOR_MSG_CHATLIST);
 
-			for( k=0; k<INT(vLineSettings.size()); k++)
+			for( auto k=0; k<INT(vLineSettings.size()); k++)
 			{
 				const TLINK_LINE_SETTING& s = vLineSettings[k];
 				m_pChatList->AddTextSetting( iRow, 0, s.nStart, s.nEnd, s.dwColor, s.dwInfo);

@@ -7,7 +7,7 @@ CTClientFake::CTClientFake()
 	for( BYTE i=0; i<ES_COUNT; i++)
 		m_vTEMP.m_pTITEM[i] = NULL;
 
-	for( i=0; i<TMONSKILL_COUNT; i++)
+	for( auto i=0; i<TMONSKILL_COUNT; i++)
 		m_vTEMP.m_wTSKILL[i] = 0;
 
 	m_vTEMP.m_strTITLE.Empty();
@@ -41,7 +41,7 @@ void CTClientFake::ReleaseData()
 	for( BYTE i=0; i<ES_COUNT; i++)
 		m_vTEMP.m_pTITEM[i] = NULL;
 
-	for( i=0; i<TMONSKILL_COUNT; i++)
+	for( auto i=0; i<TMONSKILL_COUNT; i++)
 		m_vTEMP.m_wTSKILL[i] = 0;
 
 	m_vTEMP.m_strTITLE.Empty();
@@ -287,7 +287,7 @@ void CTClientFake::InitRecall( CD3DDevice *pDevice,
 	m_vPosition = 
 	m_vWorld = m_pHOST->GetPositionMat();
 
-	for( i=0; i<4; i++)
+	for( auto i=0; i<4; i++)
 	{
 		CTClientSkill *pTHOSTSKILL = m_pHOST->FindTSkill(wBasicSkill[i][0]);
 

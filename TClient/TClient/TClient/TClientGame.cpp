@@ -184,30 +184,30 @@ DWORD CTClientGame::m_dwReleaseMaintainFunctionWhenGameOut[4] =
 	SDT_STATUS_NOTSELECT
 };
 
-struct binary_draw : public binary_function< CTClientObjBase *, CTClientObjBase *, bool>
+struct binary_draw
 {
-	bool operator () ( const CTClientObjBase * &_Left, const CTClientObjBase * &_Right) const
+	bool operator()(const CTClientObjBase* const& _Left, const CTClientObjBase* const& _Right) const
 	{
-		if( _Left->m_bLastDraw == _Right->m_bLastDraw )
+		if (_Left->m_bLastDraw == _Right->m_bLastDraw)
 		{
-			if( _Left->m_OBJ.m_pOBJ->m_bFileID > _Right->m_OBJ.m_pOBJ->m_bFileID )
+			if (_Left->m_OBJ.m_pOBJ->m_bFileID > _Right->m_OBJ.m_pOBJ->m_bFileID)
 				return true;
-			else if( _Left->m_OBJ.m_pOBJ->m_bFileID < _Right->m_OBJ.m_pOBJ->m_bFileID )
+			else if (_Left->m_OBJ.m_pOBJ->m_bFileID < _Right->m_OBJ.m_pOBJ->m_bFileID)
 				return false;
 
-			return _Left->m_fZValue > _Right->m_fZValue ? true : false;
+			return _Left->m_fZValue > _Right->m_fZValue;
 		}
 		else
 			return _Left->m_bLastDraw ? false : true;
-	};
+	}
 };
 
-struct binary_pick : public binary_function< CTClientObjBase *, CTClientObjBase *, bool>
+struct binary_pick
 {
-	bool operator () ( const CTClientObjBase * &_Left, const CTClientObjBase * &_Right) const
+	bool operator()(const CTClientObjBase* const& _Left, const CTClientObjBase* const& _Right) const
 	{
-		return _Left->m_fPickWeight > _Right->m_fPickWeight ? true : false;
-	};
+		return _Left->m_fPickWeight > _Right->m_fPickWeight;
+	}
 };
 
 CTChatFrame* CTClientGame::m_pChatFrame = NULL;
@@ -240,25 +240,25 @@ CTClientGame::CTClientGame()
 		m_vTPANNEL[i] = NULL;
 	}
 
-	for( i=0; i<TLEADERMARK_COUNT; i++)
+	for( auto i=0; i<TLEADERMARK_COUNT; i++)
 		m_vTLEADERMARK[i] = NULL;
 
-	for( i=0; i<TFACEIMG_COUNT; i++)
+	for( auto i=0; i<TFACEIMG_COUNT; i++)
 		m_vTFACEIMG[i] = NULL;
 
-	for( i=0; i<TLEVELIMG_COUNT; i++)
+	for( auto i=0; i<TLEVELIMG_COUNT; i++)
 		m_vTLEVELIMG[i] = NULL;
 
-	for( i=0; i<TFACEBACKIMG_COUNT; i++)
+	for( auto i=0; i<TFACEBACKIMG_COUNT; i++)
 		m_vTFACEBACKIMG[i] = NULL;
 
-	for( i=0; i<TTEXT_COUNT; i++)
+	for( auto i=0; i<TTEXT_COUNT; i++)
 		m_vTTEXT[i] = NULL;
 
-	for( i=0; i<TGAUGE_COUNT; i++)
+	for( auto i=0; i<TGAUGE_COUNT; i++)
 		m_vTGAUGE[i] = NULL;
 
-	for( i=0; i<TFRAME_COUNT; i++)
+	for( auto i=0; i<TFRAME_COUNT; i++)
 		m_vTFRAME[i] = NULL;
 
 	m_pTPARTYITEM = NULL;
@@ -1201,7 +1201,7 @@ void CTClientGame::ResetTFOG( BYTE bWATER)
 	{
 		FLOAT fTIME = (TUNITLERP_LENGTH - fPosX) / (2.0f * TUNITLERP_LENGTH);
 
-		for( i=0; i<TLIGHT_COUNT; i++)
+		for( auto i=0; i<TLIGHT_COUNT; i++)
 			LerpTLIGHT( &vTLIGHT[i], TLIGHTSET_MAIN, i, bUnitX - 1, bUnitZ, fTIME);
 
 		LerpTLIGHT( &vTMAPCOLOR, TLIGHTSET_MAPCOLOR, 0, bUnitX - 1, bUnitZ, fTIME);
@@ -1214,7 +1214,7 @@ void CTClientGame::ResetTFOG( BYTE bWATER)
 	{
 		FLOAT fTIME = (fPosX - fUnitLength + TUNITLERP_LENGTH) / (2.0f * TUNITLERP_LENGTH);
 
-		for( i=0; i<TLIGHT_COUNT; i++)
+		for( auto i=0; i<TLIGHT_COUNT; i++)
 			LerpTLIGHT( &vTLIGHT[i], TLIGHTSET_MAIN, i, bUnitX + 1, bUnitZ, fTIME);
 
 		LerpTLIGHT( &vTMAPCOLOR, TLIGHTSET_MAPCOLOR, 0, bUnitX + 1, bUnitZ, fTIME);
@@ -1228,7 +1228,7 @@ void CTClientGame::ResetTFOG( BYTE bWATER)
 	{
 		FLOAT fTIME = (TUNITLERP_LENGTH - fPosZ) / (2.0f * TUNITLERP_LENGTH);
 
-		for( i=0; i<TLIGHT_COUNT; i++)
+		for( auto i=0; i<TLIGHT_COUNT; i++)
 			LerpTLIGHT( &vTLIGHT[i], TLIGHTSET_MAIN, i, bUnitX, bUnitZ - 1, fTIME);
 
 		LerpTLIGHT( &vTMAPCOLOR, TLIGHTSET_MAPCOLOR, 0, bUnitX, bUnitZ - 1, fTIME);
@@ -1241,7 +1241,7 @@ void CTClientGame::ResetTFOG( BYTE bWATER)
 	{
 		FLOAT fTIME = (fPosZ - fUnitLength + TUNITLERP_LENGTH) / (2.0f * TUNITLERP_LENGTH);
 
-		for( i=0; i<TLIGHT_COUNT; i++)
+		for( auto i=0; i<TLIGHT_COUNT; i++)
 			LerpTLIGHT( &vTLIGHT[i], TLIGHTSET_MAIN, i, bUnitX, bUnitZ + 1, fTIME);
 
 		LerpTLIGHT( &vTMAPCOLOR, TLIGHTSET_MAPCOLOR, 0, bUnitX, bUnitZ + 1, fTIME);
@@ -1252,7 +1252,7 @@ void CTClientGame::ResetTFOG( BYTE bWATER)
 	}
 
 	if(pTFOG)
-		for( i=0; i<BYTE(pTFOG->m_vTLOCAL.size()); i++)
+		for( auto i=0; i<BYTE(pTFOG->m_vTLOCAL.size()); i++)
 		{
 			FLOAT fLocalX = pTFOG->m_vTLOCAL[i]->m_fPosX - FLOAT(bUnitX) * fUnitLength;
 			FLOAT fLocalZ = pTFOG->m_vTLOCAL[i]->m_fPosZ - FLOAT(bUnitZ) * fUnitLength;
@@ -1289,7 +1289,7 @@ void CTClientGame::ResetTFOG( BYTE bWATER)
 		}
 	}
 
-	for( i=0; i<TLIGHT_COUNT; i++)
+	for( auto i=0; i<TLIGHT_COUNT; i++)
 	{
 		memset( &m_vLIGHT[i].m_Light, 0, sizeof(D3DLIGHT9));
 
@@ -1545,11 +1545,11 @@ void CTClientGame::ResetVisibleOBJ( DWORD dwTick)
 		}
 	}
 
-	for( i=0; i<9; i++)
+	for( auto i=0; i<9; i++)
 		for( int j=0; j<INT(m_vMAP.m_vDRAWOBJ[i].size()); j++)
 			PushDrawOBJ(m_vMAP.m_vDRAWOBJ[i][j]);
 
-	for( i=0; i<INT(m_pTRSCS->m_vTCORPS.m_vTSQUAD.size()); i++)
+	for( auto i=0; i<INT(m_pTRSCS->m_vTCORPS.m_vTSQUAD.size()); i++)
 		if( !m_pTRSCS->m_vTCORPS.m_vTSQUAD[i]->m_vTMARK.m_bHide || m_pTRSCS->m_vTCORPS.m_vTSQUAD[i]->m_vTMARK.m_bAlpha )
 		{
 			m_pTRSCS->m_vTCORPS.m_vTSQUAD[i]->m_vTMARK.ResetVisible(
@@ -1602,7 +1602,7 @@ void CTClientGame::ResetVisibleOBJ( DWORD dwTick)
 	if( m_pMainChar->InCastle() )
 		SiegeMgr->ResetVisibleOBJ(dwTick);
 
-	for( i=0; i<INT(m_vMAP.m_vDRAWBSP.size()); i++)
+	for( auto i=0; i<INT(m_vMAP.m_vDRAWBSP.size()); i++)
 		m_vMAP.m_vDRAWBSP[i]->m_vTDRAW.sort(binary_draw());
 	m_vMAP.m_vTDRAW.sort(binary_draw());
 
@@ -1881,10 +1881,10 @@ void CTClientGame::RenderTSLASH()
 		if((*itTOBJ)->m_bDynamicOBJ)
 			(*itTOBJ)->RenderTSLASH(m_pDevice);
 
-	for( i=0; i<INT(m_vTARROW.size()); i++)
+	for( auto i=0; i<INT(m_vTARROW.size()); i++)
 		m_vTARROW[i]->m_vTSLASH.Render(m_pDevice);
 
-	for( i=0; i<INT(m_pTRSCS->m_vTCORPS.m_vTSQUAD.size()); i++)
+	for( auto i=0; i<INT(m_pTRSCS->m_vTCORPS.m_vTSQUAD.size()); i++)
 		m_pTRSCS->m_vTCORPS.m_vTSQUAD[i]->m_vTARROW.m_vTSLASH.Render(m_pDevice);
 	m_vTCMDARROW.m_vTSLASH.Render(m_pDevice);
 
@@ -9438,7 +9438,8 @@ void CTClientGame::OnLButtonDblClk( UINT nFlags, CPoint pt)
 				{
 					CTClientItem *pTITEM = NULL;
 
-					for( BYTE j=0; j<MAX_DRAGSLOT; j++)
+					BYTE j;
+					for( j=0; j<MAX_DRAGSLOT; j++)
 					{
 						TComponent *pTSLOT = m_vTFRAME[bTFRAME]->FindKid(m_vSlotID[j]);
 
@@ -10054,7 +10055,7 @@ BYTE CTClientGame::PannelHitTest( CPoint point)
 		if(m_vTPANNEL[i]->HitTest(point))
 			return i;
 
-	for( i=0; i<TFACEIMG_COUNT; i++)
+	for( auto i=0; i<TFACEIMG_COUNT; i++)
 		if(m_vTFACEIMG[i]->HitTest(point))
 			switch(i)
 			{
@@ -10257,7 +10258,7 @@ void CTClientGame::EnableLIGHT( CTClientBSP *pTBSP)
 		vCONST, vLightCount[0]);
 	pCONST = vCONST;
 
-	for( i=0; i<vLightCount[0]; i++)
+	for( auto i=0; i<vLightCount[0]; i++)
 	{
 		memcpy( pCONST, &D3DXVECTOR4(
 			vTLIGHT[i]->m_Light.Diffuse.r,
@@ -10273,7 +10274,7 @@ void CTClientGame::EnableLIGHT( CTClientBSP *pTBSP)
 		vCONST, vLightCount[0]);
 	pCONST = vCONST;
 
-	for( i=0; i<vLightCount[0]; i++)
+	for( auto i=0; i<vLightCount[0]; i++)
 	{
 		memcpy( pCONST, vTLIGHT[i]->m_Light.Type == D3DLIGHT_POINT ?
 			&D3DXVECTOR4(
@@ -10312,7 +10313,7 @@ void CTClientGame::EnableLIGHT()
 		m_pDevice->m_vConstantVS[VC_LIGHTCOUNT],
 		vLightCount, 1);
 
-	for( i=0; i<TLIGHT_COUNT; i++)
+	for( auto i=0; i<TLIGHT_COUNT; i++)
 	{
 		memcpy( &vCONST[i * 4], &D3DXVECTOR4(
 			m_vLIGHT[i].m_Light.Ambient.r,
@@ -10326,7 +10327,7 @@ void CTClientGame::EnableLIGHT()
 		m_pDevice->m_vConstantVS[VC_LIGHTAMBIENT],
 		vCONST, TLIGHT_COUNT);
 
-	for( i=0; i<TLIGHT_COUNT; i++)
+	for( auto i=0; i<TLIGHT_COUNT; i++)
 	{
 		memcpy( &vCONST[i * 4], &D3DXVECTOR4(
 			m_vLIGHT[i].m_Light.Diffuse.r,
@@ -10340,7 +10341,7 @@ void CTClientGame::EnableLIGHT()
 		m_pDevice->m_vConstantVS[VC_LIGHTDIFFUSE],
 		vCONST, TLIGHT_COUNT);
 
-	for( i=0; i<TLIGHT_COUNT; i++)
+	for( auto i=0; i<TLIGHT_COUNT; i++)
 	{
 		memcpy( &vCONST[i * 4], &D3DXVECTOR4(
 			m_vLIGHT[i].m_Light.Direction.x,
@@ -10362,7 +10363,7 @@ void CTClientGame::DisableLIGHT()
 	for( int i=0; i<INT(m_vMAP.m_vDRAWBSP.size()); i++)
 		m_vMAP.m_vDRAWBSP[i]->m_pMAP->DisableLight();
 
-	for( i=0; i<TLIGHT_COUNT; i++)
+	for( auto i=0; i<TLIGHT_COUNT; i++)
 		m_vLIGHT[i].EnableLight(FALSE);
 
 	if(!m_pDevice->m_bEnableSHADER)
@@ -12723,7 +12724,7 @@ void CTClientGame::ResetTMonInvenUI()
 			pTMONEY->m_strText.Format( _T("%d"), m_vMonMoney[i]);
 	}
 
-	for( i=0; i<MAX_DRAGSLOT; i++)
+	for( auto i=0; i<MAX_DRAGSLOT; i++)
 	{
 		TImageList *pTSLOT = (TImageList *) m_vTFRAME[TFRAME_MONINVEN]->FindKid(m_vSlotID[i]);
 
@@ -14442,7 +14443,7 @@ void CTClientGame::CheckMainUI()
 
 	for( h=0; h<THOTKEYBASE_COUNT; ++h)
 	{
-		for( i=0; i<MAX_HOTKEY_POS; ++i)
+		for( auto i=0; i<MAX_HOTKEY_POS; ++i)
 		{
 			if( pUI->m_pTHOTKEYDOWN[h][i]->IsVisible() && pUI->m_pTHOTKEYDOWN[h][i]->GetCurImage() )
 			{
@@ -14475,7 +14476,7 @@ void CTClientGame::CheckMainUI()
 		}
 	}
 
-	for( i=0; i<TMONSKILL_COUNT; i++)
+	for( auto i=0; i<TMONSKILL_COUNT; i++)
 		if( pUI->m_pTRECALLSKILLDOWN[i]->IsVisible() && pUI->m_pTRECALLSKILLDOWN[i]->GetCurImage() )
 		{
 			if( m_pTARGET && CanControl() )
@@ -14484,7 +14485,7 @@ void CTClientGame::CheckMainUI()
 			return;
 		}
 
-	for( i=0; i<TRECALLAI_COUNT; i++)
+	for( auto i=0; i<TRECALLAI_COUNT; i++)
 		if( pUI->m_pTRECALLAIDOWN[i]->IsVisible() && pUI->m_pTRECALLAIDOWN[i]->GetCurImage() )
 		{
 			if(CanControl())
@@ -18517,7 +18518,7 @@ void CTClientGame::CalcTQuestTick( DWORD dwTick)
 		int nTOP = pTNPCTalkDlg->GetTop();
 		int nCount = pTNPCTalkDlg->GetCount() - nTOP;
 
-		for( i=0; i<nCount; i++)
+		for( auto i=0; i<nCount; i++)
 		{
 			LPTQUEST pTQUEST = pTNPCTalkDlg->GetTQUEST(nTOP+i);
 
@@ -21428,14 +21429,14 @@ void CTClientGame::StopMoveMainChar()
 	m_vKEY.ResetSTATE();
 }
 
-void CTClientGame::StartApexClient( CTachyonSession *pSession )
-{
-#ifndef TEST_MODE
-	long re = CHCStart( static_cast<CTClientSession*>(pSession)->SnedCS_APEXDATA_REQ, m_pApexfRec );
-
-	static_cast<CTClientSession*>(pSession)->SendCS_APEXSTART_REQ( re );
-#endif
-}
+//void CTClientGame::StartApexClient( CTachyonSession *pSession )
+//{
+//#ifndef TEST_MODE
+//	long re = CHCStart( static_cast<CTClientSession*>(pSession)->SnedCS_APEXDATA_REQ, m_pApexfRec );
+//
+//	static_cast<CTClientSession*>(pSession)->SendCS_APEXSTART_REQ( re );
+//#endif
+//}
 
 void CTClientGame::ResetKICKOUTMAP()
 {

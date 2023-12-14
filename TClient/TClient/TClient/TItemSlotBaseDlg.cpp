@@ -23,7 +23,7 @@ CTItemSlotBaseDlg::CTItemSlotBaseDlg(TComponent* pParent, LP_FRAMEDESC pDesc, in
 		m_ItemSlot[i].bInvenSlot = (BYTE)T_INVALID;
 	}
 
-	for( i = 0; i < nSlotCnt+1; ++i )
+	for( auto i = 0; i < nSlotCnt+1; ++i )
 	{
 		m_pTitles[i].Empty();
 		m_pToolTips[i].Empty();

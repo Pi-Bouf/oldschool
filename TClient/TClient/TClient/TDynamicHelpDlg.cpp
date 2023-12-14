@@ -209,7 +209,8 @@ void CTDynamicHelpDlg::InitTEXT( CString& strTEXT)
 	m_pHEIGHT = new WORD[m_nPartCount];
 	m_pWIDTH = new WORD[m_nPartCount];
 
-	for( int i=0; i<m_nPartCount - 1; i++)
+	int i;
+	for(i=0; i<m_nPartCount - 1; i++)
 	{
 		m_pHEIGHT[i] = TMAX_TEXTSIZE;
 		m_pWIDTH[i] = TMAX_TEXTSIZE;
@@ -236,7 +237,7 @@ void CTDynamicHelpDlg::InitTEXT( CString& strTEXT)
 		D3DPOOL_MANAGED,
 		&m_pTEX[i]);
 
-	for( i=0; i<m_nPartCount; i++)
+	for( auto i=0; i<m_nPartCount; i++)
 	{
 		int nBASE = TMAX_TEXTSIZE / m_nHEIGHT * i * TMAX_TEXTSIZE;
 

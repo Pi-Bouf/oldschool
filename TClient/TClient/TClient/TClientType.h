@@ -2857,18 +2857,15 @@ struct tagTSKILLTARGET_PARAM
 	VTOBJBASE m_vTARGET;
 };
 
-struct binary_quest : public binary_function< LPTQUEST, LPTQUEST, bool>
+struct binary_quest
 {
-	bool operator () ( const LPTQUEST &_Left, const LPTQUEST &_Right) const
+	bool operator()(const LPTQUEST& left, const LPTQUEST& right) const
 	{
-		if( _Left->m_bMAIN )
+		if (left->m_bMAIN)
 			return false;
 
-		if( _Left->m_bLevel < _Right->m_bLevel )
-			return true;
-
-		return false;
-	};
+		return left->m_bLevel < right->m_bLevel;
+	}
 };
 
 struct tagTMESSAGEBOX

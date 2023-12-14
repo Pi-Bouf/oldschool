@@ -4838,7 +4838,7 @@ int CTClientGame::OnGM_SELECT_TEXTURE_DETAIL()
 		}
 	}
 
-	for( i=0; i<TEXTURE_DETAIL_COUNT; ++i )
+	for( auto i=0; i<TEXTURE_DETAIL_COUNT; ++i )
 		m_pSystemSetting->m_pTTEXDETAIL[i]->Select( i == m_pDevice->m_option.m_nTextureDetail );
 
 	if( bChange )
